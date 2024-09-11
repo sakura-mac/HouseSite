@@ -1,0 +1,26 @@
+@import "~bootstrap/scss/bootstrap";
+
+.single-product{
+  @extend .col-lg-4;
+  @extend .col-md-4;
+  @extend .col-sm-6;
+}
+$fa-font-path:        "../webfonts";
+
+
+
+
+@import "./pages/product/index";
+
+@import "./assets/css/all.css";
+@import "./assets/scss/style.scss";
+
+
+@import "./assets/css/nice-select.css"; 
+
+@import "~slick-carousel/slick/slick.scss";
+@import "~slick-carousel/slick/slick-theme.scss";
+@import '~react-modal-video/scss/modal-video.scss';
+@import '~react-toastify/scss/main.scss';
+
+@import "./assets/css/animate.min.css";

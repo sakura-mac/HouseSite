@@ -1,0 +1,67 @@
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+@import "~bootstrap/scss/mixins";
+@import "~bootstrap/scss/grid";
+@import "~bootstrap/scss/utilities";
+
+
+.product-side-bar{
+  .widget{
+    padding: 25px 30px 30px;
+    margin-bottom: 30px;
+  }
+
+  & .price-box{
+    & .title{
+      @extend .d-flex ;
+      @extend .justify-content-between;
+      & a{
+        text-decoration: none;
+        color: $primary;
+        & strong{
+          i{
+            padding-left: 10px;
+          }
+        }
+      }
+    }
+
+    & .price-tooltip{
+      @extend .shadow;
+      @extend .p-2;
+      @extend .mb-2;
+      @extend .bg-white;
+      @extend .rounded;
+      @extend .mt-3;
+
+      @extend .col-sm-9;
+
+      z-index: 1;
+      background-color: $white;
+      position: absolute;
+      cursor: pointer;
+
+      > :hover{
+        background-color: #f0dfdd;
+      }
+
+      > :nth-child(4){
+        border-top: 2px dashed #e1e8ed;
+      }
+
+
+
+
+
+      &__box{
+
+
+
+      }
+
+
+    }
+
+  }
+
+}
