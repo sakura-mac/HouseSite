@@ -1,7 +1,6 @@
 {
   "name": "create-react-app",
   "version": "6.4.0",
-  "author": "jubayed",
   "private": true,
   "engines": {
     "node": "12.22.12",
