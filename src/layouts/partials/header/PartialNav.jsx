@@ -44,32 +44,32 @@ class PartialNav extends React.Component {
                         <Link className="nav-link" to={'/case-study'}>房源速览</Link>
                         <ul className="sub-menu">
                             <li>
-                                <Link to={'/case-study'}>case study</Link>
+                                <Link to={'/case-study'}>神户</Link>
                             </li>
                             <li>
-                                <Link to={'/case-details'}>Case Details</Link>
+                                <Link to={'/case-details'}>大阪</Link>
                             </li>
                             <li>
-                                <Link to={'/coming-soon'}>coming soon</Link>
+                                <Link to={'/coming-soon'}>京都</Link>
                             </li>
                             <li>
-                                <Link to={'/error'}>error</Link>
+                                <Link to={'/error'}>北海道</Link>
                             </li>
                             <li>
-                                <Link to={'/faq'}>faq</Link>
+                                <Link to={'/faq'}>冲绳</Link>
                             </li>
                             <li>
-                                <Link to={'/pricing'}>pricing</Link>
+                                <Link to={'/pricing'}>东日本</Link>
                             </li>
 
                             <li>
-                                <Link to={'/team'}>team</Link>
+                                <Link to={'/team'}>西日本</Link>
                             </li>
                             <li>
-                                <Link to={'/team-details'}>team details</Link>
+                                <Link to={'/team-details'}>东京</Link>
                             </li>
                             <li className="nav-item">
-                                <Link className="nav-link" to={'/contact'}>Contact</Link>
+                                <Link className="nav-link" to={'/contact'}>联系我们</Link>
                             </li>
                         </ul>
                         {/* sub menu */}
@@ -78,17 +78,17 @@ class PartialNav extends React.Component {
                         <Link className="nav-link" to={'/blog-standard'}>新闻中心</Link>
                         <ul className="sub-menu">
                             <li>
-                                <Link to={'/blog-standard'}>Blog Standard</Link>
+                                <Link to={'/blog-standard'}>新闻速递</Link>
                             </li>
                             <li>
-                                <Link to={'/blog-grid'}>Blog Grid</Link>
+                                <Link to={'/blog-grid'}>通知中心</Link>
                             </li>
                             <li>
-                                <Link to={'/blog-details'}>Blog Details</Link>
+                                <Link to={'/blog-details'}>生活技巧</Link>
                             </li>
-                            <li>
-                                <Link to={'/blog-standard-details'}>Blog Details 2</Link>
-                            </li>
+                            {/*<li>*/}
+                            {/*    <Link to={'/blog-standard-details'}>Blog Details 2</Link>*/}
+                            {/*</li>*/}
                         </ul>
                         {/* sub menu */}
                     </li>
