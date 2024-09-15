@@ -16,7 +16,7 @@ class LatestNewsPart extends React.Component {
                 <Col lg="6">
                   <div className="section-title text-center">
                     <span>latest news</span>
-                    <h2 className="title">Read Our Latest News &amp; Blog</h2>
+                    <h2 className="title">新闻中心</h2>
                   </div>
                   {/* sction title */}
                 </Col>
@@ -36,20 +36,17 @@ class LatestNewsPart extends React.Component {
                           data-wow-delay="0s"
                         >
                           <div className="letest-news-item mt-30">
-                            <span>By Admin, 05 Aug 2019</span>
+                            <span>05 Aug 2019</span>
                             <h4 className="title">
                               <Link to={"blog-details"}>
-                                Monthly Web Development Update Design Ethics &amp; Clarity
-                                Over Solution System
+                                豪宅梦不再遥远！购房新手必看的选房指南
                               </Link>
                             </h4>
                             <p>
-                              Nemo enim ipsam voluptatem quia voluptas sip erntur aut odit
-                              aut fugit, sed quia consequunturm agni dolores eos qui
-                              ratione voluptatem
+                              买房是人生大事，尤其是第一次购房时，难免会有很多疑问。本文为购房新手提供实用的选房建议，从豪华别墅到城市公寓，帮助你找到最适合的家。轻松开启你的置业之旅！
                             </p>
                             <Link to={"blog-details"} className="main-btn">
-                              Read More
+                              了解更多
                               <FontAwesomeIcon icon={faLongArrowAltRight} className={`pl-1`} />
                             </Link>
                           </div>
@@ -61,20 +58,17 @@ class LatestNewsPart extends React.Component {
                           data-wow-delay="0s"
                         >
                           <div className="letest-news-item mt-30">
-                            <span>By Admin, 05 Aug 2019</span>
+                            <span>24 Jun 2023</span>
                             <h4 className="title">
                             <Link to={"blog-details"}>
-                                Design System: What It Is And How To Create One Using
-                                Indigo Design Sence
+                              小户型如何大作为？打造属于你的温馨居所
                               </Link>
                             </h4>
                             <p>
-                              Nemo enim ipsam voluptatem quia voluptas sip erntur aut odit
-                              aut fugit, sed quia consequunturm agni dolores eos qui
-                              ratione voluptatem
+                              想要用有限的预算找到理想的小户型公寓？如何在小空间中实现大梦想？从布局设计到实用功能，我们提供了让你房子“变大”的贴心建议，让小户型也能住得舒适惬意。
                             </p>
                             <Link to={"blog-details"} className="main-btn" >
-                              Read More
+                              了解更多
                               <FontAwesomeIcon icon={faLongArrowAltRight} className={`pl-1`} />
                             </Link>
                           </div>
@@ -86,20 +80,18 @@ class LatestNewsPart extends React.Component {
                           data-wow-delay="0s"
                         >
                           <div className="letest-news-item mt-30">
-                            <span>By Admin, 05 Aug 2019</span>
+                            <span>12 Jan 2021</span>
                             <h4 className="title">
                             <Link to={"blog-details"}>
-                                How We Used WebAssembly To Speed Up Our Web App By 20X
-                                (Case Study)
+                              度假还是投资？海景房值得入手的理由
+
                               </Link>
                             </h4>
                             <p>
-                              Nemo enim ipsam voluptatem quia voluptas sip erntur aut odit
-                              aut fugit, sed quia consequunturm agni dolores eos qui
-                              ratione voluptatem
+                              想象每天醒来就能看到海景，简直是梦想中的度假生活！但海景房不仅仅适合度假，它也是一项很好的投资选择。本文将分析购买海景房的优势，让你知道它为何能同时满足生活享受和投资需求。
                             </p>
                             <Link to={"blog-details"} className="main-btn" >
-                              Read More
+                              了解更多
                               <FontAwesomeIcon icon={faLongArrowAltRight} className={`pl-1`} />
                             </Link>
                           </div>

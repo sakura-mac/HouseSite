@@ -29,7 +29,8 @@ class Index1 extends React.Component {
                 <WhoWeAreArea/>
                 <SolutionPart/>
                 <LatestServicesPart/>
-                <WhyChoosePart/>
+
+                {/*<WhyChoosePart/>*/}
                 {/*<CaseStudiesPart/>*/}
                 {/*<WhoWeAreArea/>*/}
                 {/*<TeamMemberPart/>*/}

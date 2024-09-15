@@ -14,7 +14,7 @@ class OueChoosePart extends React.Component {
                 <Col lg="6">
                   <div className="section-title mt-30">
                     <span>Best agecy for you</span>
-                    <h2 className="title">Why Choose Our Solutions</h2>
+                    <h2 className="title">为何选择我们？</h2>
                   </div>
                   {/* section title */}
                   <Accordion defaultActiveKey="0">
@@ -22,15 +22,13 @@ class OueChoosePart extends React.Component {
                       <Card.Header>
                         <Accordion.Toggle as={Link} to="#be" variant="link" eventKey="0">
                           <FontAwesomeIcon icon={faLongArrowAltRight} />
-                          We Provide Professional Service
+                          专业团队
                         </Accordion.Toggle>
                       </Card.Header>
                       <Accordion.Collapse eventKey="0">
                         <Card.Body>
                           <p>
-                            Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut
-                            odit aut fugit, sed quia consequuntur magni dolores eos qui
-                            ratione voluptatem sequi nesciunt. Neque porro quisquam
+                            我们拥有经验丰富的专业团队，为您提供优质的房产咨询服务，确保每一个决策都精准可靠。
                           </p>
                         </Card.Body>
                       </Accordion.Collapse>
@@ -39,15 +37,13 @@ class OueChoosePart extends React.Component {
                       <Card.Header>
                         <Accordion.Toggle as={Link} to="#be" variant="link" eventKey="1">
                           <FontAwesomeIcon icon={faLongArrowAltRight} />
-                          We Provide Professional Service
+                          优质房源
                         </Accordion.Toggle>
                       </Card.Header>
                       <Accordion.Collapse eventKey="1">
                         <Card.Body>
                           <p>
-                            Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut
-                            odit aut fugit, sed quia consequuntur magni dolores eos qui
-                            ratione voluptatem sequi nesciunt. Neque porro quisquam
+                            我们提供市场上精选的优质房源，满足您对理想居住环境的所有期待与需求。
                           </p>
                         </Card.Body>
                       </Accordion.Collapse>
@@ -56,15 +52,13 @@ class OueChoosePart extends React.Component {
                       <Card.Header>
                         <Accordion.Toggle as={Link} to="#be" variant="link" eventKey="2">
                           <FontAwesomeIcon icon={faLongArrowAltRight} />
-                          We Provide Professional Service
+                          高效交易
                         </Accordion.Toggle>
                       </Card.Header>
                       <Accordion.Collapse eventKey="2">
                         <Card.Body>
                           <p>
-                            Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut
-                            odit aut fugit, sed quia consequuntur magni dolores eos qui
-                            ratione voluptatem sequi nesciunt. Neque porro quisquam
+                            简化房产交易流程，让您在最短的时间内完成交易，节省宝贵时间。
                           </p>
                         </Card.Body>
                       </Accordion.Collapse>
@@ -73,15 +67,13 @@ class OueChoosePart extends React.Component {
                       <Card.Header>
                         <Accordion.Toggle as={Link} to="#be" variant="link" eventKey="3">
                           <FontAwesomeIcon icon={faLongArrowAltRight} />
-                          We Provide Professional Service
+                          贴心服务
                         </Accordion.Toggle>
                       </Card.Header>
                       <Accordion.Collapse eventKey="3">
                         <Card.Body>
                           <p>
-                            Nemo enim ipsam voluptatem quia voluptas sit aspernatur aut
-                            odit aut fugit, sed quia consequuntur magni dolores eos qui
-                            ratione voluptatem sequi nesciunt. Neque porro quisquam
+                            为您提供一对一的专属服务，从咨询到售后，确保每个细节都得到妥善处理。
                           </p>
                         </Card.Body>
                       </Accordion.Collapse>
@@ -100,12 +92,11 @@ class OueChoosePart extends React.Component {
                           data-wow-delay="0s"
                         >
                           <sub>
-                            <span className="counter">569</span> <sup>+</sup>
+                            <span className="counter">2456万</span> <sup>+</sup>
                           </sub>
-                          <span>Projct Complate</span>
+                          <span>贩卖房产最高价格</span>
                           <p>
-                            Sed ut perspiciatis unde omnis iste natus error sit
-                            voluptsantium doloremque laudantium
+                            我们曾成功促成高达2456万+的房产交易，彰显我们在高端市场中的实力与信赖。
                           </p>
                         </div>
                         <div
@@ -114,12 +105,11 @@ class OueChoosePart extends React.Component {
                           data-wow-delay="0s"
                         >
                           <sub>
-                            <span className="counter">783</span> <sup>+</sup>
+                            <span className="counter">3年</span> <sup>+</sup>
                           </sub>
-                          <span>Business Partners</span>
+                          <span>房地产经验</span>
                           <p>
-                            Sed ut perspiciatis unde omnis iste natus error sit
-                            voluptsantium doloremque laudantium
+                            拥有超过3年的房地产从业经验，积累了丰富的市场洞察与行业知识。
                           </p>
                         </div>
                       </div>
@@ -130,12 +120,11 @@ class OueChoosePart extends React.Component {
                           data-wow-delay="0s"
                         >
                           <sub>
-                            <span className="counter">356</span> <sup>+</sup>
+                            <span className="counter">98%</span> <sup>+</sup>
                           </sub>
-                          <span>Happy Clients</span>
+                          <span>客户好评</span>
                           <p>
-                            Sed ut perspiciatis unde omnis iste natus error sit
-                            voluptsantium doloremque laudantium
+                            98%的客户给予了高度好评，感谢我们专业、高效、贴心的房产服务。
                           </p>
                         </div>
                         <div
@@ -144,12 +133,11 @@ class OueChoosePart extends React.Component {
                           data-wow-delay="0s"
                         >
                           <sub>
-                            <span className="counter">894</span> <sup>+</sup>
+                            <span className="counter">500</span> <sup>+</sup>
                           </sub>
-                          <span>IT Consultant</span>
+                          <span>成交项目</span>
                           <p>
-                            Sed ut perspiciatis unde omnis iste natus error sit
-                            voluptsantium doloremque laudantium
+                            我们已成功完成500多个房产项目，确保每一位客户都能找到理想的家园。
                           </p>
                         </div>
                       </div>

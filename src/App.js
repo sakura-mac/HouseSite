@@ -39,32 +39,32 @@ class App extends React.Component {
 
 				<Switch>
 					<Route exact path="/" component={Index1} /> {/* Root path should match '/' */}
-					<Route path="/index" component={Index1} />
-					<Route path="/index2" component={Index2} />
-					<Route path="/index3" component={Index3} />
-					<Route path="/index4" component={Index4} />
-					<Route path="/about" component={AboutPage} />
-					<Route path="/services" component={ServicesPage} />
-					<Route path="/services-details" component={ServicesDetails} />
-					<Route path="/case-study" component={CaseStudy} />
-					<Route path="/case-details" component={CaseDetails} />
-					<Route path="/coming-soon" component={ComingSoon} />
-					<Route path="/error" component={NoMatch} />
-					<Route path="/faq" component={FaqPage} />
-					<Route path="/pricing" component={PricingPage} />
-					<Route path="/products" component={ProductPage} />
-					<Route path="/products-details" component={ProductDetailPage} />
-					<Route path="/shop" component={ShopPage} />
-					<Route path="/shop-details" component={ShopDetailsPage} />
-					<Route path="/team" component={TeamPage} />
-					<Route path="/team-details" component={TeamDetailsPage} />
-					<Route path="/blog-standard" component={BlogStandard} />
-					<Route path="/blog-grid" component={BlogGrid} />
-					<Route path="/blog-details" component={BlogDetails} />
-					<Route path="/blog-details2" component={BlogDetails2} />
-					<Route path="/contact" component={ContactPage} />
+					<Route path="index" component={Index1} />
+					<Route path="index2" component={Index2} />
+					<Route path="index3" component={Index3} />
+					<Route path="index4" component={Index4} />
+					<Route path="about" component={AboutPage} />
+					<Route path="services" component={ServicesPage} />
+					<Route path="services-details" component={ServicesDetails} />
+					<Route path="case-study" component={CaseStudy} />
+					<Route path="case-details" component={CaseDetails} />
+					<Route path="coming-soon" component={ComingSoon} />
+					<Route path="error" component={NoMatch} />
+					<Route path="faq" component={FaqPage} />
+					<Route path="pricing" component={PricingPage} />
+					<Route path="products" component={ProductPage} />
+					<Route path="products-details" component={ProductDetailPage} />
+					<Route path="shop" component={ShopPage} />
+					<Route path="shop-details" component={ShopDetailsPage} />
+					<Route path="team" component={TeamPage} />
+					<Route path="team-details" component={TeamDetailsPage} />
+					<Route path="blog-standard" component={BlogStandard} />
+					<Route path="blog-grid" component={BlogGrid} />
+					<Route path="blog-details" component={BlogDetails} />
+					<Route path="blog-details2" component={BlogDetails2} />
+					<Route path="contact" component={ContactPage} />
 
-					<Route component={NoMatch} /> {/* Fallback for unknown routes */}
+					{/*<Route component={NoMatch} /> /!* Fallback for unknown routes *!/*/}
 				</Switch>
 				<ToastContainer />
 			</BrowserRouter>

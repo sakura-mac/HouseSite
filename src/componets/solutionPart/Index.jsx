@@ -9,24 +9,24 @@ class SolutionPart extends React.Component {
   constructor() {
     super();
     this.state = {
-      isOpen: false
+      isOpen: false, // 控制模态框显示
     };
-    this.openModal = this.openModal.bind(this);
-    this.closeModal = this.closeModal.bind(this);
   }
 
-  openModal(event) {
+  // 打开模态框
+  openModal = (event) => {
     this.setState({ isOpen: true });
     event.preventDefault();
-  }
+  };
 
-  closeModal() {
+  // 关闭模态框
+  closeModal = () => {
     this.setState({ isOpen: false });
-  }
+  };
 
   render() {
     return (
-        <div className="solution-area bg_cover" style={{ backgroundImage: "url(/assets/images/solution-bg.jpg)" }}>
+        <div className="solution-area bg_cover" style={{ backgroundImage: "url(/assets/images/Image_20231018235738.jpg)" }}>
           <div className="solution-overlay pt-120">
             <Container>
               <Row className="align-items-center">
@@ -35,34 +35,31 @@ class SolutionPart extends React.Component {
                     <div className="solution-content">
                       <h3 className="title">集团鸟瞰</h3>
                       <p>
-                        Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-                        accusantium doloremque laudantium totam rem aperiam eaque ipsa
+                        集团总部及产业园区布局合理，涵盖住宅、商业地产等多个领域，注重现代化设计与绿色环保，为城市发展提供多元化服务与支持。
                       </p>
 
-                      {/* Solution play for mobile */}
+                      {/* 播放按钮（移动端显示） */}
                       <div className="solution-play text-right mr-30 d-block d-lg-none">
                         <Link to="#" className="video-popup" onClick={this.openModal}>
                           <FontAwesomeIcon icon={faPlay} />
                         </Link>
                       </div>
-                      {/* solution play */}
                     </div>
                   </div>
-                  {/* solution box */}
                 </Col>
                 <Col lg="4">
+                  {/* 播放按钮（桌面端显示） */}
                   <div className="solution-play text-right mr-30 d-none d-lg-block">
                     <Link to="#" className="video-popup" onClick={this.openModal}>
                       <FontAwesomeIcon icon={faPlay} />
                     </Link>
                   </div>
-                  {/* solution play */}
                 </Col>
               </Row>
-              {/* row */}
             </Container>
-            {/* container */}
           </div>
+
+          {/* 视频模态框 */}
           <VideoModal isOpen={this.state.isOpen} onClose={this.closeModal} />
         </div>
     );

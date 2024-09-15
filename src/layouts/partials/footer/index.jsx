@@ -57,13 +57,15 @@ class Footer extends React.Component {
                           {/*<li><Link to={"/terms"}><i className="fal fa-angle-right" /> Terms</Link></li>*/}
                         </ul>
                         <ul>
-                          <li><Link to={"details"}><i className="fal fa-angle-right" /> 新闻中心</Link></li>
-                          <li><Link to={"contact"}><i className="fal fa-angle-right" /> 联系我们</Link></li>
-                          <li><Link to={"business"}><i className="fal fa-angle-right" /> 更多推荐</Link></li>
+                          <li><Link to={"details"}><i className="fal fa-angle-right"/> 新闻中心</Link></li>
+                          <li><Link to={"contact"}><i className="fal fa-angle-right"/> 联系我们</Link></li>
+                          <li><a href="https://v.kuaishou.com/8v5DSF" target="_blank" rel="noopener noreferrer"><i
+                              className="fal fa-angle-right"/> 更多推荐</a></li>
                           {/*<li><Link to={"affiliate"}><i className="fal fa-angle-right" /> Affiliate</Link></li>*/}
                         </ul>
                       </div>
-                    </div> {/* widget item 2 */}
+                    </div>
+                    {/* widget item 2 */}
                   </Col>
                   <Col lg="4" md="6">
                     <div className="widget-item-2 widget-item-3 mt-30">

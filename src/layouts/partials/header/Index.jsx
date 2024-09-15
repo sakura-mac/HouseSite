@@ -78,16 +78,42 @@ class Header extends React.Component {
 
                     .custom-brand-text {
                       font-family: 'Xique', sans-serif; /* 使用自定义字体 */
-                      font-size: 18px;   /* 调整文字大小 */
                       margin-left: 10px; /* 调整文字与图片的间距 */
                     }
-
+                
                     .custom-subtext {
                       font-family: 'Xique', sans-serif; /* 使用自定义字体 */
-                      font-size: 12px;
                       text-align: center;
                       display: block;
                       margin-top: 5px; /* 调整文字与上方元素的间距 */
+                    }
+                
+                    /* 默认字体大小 */
+                    .custom-brand-text {
+                      font-size: 18px;
+                    }
+                    .custom-subtext {
+                      font-size: 12px;
+                    }
+                
+                    /* 中等屏幕（宽度大于等于768px） */
+                    @media (min-width: 768px) {
+                      .custom-brand-text {
+                        font-size: 22px; /* 调整为较大字体 */
+                      }
+                      .custom-subtext {
+                        font-size: 14px;
+                      }
+                    }
+                
+                    /* 大屏幕（宽度大于等于1200px） */
+                    @media (min-width: 1200px) {
+                      .custom-brand-text {
+                        font-size: 26px; /* 更大的字体 */
+                      }
+                      .custom-subtext {
+                        font-size: 16px;
+                      }
                     }
                   `}
                   </style>
