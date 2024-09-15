@@ -51,3 +51,4 @@ docs/build/
 Thumbs.db
 
 .idea/
+/website_resources/
