@@ -15,29 +15,32 @@ import OueChoosePart from '../../componets/OueChoosePart/Index';
 import MeetUsPart from '../../componets/MeetUsPart/Index';
 import LatestNewsPart from '../../componets/latestNewsPart/Index';
 import Brand2Part from '../../componets/brand2Part/Index';
+import PlayVideoControl from "../../componets/PlayVideoControl/PlayVideoControl";
 
 
 class Index1 extends React.Component {
 
-    render() { 
-        return ( 
+    render() {
+        return (
             <React.Fragment>
                 <Header />
+                <PlayVideoControl videoSrc="assets/videos/SwallowHome.mp4" />
                 <Banner/>
                 <WhoWeAreArea/>
                 <SolutionPart/>
                 <LatestServicesPart/>
                 <WhyChoosePart/>
-                <CaseStudiesPart/>
-                <TeamMemberPart/>
-                <ContactUsPart/>
+                {/*<CaseStudiesPart/>*/}
+                {/*<WhoWeAreArea/>*/}
+                {/*<TeamMemberPart/>*/}
+                {/*<ContactUsPart/>*/}
                 <OueChoosePart/>
-                <MeetUsPart/>
+                {/*<MeetUsPart/>*/}
                 <LatestNewsPart/>
-                <Brand2Part/>
+                {/*<Brand2Part/>*/}
                 <Footer />
             </React.Fragment>
-         );
+        );
     }
 }
  

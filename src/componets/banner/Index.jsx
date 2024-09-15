@@ -65,20 +65,18 @@ class Banner extends React.Component {
                       <Col lg="9">
                         <div className="banner-content">
                           <span data-animation="fadeInLeft" data-delay="0.5s">
-                            IT Business Consulting
+                            Estate Consultant
                           </span>
                           <h1
                             data-animation="fadeInLeft"
                             data-delay="0.9s"
                             className="title"
                           >
-                            Best IT Soluations <br />
-                            Provider Agency
+                            发现完美住所
                           </h1>
                           <p data-animation="fadeInLeft" data-delay="1.3s">
-                            Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-                            accusantium doloremda tium totam rem aperiam eaque ipsa quae ab
-                            illo inventore veritatis
+                            在我们这里，每一处房产都拥有独特的魅力。<br />
+                            通过个性化方案和精确定位，轻松实现舒适居住。
                           </p>
                           <Link
                             data-animation="fadeInUp"
@@ -86,7 +84,7 @@ class Banner extends React.Component {
                             className="main-btn"
                             to={"services"}
                           >
-                            Our Services <i className="fal fa-long-arrow-right" />
+                            房源速览 <i className="fal fa-long-arrow-right" />
                           </Link>
                         </div>
                         {/* banner content */}
@@ -105,28 +103,26 @@ class Banner extends React.Component {
                       <Col lg="9">
                         <div className="banner-content">
                           <span data-animation="fadeInLeft" data-delay="0.5s">
-                            IT Business Consulting
+                            Estate Consultant
                           </span>
                           <h1
-                            data-animation="fadeInLeft"
-                            data-delay="0.9s"
-                            className="title"
+                              data-animation="fadeInLeft"
+                              data-delay="0.9s"
+                              className="title"
                           >
-                            Best IT Soluations <br />
-                            Provider Agency
+                            发现完美住所
                           </h1>
                           <p data-animation="fadeInLeft" data-delay="1.3s">
-                            Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-                            accusantium doloremda tium totam rem aperiam eaque ipsa quae ab
-                            illo inventore veritatis
+                            在我们这里，每一处房产都拥有独特的魅力。<br/>
+                            通过个性化方案和精确定位，轻松实现舒适居住。
                           </p>
                           <Link
-                            data-animation="fadeInUp"
-                            data-delay="1.6s"
-                            className="main-btn"
-                            to={"services"}
+                              data-animation="fadeInUp"
+                              data-delay="1.6s"
+                              className="main-btn"
+                              to={"services"}
                           >
-                            Our Services <i className="fal fa-long-arrow-right" />
+                            房源速览 <i className="fal fa-long-arrow-right"/>
                           </Link>
                         </div>
                         {/* banner content */}
@@ -139,35 +135,33 @@ class Banner extends React.Component {
               </div>
 
 
-              <div className="single-banner bg_cover  bg_img_3" >
+              <div className="single-banner bg_cover  bg_img_3">
                 <div className="banner-overlay">
                   <Container>
                     <Row>
                       <Col lg="9">
                         <div className="banner-content">
                           <span data-animation="fadeInLeft" data-delay="0.5s">
-                            IT Business Consulting
+                            Estate Consultant
                           </span>
                           <h1
-                            data-animation="fadeInLeft"
-                            data-delay="0.9s"
-                            className="title"
+                              data-animation="fadeInLeft"
+                              data-delay="0.9s"
+                              className="title"
                           >
-                            Best IT Soluations <br />
-                            Provider Agency
+                            发现完美住所
                           </h1>
                           <p data-animation="fadeInLeft" data-delay="1.3s">
-                            Sed ut perspiciatis unde omnis iste natus error sit voluptatem
-                            accusantium doloremda tium totam rem aperiam eaque ipsa quae ab
-                            illo inventore veritatis
+                            在我们这里，每一处房产都拥有独特的魅力。<br/>
+                            通过个性化方案和精确定位，轻松实现舒适居住。
                           </p>
                           <Link
-                            data-animation="fadeInUp"
-                            data-delay="1.6s"
-                            className="main-btn"
-                            to={"services"}
+                              data-animation="fadeInUp"
+                              data-delay="1.6s"
+                              className="main-btn"
+                              to={"services"}
                           >
-                            Our Services <i className="fal fa-long-arrow-right" />
+                            房源速览 <i className="fal fa-long-arrow-right"/>
                           </Link>
                         </div>
                         {/* banner content */}
@@ -181,8 +175,8 @@ class Banner extends React.Component {
 
             </Slider>
             </React.Fragment>
-         );
+        );
     }
 }
- 
+
 export default Banner;

@@ -1,0 +1,23 @@
+.video-control {
+    position: relative; /* 让视频处于正常文档流中，不影响导航栏 */
+    width: 100%;
+    height: 100vh; /* 控制视频的高度，让它不会太大 */
+    overflow: visible;
+    margin-top: 60px;
+}
+
+.video-control .video-player {
+    width: 100%;
+    height: 100vh;
+    object-fit: cover; /* 确保视频适应整个容器并保持比例 */
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1; /* 确保视频在最底层，不挡住导航栏 */
+}
+/* 媒体查询：在小屏幕设备上隐藏视频 */
+@media (max-width: 576px) {
+    .video-control {
+        display: none; /* 隐藏视频 */
+    }
+}

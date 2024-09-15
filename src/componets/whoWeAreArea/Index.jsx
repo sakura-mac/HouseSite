@@ -20,9 +20,10 @@ class WhoWeAreArea extends React.Component {
                   data-wow-delay="0s"
                 >
                   <div className="section-title">
-                    <span>who we are</span>
+                    <span>关于我们</span>
                     <h2 className="title">
-                      We Work Hard Play Hard Explore Creative Mmind
+                      行业积累<br/>
+                      经验沉淀
                     </h2>
                   </div>
                   {/* section title */}
@@ -34,12 +35,10 @@ class WhoWeAreArea extends React.Component {
                 >
                   <div className="section-title">
                     <p>
-                      Perspiciatis unde omnis iste natus error sit voluptatem accusantium
-                      dolorem-quelaudantium, totam rem aperiam eaque ipsa quae ab illo
-                      inventore veritatis et quasi architecto beatae vitae dicta sunt
-                      explicabo. Nemo enim ipsam voluptatem quiavoluptas sit aspernatur
-                      aut odit aut fugit, sed quia quuntur magni dolores eos ratione
-                      voluptatem sequi nesciunt eque porroe.
+                      Swalloow Homes公司成立于2022年6月。公司创始团队具有3年经历和经验。
+
+                      多年来，公司始终坚持专心、专业、专注日本房产解决方案，帮助客户提供理想房产，
+                      开拓日本财产的经营理念，通过全体员工的共同努力，公司已成为日本房地产行业的优秀企业
                     </p>
                   </div>
                   {/* section title */}
@@ -53,8 +52,8 @@ class WhoWeAreArea extends React.Component {
                 >
                   <div className="what-we-do-item text-center mt-30">
                     <FontAwesomeIcon  icon={faLaptopCode} />
-                    <h5 className="title">IT Soluations</h5>
-                    <p>Sed ut perspiciatis unde omnis iste natus error volup</p>
+                    <h5 className="title">公司资质</h5>
+                    <p> 资质全面，<br />证书齐全</p>
                     <Link to={"case-details"}>
                       <FontAwesomeIcon icon={faLongArrowAltRight}/>
                     </Link>
@@ -68,8 +67,8 @@ class WhoWeAreArea extends React.Component {
                 >
                   <div className="what-we-do-item text-center mt-30">
                     <FontAwesomeIcon icon={faFingerprint}  />
-                    <h5 className="title">Security System</h5>
-                    <p>Sed ut perspiciatis unde omnis iste natus error volup</p>
+                    <h5 className="title">行业认可</h5>
+                    <p><br/><br/></p>
                     <Link to={"case-details"}>
                       <FontAwesomeIcon icon={faLongArrowAltRight}/>
                     </Link>
@@ -83,8 +82,8 @@ class WhoWeAreArea extends React.Component {
                 >
                   <div className="what-we-do-item text-center mt-30">
                     <FontAwesomeIcon icon={faChalkboard} />
-                    <h5 className="title">Web Development</h5>
-                    <p>Sed ut perspiciatis unde omnis iste natus error volup</p>
+                    <h5 className="title">流程规范</h5>
+                    <p><br/><br/></p>
                     <Link to={"case-details"}>
                       <FontAwesomeIcon icon={faLongArrowAltRight}/>
                     </Link>
@@ -98,8 +97,8 @@ class WhoWeAreArea extends React.Component {
                 >
                   <div className="what-we-do-item text-center mt-30">
                     <FontAwesomeIcon icon={faDatabase} />
-                    <h5 className="title">Database Security</h5>
-                    <p>Sed ut perspiciatis unde omnis iste natus error volup</p>
+                    <h5 className="title">团队培养</h5>
+                    <p>拥有高素质专业团队，全心全意服务</p>
                     <Link to={"case-details"}>
                       <FontAwesomeIcon icon={faLongArrowAltRight}/>
                     </Link>
@@ -112,9 +111,6 @@ class WhoWeAreArea extends React.Component {
             {/* container */}
             <div className="what-we-are-shape-1">
               <img src="/assets/images/what-we-are-shape-1.png" alt="shape" />
-            </div>
-            <div className="what-we-are-shape-2">
-              <img src="/assets/images/what-we-are-shape-2.png" alt="shape" />
             </div>
           </div>
          );

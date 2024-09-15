@@ -4,75 +4,100 @@ import { Container, Row, Col } from 'react-bootstrap';
 
 class Footer extends React.Component {
 
-  render() { 
-      return ( 
+  render() {
+    return (
         <React.Fragment>
-        <footer className="footer-area footer-area-2 footer-area-1 bg_cover" style={{backgroundImage: 'url(assets/images/footer-bg.jpg)'}}>
-          <div className="footer-overlay">
-            <Container className="position-relative">
-              <Row>
-                <Col lg="4" md="7">
-                  <div className="widget-item-1 mt-30">
-                    <img src="/assets/images/logo-1.1.png" alt="" />
-                    <p>The web has changed a lot since Vitaly posted his first article back in 2006. The team at Smashing has changed too, as have the things that we bring to our community onferences, books, and our membership added to the online magazine.</p>
-                    <p>One thing that hasn’t changed is that we’re a small team — with most of us not working</p>
-                  </div> {/* widget item 1 */}
-                </Col>
-                <Col lg="3" md="5" className="offset-lg-1">
-                  <div className="widget-item-2 mt-30">
-                    <h4 className="title">Pages</h4>
-                    <div className="footer-list">
-                      <ul>
-                        <li><Link to={"/"}><i className="fal fa-angle-right" /> Home</Link></li>
-                        <li><Link to={"/services"}><i className="fal fa-angle-right" /> Services</Link></li>
-                        <li><Link to={"/about"}><i className="fal fa-angle-right" /> About</Link></li>
-                        <li><Link to={"/career"}><i className="fal fa-angle-right" /> Career</Link></li>
-                        <li><Link to={"/refund"}><i className="fal fa-angle-right" /> Refund</Link></li>
-                        <li><Link to={"/terms"}><i className="fal fa-angle-right" /> Terms</Link></li>
-                      </ul>
-                      <ul>
-                        <li><Link to={"details"}><i className="fal fa-angle-right" /> Details</Link></li>
-                        <li><Link to={"contact"}><i className="fal fa-angle-right" /> Contact</Link></li>
-                        <li><Link to={"business"}><i className="fal fa-angle-right" /> Business</Link></li>
-                        <li><Link to={"affiliate"}><i className="fal fa-angle-right" /> Affiliate</Link></li>
-                      </ul>
-                    </div>
-                  </div> {/* widget item 2 */}
-                </Col>
-                <Col lg="4" md="6">
-                  <div className="widget-item-2 widget-item-3 mt-30">
-                    <h4 className="title">Working Hours</h4>
-                    <ul>
-                      <li>Monday - Friday: 7:00 - 17:00</li>
-                      <li>Saturday: 7:00 - 12:00</li>
-                      <li>Sunday and holidays: 8:00 - 10:00</li>
-                    </ul>
-                    <p><span>For more then 30 years,</span> IT Service has been a reliable partner in the field of logistics and cargo forwarding.</p>
-                    <Link  to={"#be"}><i className="fal fa-angle-right" />Discover More</Link>
-                  </div> {/* widget item 3 */}
-                </Col>
-              </Row> {/* row */}
-              <Row>
-                <Col lg="12">
-                  <div className="footer-copyright">
-                    <p>Copyright By@ <span>Ducor</span> - {(new Date().getFullYear())}</p>
-                  </div> {/* footer copyright */}
-                </Col>
-              </Row> {/* row */}
-            </Container> {/* container */}
-          </div>
-        </footer>
-        {/*====== BACK TO TOP ======*/}
-        <div className="back-to-top back-to-top-2">
-          <a  href="#backTotop">
-            <i className="fas fa-arrow-up" />
-          </a>
-        </div>
-        {/*====== BACK TO TOP ======*/}
+          <footer className="footer-area footer-area-2 footer-area-1 bg_cover" style={{backgroundImage: 'url(assets/images/footer-bg.jpg)'}}>
+            <div className="footer-overlay">
+              <Container className="position-relative">
+                <Row>
+                  <Col lg="4" md="7">
+                    <div className="widget-item-1 mt-30">
+                      <style>
+                        {`
+                        @font-face {
+                          font-family: 'Xique';
+                          src: url('/assets/fonts/xique.ttf') format('truetype');
 
-      </React.Fragment>
+                        }
+
+                        .footer-img {
+                          max-height: 60px; /* 调整图片高度 */
+                          width: auto; /* 保持纵横比 */
+                          display: inline-block; /* 让图片和文字在一行显示 */
+                        }
+
+                        .footer-text {
+                          font-family: 'Xique', sans-serif; /* 使用自定义字体 */
+                          font-size: 38px !important;
+                          display: inline-block; /* 让文字和图片在一行显示 */
+                          vertical-align: middle; /* 垂直对齐文字 */
+                          margin-left: 10px; /* 图片和文字之间的间距 */
+                        }
+                      `}
+                      </style>
+                      <div style={{display: 'flex', alignItems: 'center'}}>
+                        <img src="assets/images/IMG_6715.JPG.jpg" alt="" className="footer-img"/>
+                        <h4 className="footer-text" style={{color: 'white'}}>小燕房地产</h4>
+                      </div>
+                      <p>Swalloow Homes公司成立于2022年6月。公司创始团队具有3年经历和经验。
+                        多年来，公司始终坚持专心、专业、专注日本房产解决方案，帮助客户提供理想房产， 开拓日本财产的经营理念，通过全体员工的共同努力，公司已成为日本房地产行业的优秀企业</p>
+                    </div> {/* widget item 1 */}
+                  </Col>
+                  <Col lg="3" md="5" className="offset-lg-1">
+                    <div className="widget-item-2 mt-30">
+                      <h4 className="title">导航</h4>
+                      <div className="footer-list">
+                        <ul>
+                          <li><Link to={"/"}><i className="fal fa-angle-right" /> 首页</Link></li>
+                          <li><Link to={"/services"}><i className="fal fa-angle-right" /> 房源速览</Link></li>
+                          <li><Link to={"/about"}><i className="fal fa-angle-right" /> 关于我们</Link></li>
+                          {/*<li><Link to={"/career"}><i className="fal fa-angle-right" /> Career</Link></li>*/}
+                          {/*<li><Link to={"/refund"}><i className="fal fa-angle-right" /> Refund</Link></li>*/}
+                          {/*<li><Link to={"/terms"}><i className="fal fa-angle-right" /> Terms</Link></li>*/}
+                        </ul>
+                        <ul>
+                          <li><Link to={"details"}><i className="fal fa-angle-right" /> 新闻中心</Link></li>
+                          <li><Link to={"contact"}><i className="fal fa-angle-right" /> 联系我们</Link></li>
+                          <li><Link to={"business"}><i className="fal fa-angle-right" /> 更多推荐</Link></li>
+                          {/*<li><Link to={"affiliate"}><i className="fal fa-angle-right" /> Affiliate</Link></li>*/}
+                        </ul>
+                      </div>
+                    </div> {/* widget item 2 */}
+                  </Col>
+                  <Col lg="4" md="6">
+                    <div className="widget-item-2 widget-item-3 mt-30">
+                      <h4 className="title">联系我们</h4>
+                      <p>
+                        联系邮箱：88swallow@gmail.com<br/>
+                        联系地址：神戸市東灘区本山南町8丁目6番26号 東神戸センタービルW棟8階SD1号室<br/>
+                        联系电话：078-891-7099<br/>
+                        手机号码：090-5256-2484
+                      </p>
+                    </div> {/* widget item 3 */}
+                  </Col>
+                </Row> {/* row */}
+                <Row>
+                  <Col lg="12">
+                    <div className="footer-copyright">
+                      <p>Copyright By@ <span>Ducor</span> - {(new Date().getFullYear())}</p>
+                    </div> {/* footer copyright */}
+                  </Col>
+                </Row> {/* row */}
+              </Container> {/* container */}
+            </div>
+          </footer>
+          {/*====== BACK TO TOP ======*/}
+          <div className="back-to-top back-to-top-2">
+            <a href="#backTotop">
+              <i className="fas fa-arrow-up" />
+            </a>
+          </div>
+          {/*====== BACK TO TOP ======*/}
+
+        </React.Fragment>
     );
   }
 }
- 
+
 export default Footer;
