@@ -43,9 +43,7 @@ node_modules/
 docs/api/
 docs/build/
 
-# 忽略存储敏感信息的文件
-.env
-.senv
+
 
 # 忽略系统文件
 Thumbs.db
