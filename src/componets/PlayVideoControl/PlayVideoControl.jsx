@@ -2,6 +2,7 @@ import React from 'react';
 import './PlayVideoControl.css';  // 导入样式
 
 const PlayVideoControl = ({ videoSrc }) => {
+    console.log('PlayVideoControl rendered with videoSrc:', videoSrc);
     return (
         <div className="video-control">
             {/* 自动播放、静音、循环的视频 */}

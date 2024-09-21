@@ -9,7 +9,7 @@ import {
   faSearch,
   faShoppingCart
 } from '@fortawesome/free-solid-svg-icons';
-import Logo1 from '../../../assets/images/IMG_6715.JPG.jpg';
+import Logo1 from '../../../assets/images/img_2.png';
 import { Row, Col, Navbar } from 'react-bootstrap';
 import { FiMail, FiPhone } from "react-icons/fi";
 
@@ -131,7 +131,7 @@ class Header extends React.Component {
                             }}
                         />
                         <span className="custom-brand-text">
-                        Swallow Home 小燕房地产
+                        Swallow Homes 小燕房地产
                       </span>
                       </div>
                       <span className="custom-subtext">

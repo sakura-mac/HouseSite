@@ -43,7 +43,7 @@ class App extends React.Component {
 					<Route path="index2" component={Index2} />
 					<Route path="index3" component={Index3} />
 					<Route path="index4" component={Index4} />
-					<Route path="about" component={AboutPage} />
+					<Route path="/about" component={AboutPage} />
 					<Route path="services" component={ServicesPage} />
 					<Route path="services-details" component={ServicesDetails} />
 					<Route path="case-study" component={CaseStudy} />

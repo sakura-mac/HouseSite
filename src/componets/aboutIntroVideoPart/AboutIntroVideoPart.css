@@ -1,0 +1,38 @@
+.about-intro-area {
+  position: relative;
+  background-color: #000; /* 背景黑色 */
+  color: white;
+}
+
+.about-intro-overlay {
+  background-color: rgba(0, 0, 0, 0.7); /* 透黑背景 */
+  padding-top: 90px;
+  padding-bottom: 120px;
+}
+
+.intro-box {
+  color: #fff;
+}
+
+.intro-content .title {
+  font-size: 48px;
+  color: #fff;
+}
+
+.intro-content .text-1,
+.intro-content .text-2 {
+  font-size: 18px;
+  color: #fff;
+  margin-bottom: 20px;
+}
+
+.main-btn {
+  background-color: #ff4f74;
+  color: white;
+  padding: 10px 30px;
+  font-size: 16px;
+}
+
+.intro-play {
+  margin-top: 20px;
+}

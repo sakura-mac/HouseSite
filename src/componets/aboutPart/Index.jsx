@@ -5,24 +5,31 @@ import {
 } from '@fortawesome/free-solid-svg-icons';
 import {faVideo} from "@fortawesome/free-solid-svg-icons";
 import { Container, Row, Col } from 'react-bootstrap';
+import PlayVideoControl from "../PlayVideoControl/PlayVideoControl";
 
 class AboutPart extends React.Component {
 
-    render() { 
-        return ( 
+    render() {
+        return (
+
             <React.Fragment>
+
 {
   /*====== ABOUT PART START ======*/
 }
 <div className="about-area pt-90 pb-120">
+
   <Container>
+
     <Row className="align-items-center">
+
       <Col lg="6" md="12" className="order-2 order-lg-1">
         <div className="about-thumb mt-30">
-          <img src="/assets/images/about-thumb.jpg" alt="" />
+          <img src="/assets/images/about-thumb.jpg" alt=""/>
         </div>
         {/* about thumb */}
       </Col>
+      <PlayVideoControl videoSrc="assets/videos/SwallowHome.mp4"/>
       <Col lg="6" md="12" className="order-1 order-lg-2">
         <div className="about-item mt-30">
           <span>About Us</span>
@@ -34,29 +41,30 @@ class AboutPart extends React.Component {
             competing interests of the people who purchase, implement, manage,
             and use the technology. It’s a lot meaningful content here.
           </p>
+
           <div className="about-experience">
             <h3>30</h3>
             <span>
-              Years Of <br /> Experience
+              Years Of <br/> Experience
             </span>
           </div>
           <ul>
             <li>
               <Link
-                className="main-btn wow fadeInUp"
-                data-wow-duration="1s"
-                data-wow-delay=".1s"
-                to={"about"}
+                  className="main-btn wow fadeInUp"
+                  data-wow-duration="1s"
+                  data-wow-delay=".1s"
+                  to={"about"}
               >
                 Learn More
               </Link>
             </li>
             <li>
               <Link
-                className="main-btn main-btn-2 wow fadeInUp"
-                data-wow-duration="2s"
-                data-wow-delay=".5s"
-                to={"/"}
+                  className="main-btn main-btn-2 wow fadeInUp"
+                  data-wow-duration="2s"
+                  data-wow-delay=".5s"
+                  to={"/"}
               >
                 <FontAwesomeIcon icon={faVideo} className={`pr-1`}/>
 
@@ -71,14 +79,15 @@ class AboutPart extends React.Component {
     {/* row */}
   </Container>
   {/* container */}
-</div>;
-{
-  /*====== ABOUT PART ENDS ======*/
-}
+</div>
+              ;
+              {
+                /*====== ABOUT PART ENDS ======*/
+              }
 
             </React.Fragment>
-         );
+        );
     }
 }
- 
+
 export default AboutPart;

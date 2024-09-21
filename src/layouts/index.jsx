@@ -9,7 +9,7 @@ class Layout extends React.Component {
         return (
             <React.Fragment>
                 <Helmet>
-                    <title> Omnivus - IT Solutions & Services React JS Template </title>
+                    <title> Swallow Homes Japan </title>
                 </Helmet>
                 <Header />
                     { this.props.children }

@@ -1,71 +1,60 @@
 import React from 'react';
-import ModalVideo from 'react-modal-video'
-import { Link } from 'react-router-dom';
 import { Container, Row, Col } from 'react-bootstrap';
 
 class AboutIntroPart extends React.Component {
-
-  constructor () {
-    super()
-    this.state = {
-      isOpen: false
-    }
-    this.openModal = this.openModal.bind(this)
+  render() {
+    return (
+        <div className="about-intro-area pt-70">
+          <Container>
+            <Row>
+              <Col lg="6">
+                <div className="intro-thumb">
+                  <img src="/assets/images/IMG_0155 2.jpg" alt="Swallow Homes CEO" />
+                </div>
+              </Col>
+              <Col lg="6">
+                <div className="intri-content">
+                  <span>Swallow Homes</span>
+                  <h2 className="title">
+                    CEO介绍 — 李  小燕
+                  </h2>
+                  <p>
+                    公司成立于 2022 年 6 月，创始团队具有超过 3 年的丰富经验，一直致力于为客户提供优质的日本房产解决方案。多年来，我们专心、专业、专注于开拓日本房地产市场，帮助客户找到理想的房产。
+                  </p>
+                  <p>
+                    通过全体员工的共同努力，公司已成为日本房地产行业中的佼佼者。
+                  </p>
+                  <ul style={{
+                    display: 'flex',
+                    justifyContent: 'space-between',
+                    listStyle: 'none',
+                    padding: 0,
+                    marginTop: '20px',
+                    color: '#000',
+                  }}>
+                    <li style={{ marginRight: '20px'}}>
+                      <strong style={{ color: '#000' , fontSize: '2em' }}>2456万+</strong>
+                      <br/>
+                      <p style={{ color: '#808080' }}>最高成交价格</p>
+                    </li>
+                    <li style={{ marginRight: '20px' }}>
+                      <strong style={{ color: '#000' , fontSize: '2em'}}>3年+</strong>
+                      <br/>
+                      <p style={{ color: '#808080' }}>房地产专业经验</p>
+                    </li>
+                    <li style={{  }}>
+                      <strong style={{ color: '#000' ,fontSize: '2em'}}>98%</strong>
+                      <br/>
+                      <p style={{ color: '#808080' }}>客户满意度</p>
+                    </li>
+                  </ul>
+                </div>
+              </Col>
+            </Row>
+          </Container>
+        </div>
+    );
   }
-
-  openModal = event  => {
-    this.setState({isOpen: true})
-    event.preventDefault()
-  }
-
-    render() { 
-
-        return ( 
-          <div className="about-intro-area pt-120">
-            <Container>
-             <ModalVideo channel='youtube' isOpen={this.state.isOpen} videoId='TdSA7gkVYU0' onClose={() => this.setState({isOpen: false})} />
-              <Row>
-                <Col lg="6">
-                  <div className="intro-thumb">
-                    <img src="/assets/images/about-intro-thumb.jpg" alt="" />
-                    <Link className="video-popup" to="http://bit.ly/2VuPnrx" onClick={this.openModal}>
-                      <i className="fas fa-play" />
-                    </Link>
-                  </div>
-                </Col>
-                <Col lg="6">
-                  <div className="intri-content">
-                    <span>Intro Video</span>
-                    <h2 className="title">
-                      How we growth <br /> our business.
-                    </h2>
-                    <p className="text-1">
-                      The introduction of cloud and mobile technologies into enterprise
-                      software.
-                    </p>
-                    <p className="text-2">
-                      hether you are building an enterprise web portal or a
-                      state-of-the-art website, you always need the right modern tools.
-                      Well-built and maintained PHP frameworks provide those tools in
-                      abundance, allowing maintained PHP frameworks provide those tools in
-                      abundance, allowing developers to save time, re-use code, and
-                      streamline the back end. As software development tools continuously.
-                    </p>
-                    <Link
-                      className="main-btn wow fadeInUp"
-                      to={"/"}
-                      data-wow-duration="1s"
-                      data-wow-delay=".4s"
-                    >
-                      Learn More
-                    </Link>
-                  </div>
-                </Col>
-              </Row>
-            </Container>
-          </div>
-         );
-    }
 }
- 
+
 export default AboutIntroPart;
