@@ -53,8 +53,7 @@ class WhoWeAreArea extends React.Component {
                   <div className="what-we-do-item text-center mt-30">
                     <FontAwesomeIcon  icon={faLaptopCode} />
                     <h5 className="title">公司资质</h5>
-                    <p> 资质全面，<br />证书齐全</p>
-                    <Link to={"case-details"}>
+                    <Link to={"about"}>
                       <FontAwesomeIcon icon={faLongArrowAltRight}/>
                     </Link>
                   </div>
@@ -68,8 +67,7 @@ class WhoWeAreArea extends React.Component {
                   <div className="what-we-do-item text-center mt-30">
                     <FontAwesomeIcon icon={faFingerprint}  />
                     <h5 className="title">行业认可</h5>
-                    <p><br/><br/></p>
-                    <Link to={"case-details"}>
+                    <Link to={"about"}>
                       <FontAwesomeIcon icon={faLongArrowAltRight}/>
                     </Link>
                   </div>
@@ -83,8 +81,7 @@ class WhoWeAreArea extends React.Component {
                   <div className="what-we-do-item text-center mt-30">
                     <FontAwesomeIcon icon={faChalkboard} />
                     <h5 className="title">流程规范</h5>
-                    <p><br/><br/></p>
-                    <Link to={"case-details"}>
+                    <Link to={"about"}>
                       <FontAwesomeIcon icon={faLongArrowAltRight}/>
                     </Link>
                   </div>
@@ -98,8 +95,7 @@ class WhoWeAreArea extends React.Component {
                   <div className="what-we-do-item text-center mt-30">
                     <FontAwesomeIcon icon={faDatabase} />
                     <h5 className="title">团队培养</h5>
-                    <p>拥有高素质专业团队，全心全意服务</p>
-                    <Link to={"case-details"}>
+                    <Link to={"about"}>
                       <FontAwesomeIcon icon={faLongArrowAltRight}/>
                     </Link>
                   </div>
