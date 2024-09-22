@@ -62,7 +62,7 @@ class App extends React.Component {
 					<Route path="blog-grid" component={BlogGrid} />
 					<Route path="blog-details" component={BlogDetails} />
 					<Route path="blog-details2" component={BlogDetails2} />
-					<Route path="contact" component={ContactPage} />
+					<Route path="/contact" component={ContactPage} />
 
 					{/*<Route component={NoMatch} /> /!* Fallback for unknown routes *!/*/}
 				</Switch>

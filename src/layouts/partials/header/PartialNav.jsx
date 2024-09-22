@@ -112,7 +112,7 @@ class PartialNav extends React.Component {
                     {/*  /!* sub menu *!/*/}
                     {/*</li>*/}
                     <li className="nav-item">
-                        <Link className="nav-link" to={'/case-study'}>联系我们</Link>
+                        <Link className="nav-link" to={'/contact'}>联系我们</Link>
                     </li>
                     <li className="nav-item">
                         <a href="https://v.kuaishou.com/8v5DSF" target="_blank" rel="noopener noreferrer"> 更多推荐</a>
