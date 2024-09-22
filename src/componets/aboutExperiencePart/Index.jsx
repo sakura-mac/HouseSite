@@ -35,7 +35,7 @@ class Index extends React.Component {
                     <Col lg="5">
                         <div className="experience-item">
                             <span>多年经验</span>
-                            <h2 className="title">不止提供舒适住房</h2>
+                            <h2 className="title">不止温馨住宅</h2>
                             <br/>
                         </div>
                         {/* experience item */}
