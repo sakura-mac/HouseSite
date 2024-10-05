@@ -2,6 +2,10 @@ import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 
+import BlogList from './pages/blog/blog-standard';  // 博客列表页面
+import BlogDetails from './pages/blog/blog-details';  // 博客详情页面
+
+
 import Index1 from './pages/home/index';
 import Index2 from './pages/home/index-2';
 import Index3 from './pages/home/index-3';
@@ -22,11 +26,13 @@ import ProductDetailPage from './pages/product-details';
 
 import TeamPage from './pages/team';
 import TeamDetailsPage from './pages/team/details';
-import BlogStandard from './pages/blog/blog-standard';
+
 import BlogGrid from './pages/blog/blog-grid';
-import BlogDetails from './pages/blog/blog-details';
 import BlogDetails2 from './pages/blog/blog-details2';
 import PlayVideoControl from './componets/PlayVideoControl/PlayVideoControl';  // 确保文件名和路径正确
+
+import BuyReasons from './pages/blog/buy-reasons';
+
 
 import NoMatch from './pages/errors/no-match';
 import Preloader from './componets/preloader';
@@ -46,7 +52,7 @@ class App extends React.Component {
 					<Route path="/about" component={AboutPage} />
 					<Route path="services" component={ServicesPage} />
 					<Route path="services-details" component={ServicesDetails} />
-					<Route path="case-study" component={CaseStudy} />
+					<Route path="/case-study" component={CaseStudy} />
 					<Route path="case-details" component={CaseDetails} />
 					<Route path="coming-soon" component={ComingSoon} />
 					<Route path="error" component={NoMatch} />
@@ -58,12 +64,16 @@ class App extends React.Component {
 					<Route path="shop-details" component={ShopDetailsPage} />
 					<Route path="team" component={TeamPage} />
 					<Route path="team-details" component={TeamDetailsPage} />
-					<Route path="blog-standard" component={BlogStandard} />
-					<Route path="blog-grid" component={BlogGrid} />
-					<Route path="blog-details" component={BlogDetails} />
-					<Route path="blog-details2" component={BlogDetails2} />
-					<Route path="/contact" component={ContactPage} />
 
+					<Route path="/blog-standard" component={BlogList} />
+					<Route path="/blog-grid" component={BlogGrid} />
+					{/*<Route path="/blog-details" component={BlogDetails} />*/}
+					<Route path="/blog-details2" component={BlogDetails2} />
+					<Route path="/contact" component={ContactPage} />
+					<Route path="/buy-reasons" component={BuyReasons} />
+					<Route path="/blog/:folderName" component={BlogDetails} />
+
+					{/*<Route path="/blog-standard=details"*/}
 					{/*<Route component={NoMatch} /> /!* Fallback for unknown routes *!/*/}
 				</Switch>
 				<ToastContainer />
