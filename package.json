@@ -28,6 +28,7 @@
     "desandro-matches-selector": "^2.0.2",
     "get-size": "^2.0.3",
     "google-map-react": "^1.1.6",
+    "gray-matter": "^4.0.3",
     "isotope-layout": "^3.0.6",
     "outlayer": "^2.1.1",
     "prop-types": "^15.7.2",

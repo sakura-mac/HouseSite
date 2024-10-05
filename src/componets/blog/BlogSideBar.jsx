@@ -32,25 +32,25 @@ const BlogSideBar = () => {
                 {currentBlogs.map((blog, index) => (
                     <div className="single-blog-standard mt-30" key={index}>
                       <div className="blog-standard-thumb">
-                        <img src={`/blogs/${blog.folderName}/cover.jpg`} alt="blog" /> {/* 使用动态图片路径 */}
+                        {/* 直接从文件夹中加载 cover.jpg */}
+                        <img
+                            src={`/blogs/${blog.folderName}/cover.jpg`}
+                            alt={blog.title || 'Blog cover'}
+                        />
                       </div>
                       <div className="blog-standard-content">
-                        <span>Category</span>
+                        <span>{blog.category || 'Uncategorized'}</span>
                         <h2 className="title">
                           <Link to={`/blog/${blog.folderName}`}>{blog.title}</Link>
                         </h2>
                         <ul>
-                          <li><i className="fal fa-calendar-alt" /> 24th March 2019</li>
+                          <li><i className="fal fa-calendar-alt" /> {new Date(blog.date).toLocaleDateString()}</li>
                         </ul>
-                        <p>{blog.excerpt}</p>
+                        <p>{blog.description || blog.excerpt}</p>
                         <div className="blog-flex">
-                          {/*<div className="blog-left">*/}
-                          {/*  <p><span>by</span> 小编</p>*/}
-                          {/*  <img src="assets/images/blog-girl.png" alt="author" />*/}
-                          {/*</div>*/}
                           <div className="blog-right">
                             <Link to={`/blog-details/${blog.folderName}`}>
-                              <i className="fal fa-arrow-right" /> Read More
+                              <i className="fal fa-arrow-right" /> 了解更多
                             </Link>
                           </div>
                         </div>

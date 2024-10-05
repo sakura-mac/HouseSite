@@ -71,7 +71,7 @@ class App extends React.Component {
 					<Route path="/blog-details2" component={BlogDetails2} />
 					<Route path="/contact" component={ContactPage} />
 					<Route path="/buy-reasons" component={BuyReasons} />
-					<Route path="/blog/:folderName" component={BlogDetails} />
+					<Route path="/blog-details/:folderName" component={BlogDetails} />
 
 					{/*<Route path="/blog-standard=details"*/}
 					{/*<Route component={NoMatch} /> /!* Fallback for unknown routes *!/*/}

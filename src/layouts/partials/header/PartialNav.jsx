@@ -83,12 +83,6 @@ class PartialNav extends React.Component {
                             <li>
                                 <Link to={'/blog-standard'}>通知中心</Link>
                             </li>
-                            <li>
-                                <Link to={'/blog-details'}>生活技巧</Link>
-                            </li>
-                            <li>
-                                <Link to={'/blog-standard-details'}>简要记述</Link>
-                            </li>
                             {/*<li>*/}
                             {/*    <Link to={'/blog-standard-details'}>Blog Details 2</Link>*/}
                             {/*</li>*/}

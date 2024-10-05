@@ -10,6 +10,11 @@ const BlogDetails = () => {
     const [content, setContent] = useState('');
     const [error, setError] = useState(null);
 
+    // 移除 frontmatter 的函数
+    const removeFrontmatter = (markdownContent) => {
+        return markdownContent.replace(/^---[\s\S]+?---/, '').trim();
+    };
+
     // 加载Markdown文件内容
     useEffect(() => {
         const filePath = `${process.env.PUBLIC_URL}/blogs/${folderName}/index.md`;
@@ -22,57 +27,59 @@ const BlogDetails = () => {
                 return response.text();
             })
             .then(data => {
-                console.log("Markdown content:", data);  // 输出加载的内容用于调试
-                setContent(data);
+                const cleanContent = removeFrontmatter(data);
+                setContent(cleanContent);
             })
             .catch(err => {
-                console.error("Error fetching blog content:", err);
                 setError(err.message);
             });
     }, [folderName]);
 
-
     // 样式对象
     const styles = {
         h1: {
-            // color: '#2c3e50',
-            // fontFamily: 'Georgia, serif',
-            marginBottom: '40px',
-            borderBottom: '2px solid #e74c3c',
-            paddingBottom: '40px'
+            marginBottom: '30px',
+            paddingBottom: '15px',
+            borderBottom: '3px solid #e74c3c',
+            fontSize: '2.5em',
+            fontWeight: 'bold',
+            color: '#333',
+        },
+        h2: {
+            marginBottom: '25px',
+            paddingBottom: '10px',
+            // borderBottom: '2px solid #e74c3c',
+            fontSize: '2em',
+            color: '#444',
         },
         p: {
-            fontFamily: 'Arial, sans-serif',
             lineHeight: '1.8',
-            marginBottom: '15px',
+            marginBottom: '20px',
+            fontSize: '1.1em',
             color: '#555',
         },
         ul: {
             paddingLeft: '20px',
-            marginBottom: '20px',
-            fontFamily: 'Arial, sans-serif',
+            marginBottom: '25px',
         },
         li: {
             marginBottom: '10px',
-            listStyleType: 'none',
-            position: 'relative',
-            paddingLeft: '20px',
-        },
-        liBefore: {
-            content: '"🔹"',
-            position: 'absolute',
-            left: '0',
+            listStyleType: 'disc',
+            color: '#555',
+            paddingLeft: '5px',
         },
         blockquote: {
-            backgroundColor: '#f9f9f9',
-            padding: '15px',
-            borderLeft: '5px solid #ccc',
-            marginBottom: '20px',
+            backgroundColor: '#f7f7f7',
+            padding: '20px',
+            borderLeft: '5px solid #e74c3c',
+            marginBottom: '25px',
             fontStyle: 'italic',
+            fontSize: '1.2em',
+            color: '#555',
         },
         strong: {
             fontWeight: 'bold',
-            // color: '#e74c3c',
+            color: '#e74c3c',
         },
         em: {
             color: '#3498db',
@@ -82,19 +89,21 @@ const BlogDetails = () => {
             border: 'none',
             height: '2px',
             backgroundColor: '#e74c3c',
-            margin: '30px 0',
+            margin: '40px 0',
         },
         img: {
             maxWidth: '100%',
             height: 'auto',
-            borderRadius: '8px',
-            marginBottom: '20px',
+            borderRadius: '10px',
+            boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
+            marginBottom: '30px',
         }
     };
 
     // 自定义 Markdown 元素渲染
     const components = {
         h1: ({ children }) => <h1 style={styles.h1}>{children}</h1>,
+        h2: ({ children }) => <h2 style={styles.h2}>{children}</h2>,
         p: ({ children }) => <p style={styles.p}>{children}</p>,
         ul: ({ children }) => <ul style={styles.ul}>{children}</ul>,
         li: ({ children }) => <li style={styles.li}>{children}</li>,
@@ -107,6 +116,7 @@ const BlogDetails = () => {
             return <img {...props} src={src} alt={props.alt} style={styles.img} />;
         },
     };
+
     return (
         <Layout>
             {/* 页面标题区域 */}
@@ -139,19 +149,13 @@ const BlogDetails = () => {
                         <Col lg="12">
                             <div className="blog-standard">
                                 <div className="single-blog-standard mt-30">
-                                    <div className="blog-dteails-content blog-border">
+                                    <div className="blog-details-content blog-border">
                                         {error && <div>Error: {error}</div>}
                                         {!content && !error && <div>Loading...</div>}
                                         {content && (
                                             <div>
                                                 {/* 渲染 Markdown 并确保图片路径处理 */}
-                                                <ReactMarkdown components={{
-                                                    h1: ({ children }) => <h1 style={styles.h1}>{children}</h1>,
-                                                    p: ({ children }) => <p style={styles.p}>{children}</p>,
-                                                    ul: ({ children }) => <ul style={styles.ul}>{children}</ul>,
-                                                    blockquote: ({ children }) => <blockquote style={styles.blockquote}>{children}</blockquote>,
-                                                    strong: ({ children }) => <strong style={styles.strong}>{children}</strong>,
-                                                }}>
+                                                <ReactMarkdown components={components}>
                                                     {content}
                                                 </ReactMarkdown>
                                             </div>
@@ -166,8 +170,5 @@ const BlogDetails = () => {
         </Layout>
     );
 };
-
-
-// 使用 ReactMarkdown 时自定义样式
 
 export default BlogDetails;

@@ -1,9 +1,30 @@
 这里是新闻中心的资源文件夹
 每个子文件夹就是一篇文章
 内容需要放在index.md中进行排版，图片需要在md同文件夹下。渲染的部分js会完成
-每篇文章的标题、除标题外的第一句话会被js抽取成标题和一行摘要
-缩略图是每篇文章文件夹内的cover.jpg，请注意
+每篇文章需要提供元数据，或使用默认元数据
+
+title: data.title || folder,
+date: data.date || getRandomDateIn2023(),
+author: data.author || '李 小燕',
+tags: data.tags || [],
+category: data.category || 'House',
+description: data.description || content.slice(0, 50), // 如果没有描述，用内容前50字符作为摘要
+
+例如：
+---
+title: "如何学习JavaScript的最佳方法"
+date: "2023-10-01"
+author: "Jane Doe"
+tags:
+    - "JavaScript"
+    - "编程"
+category: "编程"
+description: "本文为您提供了如何高效学习JavaScript编程的最佳指南。"
+---
+
+
+缩略图默认是每篇文章文件夹内的cover.jpg，请注意
 
 新建完文章后，要在根目录运行
-node .\scripts\generate-blog-list.js
+node .\scripts\generate-blog-list.js.backup
 来更新博客列表
