@@ -47,26 +47,26 @@ class PartialNav extends React.Component {
                                 <Link to={'/case-study'}>神户</Link>
                             </li>
                             <li>
-                                <Link to={'/case-details'}>大阪</Link>
+                                <Link to={'/case-study'}>大阪</Link>
                             </li>
                             <li>
-                                <Link to={'/coming-soon'}>京都</Link>
+                                <Link to={'/case-study'}>京都</Link>
                             </li>
                             <li>
-                                <Link to={'/error'}>北海道</Link>
+                                <Link to={'/case-study'}>北海道</Link>
                             </li>
                             <li>
-                                <Link to={'/faq'}>冲绳</Link>
+                                <Link to={'/case-study'}>冲绳</Link>
                             </li>
                             <li>
-                                <Link to={'/pricing'}>东日本</Link>
+                                <Link to={'/case-study'}>东日本</Link>
                             </li>
 
                             <li>
-                                <Link to={'/team'}>西日本</Link>
+                                <Link to={'/case-study'}>西日本</Link>
                             </li>
                             <li>
-                                <Link to={'/team-details'}>东京</Link>
+                                <Link to={'/case-study'}>东京</Link>
                             </li>
                             <li className="nav-item">
                                 <Link className="nav-link" to={'/contact'}>联系我们</Link>

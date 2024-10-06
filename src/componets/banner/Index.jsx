@@ -82,7 +82,7 @@ class Banner extends React.Component {
                             data-animation="fadeInUp"
                             data-delay="1.6s"
                             className="main-btn"
-                            to={"services"}
+                            to={"/case-study"}
                           >
                             房源速览 <i className="fal fa-long-arrow-right" />
                           </Link>
@@ -120,7 +120,7 @@ class Banner extends React.Component {
                               data-animation="fadeInUp"
                               data-delay="1.6s"
                               className="main-btn"
-                              to={"services"}
+                              to={"/case-study"}
                           >
                             房源速览 <i className="fal fa-long-arrow-right"/>
                           </Link>
@@ -159,7 +159,7 @@ class Banner extends React.Component {
                               data-animation="fadeInUp"
                               data-delay="1.6s"
                               className="main-btn"
-                              to={"services"}
+                              to={"/case-study"}
                           >
                             房源速览 <i className="fal fa-long-arrow-right"/>
                           </Link>
