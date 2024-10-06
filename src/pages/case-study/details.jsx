@@ -1,191 +1,172 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import { Link, useParams } from 'react-router-dom';
 import Layout from '../../layouts';
-import { Link } from 'react-router-dom';
 import { Container, Row, Col } from 'react-bootstrap';
+import ReactMarkdown from 'react-markdown';
 
-class CaseDetails extends React.Component {
+const CaseDetails = () => {
+    const { folderName } = useParams(); // 从URL中获取folderName
+    const [content, setContent] = useState('');
+    const [error, setError] = useState(null);
 
-    render() { 
-        return ( 
-          <Layout>
-        <div className="page-title-area">
-          <Container>
-            <Row>
-              <Col lg="12">
-                <div className="page-title-item text-center">
-                  <h2 className="title">Work Details</h2>
-                  <nav aria-label="breadcrumb">
+    // 移除 frontmatter 的函数
+    const removeFrontmatter = (markdownContent) => {
+        return markdownContent.replace(/^---[\s\S]+?---/, '').trim();
+    };
 
-                  
-                    <ol className="breadcrumb">
-                      <li className="breadcrumb-item">
-                        <Link  to={"/"}>Home </Link>
-                      </li>
-                      <li className="breadcrumb-item active" aria-current="page">
-                      Work Details
-                      </li>
-                    </ol>
-                  </nav>
-                </div>
-                {/* page title */}
-              </Col>
-            </Row>
-            {/* row */}
-          </Container>
-          {/* container */}
-        </div>
-        {
-          /*====== PAGE TITLE PART ENDS ======*/
+    // 加载Markdown文件内容
+    useEffect(() => {
+        const filePath = `${process.env.PUBLIC_URL}/house/${folderName}/index.md`;
+        console.log("Fetching:", filePath);  // 输出请求路径用于调试
+        fetch(filePath)
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error("房源未找到");
+                }
+                return response.text();
+            })
+            .then(data => {
+                const cleanContent = removeFrontmatter(data);
+                setContent(cleanContent);
+            })
+            .catch(err => {
+                setError(err.message);
+            });
+    }, [folderName]);
+
+    // 样式对象
+    const styles = {
+        h1: {
+            marginBottom: '30px',
+            paddingBottom: '15px',
+            borderBottom: '3px solid #e74c3c',
+            fontSize: '2.5em',
+            fontWeight: 'bold',
+            color: '#333',
+        },
+        h2: {
+            marginBottom: '25px',
+            paddingBottom: '10px',
+            fontSize: '2em',
+            color: '#444',
+        },
+        p: {
+            lineHeight: '1.8',
+            marginBottom: '20px',
+            fontSize: '1.1em',
+            color: '#555',
+        },
+        ul: {
+            paddingLeft: '20px',
+            marginBottom: '25px',
+        },
+        li: {
+            marginBottom: '10px',
+            listStyleType: 'disc',
+            color: '#555',
+            paddingLeft: '5px',
+        },
+        blockquote: {
+            backgroundColor: '#f7f7f7',
+            padding: '20px',
+            borderLeft: '5px solid #e74c3c',
+            marginBottom: '25px',
+            fontStyle: 'italic',
+            fontSize: '1.2em',
+            color: '#555',
+        },
+        strong: {
+            fontWeight: 'bold',
+            color: '#e74c3c',
+        },
+        em: {
+            color: '#3498db',
+            fontStyle: 'italic',
+        },
+        hr: {
+            border: 'none',
+            height: '2px',
+            backgroundColor: '#e74c3c',
+            margin: '40px 0',
+        },
+        img: {
+            maxWidth: '100%',
+            height: 'auto',
+            borderRadius: '10px',
+            boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)',
+            marginBottom: '30px',
         }
+    };
 
-                    {
-          /*====== CASE DETAILS PART START ======*/
-        }
-        <div className="case-details-area pt-120 pb-115">
-          <Container>
-            <Row>
-              <Col lg="12">
-                <div className="case-details-thumb">
-                  <img src="assets/images/case-details-thumb.jpg" alt="" />
-                  <div className="case-live">
-                    <div className="case-live-item-area d-flex justify-content-between">
-                      <div className="case-live-item">
-                        <h5 className="title">Sweet Client</h5>
-                        <span>Rosalina D. William</span>
-                        <i className="fal fa-user" />
-                      </div>
-                      <div className="case-live-item">
-                        <h5 className="title">Date</h5>
-                        <span>24th May 2019</span>
-                        <i className="fal fa-calendar-alt" />
-                      </div>
-                    </div>
-                    <div className="case-live-item-area mt-35 d-flex justify-content-between">
-                      <div className="case-live-item">
-                        <h5 className="title">Website</h5>
-                        <span>www.example.com</span>
-                        <i className="fal fa-globe" />
-                      </div>
-                      <div className="case-live-item">
-                        <h5 className="title">Category</h5>
-                        <span>Design, UI/UX</span>
-                        <i className="fal fa-tags" />
-                      </div>
-                    </div>
-                    <div className="case-live-btn text-center">
-                      <Link  className="main-btn" to={"/"}>
-                        Live Preview
-                      </Link>
-                    </div>
-                  </div>
-                </div>
-                <div className="case-details-content mt-50 pb-20">
-                  <p>
-                    As a result, most of us need to know how to use computers. Our
-                    knowledge of computers will help us to tap into challenging career
-                    opportunities and enhance the quality of our lives. It is imperative
-                    that quality students be encouraged and motivated to study computers
-                    and become capable and responsible IT professionals. The education
-                    model needs to align itself with dynamically changing technology to
-                    meet the growing need for skilled IT manpower and deliver
-                    state-of-the-art, industry relevant and technology ready programs.​
-                    Today, the term Information Technology (IT) has ballooned to
-                    encompass many aspects of computing and technology and the term is
-                    more recognizable than ever before. The Information Technology
-                    umbrella can be quite large, covering many fields. IT professionals
-                    perform a variety of duties that range from installing applications,
-                    managing information, to designing complex applications, managing
-                    computer networks and designing and managing databases.
-                  </p>
-                  <div className="case-details-case mt-25">
-                    <img src="assets/images/case-content-thumb.jpg" alt="" />
-                    <p>
-                      Over the years, a wide range of developments and innovations in
-                      the global IT arena have led to many new IT-enabled devices and
-                      services being produced. Moreover, there is need for IT today, not
-                      just in urban areas but rural regions as well. Countries and
-                      populations that are led by the growing class of high-tech workers
-                      and entrepreneurs will be the ones at the forefront of IT
-                      development. As a result, most of us need to know how to use
-                      computers. Our knowledge of computers will help us to tap into
-                      challenging career opportunities and enhance the quality of our
-                      lives. It is imperative that quality students be encouraged and
-                      motivated to study computers and become capable and responsible IT
-                      professionals.
-                    </p>
-                  </div>
-                </div>
-              </Col>
-            </Row>
-            <Row className="justify-content-center">
-              <Col lg="4" md="4" sm="10">
-                <div className="case-details-item mt-30">
-                  <img src="assets/images/case-details-item-1.jpg" alt="" />
-                </div>
-              </Col>
-              <Col lg="4" md="4" sm="10">
-                <div className="case-details-item mt-30">
-                  <img src="assets/images/case-details-item-2.jpg" alt="" />
-                </div>
-              </Col>
-              <Col lg="4" md="4" sm="10">
-                <div className="case-details-item mt-30">
-                  <img src="assets/images/case-details-item-3.jpg" alt="" />
-                </div>
-              </Col>
-            </Row>
-            <Row>
-              <Col lg="12">
-                <div className="case-content-2 pt-40 pb-25">
-                  <h4 className="title">How it Works?</h4>
-                  <p>
-                    As a result, most of us need to know how to use computers. Our
-                    knowledge of computers will help us to tap into challenging career
-                    opportunities and enhance the quality of our lives. It is imperative
-                    that quality students be encouraged and motivated to study computers
-                    and become capable and responsible IT professionals. The education
-                    model needs to align itself with dynamically changing technology to
-                    meet the growing need for skilled IT manpower and deliver
-                    state-of-the-art, industry relevant and technology ready programs.​
-                    Today, the term Information Technology (IT) has ballooned to
-                    encompass many aspects of computing and technology and the term is
-                    more recognizable than ever before. The Information Technology
-                    umbrella can be quite large, covering many fields. IT professionals
-                    perform a variety of duties that range from installing applications,
-                    managing information, to designing complex applications, managing
-                    computer networks and designing and managing databases.
-                  </p>
-                </div>
-                <div className="case-video-thumb mt-30">
-                  <img src="assets/images/case-video-thumb.jpg" alt="" />
-                  <Link  className="video-popup" to={"http://bit.ly/2VuPnrx"}>
-                    <i className="fas fa-play" />
-                  </Link>
-                </div>
-                <div className="case-next-prev d-flex justify-content-between pt-50">
-                  <div className="case-prev">
-                    <Link  to={"/"}>
-                      <span>Prev Post</span>
-                      <h4 className="title">Tips On Minimalist</h4>
-                    </Link>
-                  </div>
-                  <div className="case-next text-right">
-                    <Link  to={"/"}>
-                      <span>next Post</span>
-                      <h4 className="title">Less Is More</h4>
-                    </Link>
-                  </div>
-                  <Link  to={"/"}>
-                    <img src="assets/images/dot-box.png" alt="" />
-                  </Link>
-                </div>
-              </Col>
-            </Row>
-          </Container>
-        </div>
+    // 自定义 Markdown 元素渲染
+    const components = {
+        h1: ({ children }) => <h1 style={styles.h1}>{children}</h1>,
+        h2: ({ children }) => <h2 style={styles.h2}>{children}</h2>,
+        p: ({ children }) => <p style={styles.p}>{children}</p>,
+        ul: ({ children }) => <ul style={styles.ul}>{children}</ul>,
+        li: ({ children }) => <li style={styles.li}>{children}</li>,
+        blockquote: ({ children }) => <blockquote style={styles.blockquote}>{children}</blockquote>,
+        strong: ({ children }) => <strong style={styles.strong}>{children}</strong>,
+        em: ({ children }) => <em style={styles.em}>{children}</em>,
+        hr: () => <hr style={styles.hr} />,
+        img: ({ node, ...props }) => {
+            const src = `${process.env.PUBLIC_URL}/house/${folderName}/${props.src}`;
+            return <img {...props} src={src} alt={props.alt} style={styles.img} />;
+        },
+    };
+
+    return (
+        <Layout>
+            {/* 页面标题区域 */}
+            <div className="page-title-area">
+                <Container>
+                    <Row>
+                        <Col lg="12">
+                            <div className="page-title-item text-center">
+                                <h2 className="title"><br />房源详情</h2>
+                                <nav aria-label="breadcrumb">
+                                    <ol className="breadcrumb">
+                                        <li className="breadcrumb-item">
+                                            <Link to={"/"}>Home</Link>
+                                        </li>
+                                        <li className="breadcrumb-item active" aria-current="page">
+                                            House
+                                        </li>
+                                    </ol>
+                                </nav>
+                            </div>
+                        </Col>
+                    </Row>
+                </Container>
+            </div>
+
+            {/* 房源详情内容区域 */}
+            <div className="blog-standard-area pt-90 pb-120">
+                <Container>
+                    <Row className="justify-content-center">
+                        <Col lg="12">
+                            <div className="blog-standard">
+                                <div className="single-blog-standard mt-30">
+                                    <div className="blog-details-content blog-border">
+                                        {error && <div>Error: {error}</div>}
+                                        {!content && !error && <div>Loading...</div>}
+                                        {content && (
+                                            <div>
+                                                {/* 渲染 Markdown 并确保图片路径处理 */}
+                                                <ReactMarkdown components={components}>
+                                                    {content}
+                                                </ReactMarkdown>
+                                            </div>
+                                        )}
+                                    </div>
+                                </div>
+                            </div>
+                        </Col>
+                    </Row>
+                </Container>
+            </div>
         </Layout>
-      );
-    }
-}
- 
+    );
+};
+
 export default CaseDetails;
