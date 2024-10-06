@@ -16,16 +16,18 @@ const NewsPart = () => {
     fetchHouses();
   }, []);
 
-  // 样式定义
+// 样式定义
   const styles = {
     singleNews: {
       position: 'relative',
       overflow: 'hidden',
       marginBottom: '30px',
+      height: '300px', // 为图片容器设置固定高度
     },
     img: {
       width: '100%',
-      height: 'auto',
+      height: '100%', // 将高度设置为100%以适应容器
+      objectFit: 'cover', // 填充容器，保持比例，可能会裁剪图片
       transition: 'transform 0.5s ease',
     },
     overlay: {
@@ -43,7 +45,7 @@ const NewsPart = () => {
       transition: 'background-color 0.5s ease, transform 0.5s ease',
     },
     overlayHover: {
-      backgroundColor: 'rgba(0, 0, 0, 0.9)', // 悬浮时不透明
+      backgroundColor: 'rgba(15, 60, 158, 0.9)', // 悬浮时不透明
     },
     content: {
       transform: 'translateY(0)', // 默认显示在下半部分
@@ -75,6 +77,7 @@ const NewsPart = () => {
     }
   };
 
+
   return (
       <div className="news-area news-area-2">
         <Container>
@@ -85,12 +88,12 @@ const NewsPart = () => {
                       className="single-news"
                       style={styles.singleNews}
                       onMouseEnter={(e) => {
-                        e.currentTarget.querySelector('.single-news-overlay').style.backgroundColor = 'rgba(15,60,158,0.9)';
-                        e.currentTarget.querySelector('.content').style.transform = 'translateY(-50%)';
+                        e.currentTarget.querySelector('.single-news-overlay').style.backgroundColor = styles.overlayHover.backgroundColor;
+                        e.currentTarget.querySelector('.content').style.transform = styles.contentHover.transform;
                       }}
                       onMouseLeave={(e) => {
-                        e.currentTarget.querySelector('.single-news-overlay').style.backgroundColor = 'rgba(15,60,158,0.2)';
-                        e.currentTarget.querySelector('.content').style.transform = 'translateY(0)';
+                        e.currentTarget.querySelector('.single-news-overlay').style.backgroundColor = styles.overlay.backgroundColor;
+                        e.currentTarget.querySelector('.content').style.transform = styles.content.transform;
                       }}
                   >
                     {/* 使用封面图片 */}

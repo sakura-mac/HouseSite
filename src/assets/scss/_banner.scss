@@ -2,7 +2,7 @@
 
 
 /*===========================
-    3.BANNER css 
+    3.BANNER css
 ===========================*/
 
 .banner-area-2{
@@ -429,7 +429,7 @@
 			opacity: .3;
 			@include transition(0.3s);
 			&:hover{
-				opacity: 1;	
+				opacity: 1;
 			}
 		}
 	}
@@ -629,4 +629,9 @@
 }
 .bg_img_3{
 	background-image: url('../../assets/images/banner3.jpg');
+}
+@media only screen and (max-width: 767px) {
+	.bg_img_1 {
+		background-image: url('../../assets/images/banner2.jpg');
+	}
 }
