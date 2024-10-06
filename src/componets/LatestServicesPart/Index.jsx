@@ -30,9 +30,16 @@ const LatestServicesPart = () => {
       flexDirection: 'column',
       height: '100%',  // 确保服务卡片的高度一致
     },
+    imgContainer: {
+      width: '100%',
+      height: '250px', // 固定图片容器的高度
+      overflow: 'hidden', // 确保图片超出部分被裁剪
+    },
     img: {
       width: '100%',
-      height: 'auto',
+      height: '100%',
+      objectFit: 'cover', // 图片填充容器，保持比例，可能会裁剪图片
+      transition: 'transform 0.5s ease',
     },
     content: {
       padding: '20px',
@@ -88,7 +95,7 @@ const LatestServicesPart = () => {
                   <div className="col-lg-4 col-md-6 col-sm-9" key={index}>
                     <div className="single-services" style={styles.singleService}>
                       {/* 使用房源的封面图片 */}
-                      <div className="services-thumb">
+                      <div className="services-thumb" style={styles.imgContainer}>
                         <img src={`/house/${house.folderName}/cover.jpg`} alt={house.title} style={styles.img} />
                       </div>
                       <div className="services-content" style={styles.content}>
