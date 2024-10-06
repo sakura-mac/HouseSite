@@ -60,7 +60,7 @@ class App extends React.Component {
 					<Route path="pricing" component={PricingPage} />
 					<Route path="/products" component={ProductPage} />
 					<Route path="/products-details" component={ProductDetailPage} />
-					<Route path="/shop" component={ShopPage} />
+					<Route path="shop" component={ShopPage} />
 					<Route path="/shop-details" component={ShopDetailsPage} />
 					<Route path="team" component={TeamPage} />
 					<Route path="team-details" component={TeamDetailsPage} />
