@@ -41,7 +41,7 @@ const BlogSideBar = () => {
                       <div className="blog-standard-content">
                         <span>{blog.category || 'Uncategorized'}</span>
                         <h2 className="title">
-                          <Link to={`/blog/${blog.folderName}`}>{blog.title}</Link>
+                          <Link to={`/blog-details/${blog.folderName}`}>{blog.title}</Link>
                         </h2>
                         <ul>
                           <li><i className="fal fa-calendar-alt" /> {new Date(blog.date).toLocaleDateString()}</li>
