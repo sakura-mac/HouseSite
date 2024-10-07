@@ -40,7 +40,7 @@ class Footer extends React.Component {
                         <img src="assets/images/IMG_6715.JPG.jpg" alt="" className="footer-img"/>
                         <h4 className="footer-text" style={{color: 'white'}}>小燕房地产</h4>
                       </div>
-                      <p>Swallow Homes公司成立于2022年6月。公司创始团队具有3年经历和经验。
+                      <p>Swallow Homes公司成立于2022年6月。公司创始团队具有多年经验。
                         多年来，公司始终坚持专心、专业、专注日本房产解决方案，帮助客户提供理想房产， 开拓日本财产的经营理念，通过全体员工的共同努力，公司已成为日本房地产行业的优秀企业</p>
                     </div> {/* widget item 1 */}
                   </Col>
