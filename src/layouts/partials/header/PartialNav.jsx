@@ -76,17 +76,17 @@ class PartialNav extends React.Component {
                     </li>
                     <li className="nav-item">
                         <Link className="nav-link" to={'/blog-standard'}>新闻中心</Link>
-                        <ul className="sub-menu">
-                            <li>
-                                <Link to={'/blog-standard'}>新闻速递</Link>
-                            </li>
-                            <li>
-                                <Link to={'/blog-standard'}>通知中心</Link>
-                            </li>
-                            {/*<li>*/}
-                            {/*    <Link to={'/blog-standard-details'}>Blog Details 2</Link>*/}
-                            {/*</li>*/}
-                        </ul>
+                        {/*<ul className="sub-menu">*/}
+                        {/*    <li>*/}
+                        {/*        <Link to={'/blog-standard'}>新闻速递</Link>*/}
+                        {/*    </li>*/}
+                        {/*    <li>*/}
+                        {/*        <Link to={'/blog-standard'}>通知中心</Link>*/}
+                        {/*    </li>*/}
+                        {/*    /!*<li>*!/*/}
+                        {/*    /!*    <Link to={'/blog-standard-details'}>Blog Details 2</Link>*!/*/}
+                        {/*    /!*</li>*!/*/}
+                        {/*</ul>*/}
                         {/* sub menu */}
                     </li>
                     {/*<li className="nav-item">*/}
@@ -112,7 +112,7 @@ class PartialNav extends React.Component {
                         <Link className="nav-link" to={'/contact'}>联系我们</Link>
                     </li>
                     <li className="nav-item">
-                        <a href="https://v.kuaishou.com/8v5DSF" target="_blank" rel="noopener noreferrer"> 更多推荐</a>
+                        <a href="https://www.xiaohongshu.com/user/profile/5df991fd00000000010010eb" target="_blank" rel="noopener noreferrer"> 更多推荐</a>
                     </li>
                 </Nav>
             </>
