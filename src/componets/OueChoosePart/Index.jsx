@@ -87,37 +87,51 @@ class OueChoosePart extends React.Component {
                     <Row>
                       <div className="col-md-6 col-sm-6">
                         <div
-                          className="our-choose-counter wow slideInUp"
-                          data-wow-duration=".5s"
-                          data-wow-delay="0s"
+                            className="our-choose-counter wow slideInUp"
+                            data-wow-duration=".5s"
+                            data-wow-delay="0s"
                         >
+                          {/*<sub>*/}
+                          {/*  <span className="counter">2456万</span> <sup>+</sup>*/}
+                          {/*</sub>*/}
+                          {/*<span>贩卖房产最高价格</span>*/}
+                          {/*<p>*/}
+                          {/*  我们曾成功促成高达2456万+的房产交易，彰显我们在高端市场中的实力与信赖。*/}
+                          {/*</p>*/}
                           <sub>
-                            <span className="counter">2456万</span> <sup>+</sup>
-                          </sub>
-                          <span>贩卖房产最高价格</span>
-                          <p>
-                            我们曾成功促成高达2456万+的房产交易，彰显我们在高端市场中的实力与信赖。
-                          </p>
-                        </div>
-                        <div
-                          className="our-choose-counter wow slideInUp mt-55"
-                          data-wow-duration="1s"
-                          data-wow-delay="0s"
-                        >
-                          <sub>
-                            <span className="counter">3年</span> <sup>+</sup>
+                            <span className="counter">丰富</span> <sup></sup>
                           </sub>
                           <span>房地产经验</span>
                           <p>
-                            拥有超过3年的房地产从业经验，积累了丰富的市场洞察与行业知识。
+                            拥有多年的房地产从业经验，积累了丰富的市场洞察与行业知识。
+                          </p>
+                        </div>
+                        <div
+                            className="our-choose-counter wow slideInUp mt-55"
+                            data-wow-duration="1s"
+                            data-wow-delay="0s"
+                        >
+                          {/*<sub>*/}
+                          {/*  <span className="counter">多年</span> <sup></sup>*/}
+                          {/*</sub>*/}
+                          {/*<span>房地产经验</span>*/}
+                          {/*<p>*/}
+                          {/*  拥有超过3年的房地产从业经验，积累了丰富的市场洞察与行业知识。*/}
+                          {/*</p>*/}
+                          <sub>
+                            <span className="counter">500</span> <sup>+</sup>
+                          </sub>
+                          <span>成交项目</span>
+                          <p>
+                            我们已成功完成500多个房产项目，确保每一位客户都能找到理想的家园。
                           </p>
                         </div>
                       </div>
                       <div className="col-md-6 col-sm-6">
                         <div
-                          className="our-choose-counter wow slideInUp"
-                          data-wow-duration="1.5s"
-                          data-wow-delay="0s"
+                            className="our-choose-counter wow slideInUp"
+                            data-wow-duration="1.5s"
+                            data-wow-delay="0s"
                         >
                           <sub>
                             <span className="counter">98%</span> <sup>+</sup>
@@ -132,13 +146,7 @@ class OueChoosePart extends React.Component {
                           data-wow-duration="2s"
                           data-wow-delay="0s"
                         >
-                          <sub>
-                            <span className="counter">500</span> <sup>+</sup>
-                          </sub>
-                          <span>成交项目</span>
-                          <p>
-                            我们已成功完成500多个房产项目，确保每一位客户都能找到理想的家园。
-                          </p>
+
                         </div>
                       </div>
                       {/* our choose counter */}
