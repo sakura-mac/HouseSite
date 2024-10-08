@@ -47,6 +47,7 @@ class Footer extends React.Component {
                   <Col lg="3" md="5" className="offset-lg-1">
                     <div className="widget-item-2 mt-30">
                       <h4 className="title">导航</h4>
+                      <br/>
                       <div className="footer-list">
                         <ul>
                           <li><Link to={"/"}><i className="fal fa-angle-right" /> 首页</Link></li>
