@@ -83,7 +83,7 @@ class Footer extends React.Component {
                 <Row>
                   <Col lg="12">
                     <div className="footer-copyright">
-                      <p>Copyright By@ <span>Ducor</span> - {(new Date().getFullYear())}</p>
+                      <p>Copyright By@ <span>swallow-homes</span> - {(new Date().getFullYear())}</p>
                     </div> {/* footer copyright */}
                   </Col>
                 </Row> {/* row */}
