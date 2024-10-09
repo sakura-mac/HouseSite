@@ -124,13 +124,13 @@ class Header extends React.Component {
                   <Navbar.Collapse className="sub-menu-bar" id="navbarSupportedContent">
                     <PartialNav/>
                   </Navbar.Collapse> {/* navbar collapse */}
-                  <div className="bar-area d-none d-xl-block">
-                    <ul>
-                      <li><Link to={"shop"}><FiShoppingCart/></Link></li>
-                      <li><Link to={"/"}><i className="fal fa-search"/></Link></li>
-                      <li><Link to={"/"}><i className="fal fa-bars"/></Link></li>
-                    </ul>
-                  </div>
+                  {/*<div className="bar-area d-none d-xl-block">*/}
+                  {/*  <ul>*/}
+                  {/*    <li><Link to={"shop"}><FiShoppingCart/></Link></li>*/}
+                  {/*    <li><Link to={"/"}><i className="fal fa-search"/></Link></li>*/}
+                  {/*    <li><Link to={"/"}><i className="fal fa-bars"/></Link></li>*/}
+                  {/*  </ul>*/}
+                  {/*</div>*/}
 
                 </Navbar>
               </div>
