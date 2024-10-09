@@ -99,7 +99,7 @@ class OueChoosePart extends React.Component {
                           {/*  我们曾成功促成高达2456万+的房产交易，彰显我们在高端市场中的实力与信赖。*/}
                           {/*</p>*/}
                           <sub>
-                            <span className="counter">丰富</span> <sup></sup>
+                            <span className="counter">数年</span> <sup></sup>
                           </sub>
                           <span>房地产经验</span>
                           <p>
