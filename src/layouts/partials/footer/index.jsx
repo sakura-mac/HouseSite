@@ -86,11 +86,11 @@ class Footer extends React.Component {
                         marginTop: '10px'
                       }}>
                         <div style={{textAlign: 'center', flex: '0 0 calc(50% - 10px)', marginBottom: '10px'}}>
-                          <img src="contact/whatsapp.png" alt="WhatsApp" style={{maxWidth: '100%', height: 'auto'}}/>
+                          <img src="contact/whatsapp.jpg" alt="WhatsApp" style={{maxWidth: '100%', height: 'auto'}}/>
                           <p style={{fontSize: '14px', color: 'white'}}>WhatsApp</p>
                         </div>
                         <div style={{textAlign: 'center', flex: '0 0 calc(50% - 10px)', marginBottom: '10px'}}>
-                          <img src="contact/weixin.png" alt="微信" style={{maxWidth: '100%', height: 'auto'}}/>
+                          <img src="contact/wechat.jpg" alt="微信" style={{maxWidth: '100%', height: 'auto'}}/>
                           <p style={{fontSize: '14px', color: 'white'}}>微信</p>
                         </div>
                       </div>

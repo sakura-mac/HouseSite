@@ -57,11 +57,11 @@ class AboutIntroPart extends React.Component {
                     marginTop: '10px'
                   }}>
                     <div style={{textAlign: 'center', flex: '0 0 calc(50% - 10px)', marginBottom: '10px'}}>
-                      <img src="contact/whatsapp.png" alt="WhatsApp" style={{maxWidth: '100%', height: 'auto',color: 'black'}}/>
+                      <img src="contact/whatsapp.jpg" alt="WhatsApp" style={{maxWidth: '100%', height: 'auto',color: 'black'}}/>
                       <p style={{fontSize: '14px', color: 'black'}}>WhatsApp</p>
                     </div>
                     <div style={{textAlign: 'center', flex: '0 0 calc(50% - 10px)', marginBottom: '10px'}}>
-                      <img src="contact/weixin.png" alt="微信" style={{maxWidth: '100%', height: 'auto',color: 'black'}}/>
+                      <img src="contact/wechat.jpg" alt="微信" style={{maxWidth: '100%', height: 'auto',color: 'black'}}/>
                       <p style={{fontSize: '14px', color: 'black'}}>微信</p>
                     </div>
                   </div>
