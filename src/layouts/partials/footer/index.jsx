@@ -63,7 +63,9 @@ class Footer extends React.Component {
                           <li><a href="https://www.xiaohongshu.com/user/profile/5df991fd00000000010010eb" target="_blank" rel="noopener noreferrer"><i
                               className="fal fa-angle-right"/> 更多推荐</a></li>
                           {/*<li><Link to={"affiliate"}><i className="fal fa-angle-right" /> Affiliate</Link></li>*/}
+
                         </ul>
+
                       </div>
                     </div>
                     {/* widget item 2 */}
@@ -73,18 +75,35 @@ class Footer extends React.Component {
                       <h4 className="title">联系我们</h4>
                       <p>
                         联系邮箱：88swallow@gmail.com<br/>
-                        联系地址：神戸市東灘区本山南町8丁目6番26号 東神戸センタービルW棟8階SD1号室<br/>
+                        联系地址：神戸市東灘区本山南町8丁目6番26号<br/>東神戸センタービルW棟8階SD1号室<br/>
                         联系电话：078-891-7099<br/>
                         手机号码：090-5256-2484
                       </p>
-                    </div> {/* widget item 3 */}
+                      <div style={{
+                        display: 'flex',
+                        flexWrap: 'wrap',
+                        justifyContent: 'space-between',
+                        marginTop: '10px'
+                      }}>
+                        <div style={{textAlign: 'center', flex: '0 0 calc(50% - 10px)', marginBottom: '10px'}}>
+                          <img src="contact/whatsapp.png" alt="WhatsApp" style={{maxWidth: '100%', height: 'auto'}}/>
+                          <p style={{fontSize: '14px', color: 'white'}}>WhatsApp</p>
+                        </div>
+                        <div style={{textAlign: 'center', flex: '0 0 calc(50% - 10px)', marginBottom: '10px'}}>
+                          <img src="contact/weixin.png" alt="微信" style={{maxWidth: '100%', height: 'auto'}}/>
+                          <p style={{fontSize: '14px', color: 'white'}}>微信</p>
+                        </div>
+                      </div>
+                    </div>
+                    {/* widget item 3 */}
                   </Col>
                 </Row> {/* row */}
                 <Row>
                   <Col lg="12">
                     <div className="footer-copyright">
                       <p>Copyright By@ <span>swallow-homes</span> - {(new Date().getFullYear())}</p>
-                    </div> {/* footer copyright */}
+                    </div>
+                    {/* footer copyright */}
                   </Col>
                 </Row> {/* row */}
               </Container> {/* container */}
@@ -93,7 +112,7 @@ class Footer extends React.Component {
           {/*====== BACK TO TOP ======*/}
           <div className="back-to-top back-to-top-2">
             <a href="#backTotop">
-              <i className="fas fa-arrow-up" />
+              <i className="fas fa-arrow-up"/>
             </a>
           </div>
           {/*====== BACK TO TOP ======*/}

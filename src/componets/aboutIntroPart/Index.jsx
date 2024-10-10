@@ -16,7 +16,7 @@ class AboutIntroPart extends React.Component {
                 <div className="intri-content">
                   <span>Swallow Homes</span>
                   <h2 className="title">
-                    CEO介绍 — 李  小燕
+                    CEO介绍 — 李 小燕
                   </h2>
                   <p>
                     公司创始团队具有多年的丰富经验，一直致力于为客户提供优质的日本房产解决方案。多年来，我们专心、专业、专注于开拓日本房地产市场，帮助客户找到理想的房产。
@@ -37,17 +37,34 @@ class AboutIntroPart extends React.Component {
                     {/*  <br/>*/}
                     {/*  <p style={{ color: '#808080' }}>最高成交价格</p>*/}
                     {/*</li>*/}
-                    <li style={{ marginRight: '20px' }}>
-                      <strong style={{ color: '#000' , fontSize: '2em'}}>丰富</strong>
+                    <li style={{marginRight: '20px'}}>
+                      <strong style={{color: '#000', fontSize: '2em'}}>丰富</strong>
                       <br/>
-                      <p style={{ color: '#808080' }}>房地产专业经验</p>
+                      <p style={{color: '#808080'}}>房地产专业经验</p>
                     </li>
-                    <li style={{  }}>
-                      <strong style={{ color: '#000' ,fontSize: '2em'}}>98%</strong>
+                    <li style={{}}>
+                      <strong style={{color: '#000', fontSize: '2em'}}>98%</strong>
                       <br/>
-                      <p style={{ color: '#808080' }}>客户满意度</p>
+                      <p style={{color: '#808080'}}>客户满意度</p>
                     </li>
+                    <br/>
+
                   </ul>
+                  <div style={{
+                    display: 'flex',
+                    flexWrap: 'wrap',
+                    justifyContent: 'space-between',
+                    marginTop: '10px'
+                  }}>
+                    <div style={{textAlign: 'center', flex: '0 0 calc(50% - 10px)', marginBottom: '10px'}}>
+                      <img src="contact/whatsapp.png" alt="WhatsApp" style={{maxWidth: '100%', height: 'auto',color: 'black'}}/>
+                      <p style={{fontSize: '14px', color: 'black'}}>WhatsApp</p>
+                    </div>
+                    <div style={{textAlign: 'center', flex: '0 0 calc(50% - 10px)', marginBottom: '10px'}}>
+                      <img src="contact/weixin.png" alt="微信" style={{maxWidth: '100%', height: 'auto',color: 'black'}}/>
+                      <p style={{fontSize: '14px', color: 'black'}}>微信</p>
+                    </div>
+                  </div>
                 </div>
               </Col>
             </Row>
