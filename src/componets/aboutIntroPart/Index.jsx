@@ -54,6 +54,7 @@ class AboutIntroPart extends React.Component {
                     display: 'flex',
                     flexWrap: 'wrap',
                     justifyContent: 'space-between',
+                    alignItems: 'flex-end', // 添加这一行
                     marginTop: '10px'
                   }}>
                     <div style={{textAlign: 'center', flex: '0 0 calc(33% - 10px)', marginBottom: '10px'}}>
