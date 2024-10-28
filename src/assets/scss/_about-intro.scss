@@ -8,7 +8,7 @@
 
 .about-intro-area{
 	background: #f5faff;
-	padding-bottom: 50px;
+	padding-bottom: 20px;
 	& .intro-thumb{
 		position: relative;
 		z-index: 5;
@@ -18,7 +18,7 @@
 			}
 			@media #{$xs} {
 				width: 100%;
-				margin-bottom: 40px;
+				margin-bottom: 20px;
 			}
 			@media #{$sm} {
 				width: 100%;
