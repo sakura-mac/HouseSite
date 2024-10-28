@@ -55,18 +55,18 @@ class AboutIntroPart extends React.Component {
                     flexWrap: 'wrap',
                     justifyContent: 'space-between',
                     alignItems: 'flex-end', // 添加这一行
-                    marginTop: '10px'
+                    marginTop: '17px'
                   }}>
                     <div style={{textAlign: 'center', flex: '0 0 calc(33% - 10px)', marginBottom: '10px'}}>
-                      <img src="contact/whatsapp.jpg" alt="WhatsApp" style={{maxWidth: '80%', height: 'auto',color: 'black'}}/>
+                      <img src="contact/whatsapp.jpg" alt="WhatsApp" style={{maxWidth: '100%', height: 'auto',color: 'black'}}/>
                       <p style={{fontSize: '14px', color: 'black'}}>WhatsApp</p>
                     </div>
                     <div style={{textAlign: 'center', flex: '0 0 calc(33% - 10px)', marginBottom: '10px'}}>
-                      <img src="contact/wechat.jpg" alt="微信" style={{maxWidth: '80%', height: 'auto',color: 'black'}}/>
+                      <img src="contact/wechat.jpg" alt="微信" style={{maxWidth: '100%', height: 'auto',color: 'black'}}/>
                       <p style={{fontSize: '14px', color: 'black'}}>微信</p>
                     </div>
                     <div style={{textAlign: 'center', flex: '0 0 calc(33% - 10px)', marginBottom: '10px'}}>
-                      <img src="contact/line.jpg" alt="LINE" style={{maxWidth: '80%', height: 'auto',color: 'black'}}/>
+                      <img src="contact/line.jpg" alt="LINE" style={{maxWidth: '100%', height: 'auto',color: 'black'}}/>
                       <p style={{fontSize: '14px', color: 'black'}}>LINE</p>
                     </div>
                   </div>
