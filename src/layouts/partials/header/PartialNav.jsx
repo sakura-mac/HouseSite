@@ -1,14 +1,16 @@
 import React from 'react';
 import { Link } from "react-router-dom";
 import { Nav } from 'react-bootstrap';
+import { withI18n } from '../../../i18n/i18n';
 
 class PartialNav extends React.Component {
     render() { 
+        const { t } = this.props.i18n || {};
         return ( 
             <>
                 <Nav className="mr-auto">
                     <li className="nav-item">
-                        <Link className="nav-link" to={'/'}>首页</Link>
+                        <Link className="nav-link" to={'/'}>{t('header.nav.home')}</Link>
                         {/*<ul className="sub-menu">*/}
                         {/*  <li>*/}
                         {/*    <Link to={'/'}>Home 1</Link>*/}
@@ -26,7 +28,7 @@ class PartialNav extends React.Component {
                         {/*/!* sub menu *!/*/}
                     </li>
                     <li className="nav-item">
-                        <Link className="nav-link" to={'/about'}>关于我们</Link>
+                        <Link className="nav-link" to={'/about'}>{t('header.nav.about')}</Link>
                     </li>
                     {/*<li className="nav-item">*/}
                     {/*      <Link className="nav-link"  to={'/'}>房源速览</Link>*/}
@@ -41,41 +43,41 @@ class PartialNav extends React.Component {
                     {/*  /!* sub menu *!/*/}
                     {/*</li>*/}
                     <li className="nav-item">
-                        <Link className="nav-link" to={'/case-study'}>房源速览</Link>
+                        <Link className="nav-link" to={'/case-study'}>{t('header.nav.houses')}</Link>
                         <ul className="sub-menu">
                             <li>
-                                <Link to={'/case-study'}>神户</Link>
+                                <Link to={'/case-study'}>{t('header.nav.regions.kobe')}</Link>
                             </li>
                             <li>
-                                <Link to={'/case-study'}>大阪</Link>
+                                <Link to={'/case-study'}>{t('header.nav.regions.osaka')}</Link>
                             </li>
                             <li>
-                                <Link to={'/case-study'}>京都</Link>
+                                <Link to={'/case-study'}>{t('header.nav.regions.kyoto')}</Link>
                             </li>
                             <li>
-                                <Link to={'/case-study'}>北海道</Link>
+                                <Link to={'/case-study'}>{t('header.nav.regions.hokkaido')}</Link>
                             </li>
                             <li>
-                                <Link to={'/case-study'}>冲绳</Link>
+                                <Link to={'/case-study'}>{t('header.nav.regions.okinawa')}</Link>
                             </li>
                             <li>
-                                <Link to={'/case-study'}>东日本</Link>
+                                <Link to={'/case-study'}>{t('header.nav.regions.east')}</Link>
                             </li>
 
                             <li>
-                                <Link to={'/case-study'}>西日本</Link>
+                                <Link to={'/case-study'}>{t('header.nav.regions.west')}</Link>
                             </li>
                             <li>
-                                <Link to={'/case-study'}>东京</Link>
+                                <Link to={'/case-study'}>{t('header.nav.regions.tokyo')}</Link>
                             </li>
                             <li className="nav-item">
-                                <Link className="nav-link" to={'/contact'}>联系我们</Link>
+                                <Link className="nav-link" to={'/contact'}>{t('header.nav.contact')}</Link>
                             </li>
                         </ul>
                         {/* sub menu */}
                     </li>
                     <li className="nav-item">
-                        <Link className="nav-link" to={'/blog-standard'}>新闻中心</Link>
+                        <Link className="nav-link" to={'/blog-standard'}>{t('header.nav.blog')}</Link>
                         {/*<ul className="sub-menu">*/}
                         {/*    <li>*/}
                         {/*        <Link to={'/blog-standard'}>新闻速递</Link>*/}
@@ -109,10 +111,10 @@ class PartialNav extends React.Component {
                     {/*  /!* sub menu *!/*/}
                     {/*</li>*/}
                     <li className="nav-item">
-                        <Link className="nav-link" to={'/contact'}>联系我们</Link>
+                        <Link className="nav-link" to={'/contact'}>{t('header.nav.contact')}</Link>
                     </li>
                     <li className="nav-item">
-                        <a href="https://www.xiaohongshu.com/user/profile/5df991fd00000000010010eb" target="_blank" rel="noopener noreferrer"> 更多推荐</a>
+                        <a href="https://www.xiaohongshu.com/user/profile/5df991fd00000000010010eb" target="_blank" rel="noopener noreferrer"> {t('header.nav.more')}</a>
                     </li>
                 </Nav>
             </>
@@ -120,4 +122,4 @@ class PartialNav extends React.Component {
     }
 }
 
-export default PartialNav;
+export default withI18n(PartialNav);

@@ -4,12 +4,18 @@ import './index.scss';
 import axios from 'axios';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import { I18nProvider } from './i18n/i18n';
 
 //axios.defaults.baseURL = 'hhttp://localhost:3000/api/';
 //axios.defaults.headers.common['Authorization'] = AUTH_TOKEN;
 axios.defaults.headers.post['Content-Type'] = 'application/x-www-form-urlencoded';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+ReactDOM.render(
+	<I18nProvider>
+		<App />
+	</I18nProvider>,
+	document.getElementById('root')
+);
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.

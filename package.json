@@ -55,6 +55,7 @@
     "build:ci": "CI=false react-scripts build",
     "build": "react-scripts build",
     "test": "react-scripts test",
+    "translate:ja": "node scripts/auto-translate.js ja",
     "eject": "react-scripts eject"
   },
   "eslintConfig": {

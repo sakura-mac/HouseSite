@@ -1,0 +1,55 @@
+{
+  "langName": "中文",
+  "header": {
+    "brandTitle": "Swallow Homes 小燕房地产",
+    "brandSubtitle": "选 择 日 本 品 质 房 产 · 创 造 美 好 生 活",
+    "email": "88swallow@gmail.com",
+    "phone": "09052562484",
+    "nav": {
+      "home": "首页",
+      "about": "关于我们",
+      "houses": "房源速览",
+      "blog": "新闻中心",
+      "contact": "联系我们",
+      "more": "更多推荐",
+      "regions": {
+        "kobe": "神户",
+        "osaka": "大阪",
+        "kyoto": "京都",
+        "hokkaido": "北海道",
+        "okinawa": "冲绳",
+        "east": "东日本",
+        "west": "西日本",
+        "tokyo": "东京"
+      }
+    },
+    "language": "语言"
+  },
+  "footer": {
+    "company": "小燕房地产",
+    "introTitle": "小燕房地产",
+    "intro": "Swallow Homes公司创始团队具有多年经验。多年来，公司始终坚持专心、专业、专注日本房产解决方案，帮助客户提供理想房产，开拓日本财产的经营理念，通过全体员工的共同努力，公司已成为日本房地产行业的优秀企业。",
+    "navTitle": "导航",
+    "nav": {
+      "home": "首页",
+      "houses": "房源速览",
+      "about": "关于我们",
+      "blog": "新闻中心",
+      "contact": "联系我们",
+      "more": "更多推荐"
+    },
+    "contactTitle": "联系我们",
+    "contact": {
+      "email": "联系邮箱：88swallow@gmail.com",
+      "address": "联系地址：神戸市東灘区本山南町8丁目6番26号 東神戸センタービルW棟8階SD1号室",
+      "phone": "联系电话：078-891-7099",
+      "mobile": "手机号码：090-5256-2484"
+    },
+    "qr": {
+      "whatsapp": "WhatsApp",
+      "wechat": "微信",
+      "line": "LINE"
+    },
+    "copyright": "Copyright By@ swallow-homes - {year}"
+  }
+}

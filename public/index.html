@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ja">
   <head>
     <meta charset="utf-8" />
     <link rel="icon" href="%PUBLIC_URL%/assets/favicon/favicon.ico" />
@@ -29,6 +29,35 @@
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <div id="root"></div>
+    <!-- Google Translate widget (client-side machine translation) -->
+    <div id="google_translate_element" style="position: fixed; bottom: 16px; right: 16px; z-index: 9999; background: rgba(255,255,255,0.9); padding: 6px 10px; border-radius: 4px; box-shadow: 0 4px 12px rgba(0,0,0,0.15);"></div>
+    <script type="text/javascript">
+      function setTranslateCookie(value) {
+        try {
+          var host = window.location.hostname;
+          var cookieBase = 'googtrans=' + value + ';path=/';
+          document.cookie = cookieBase;
+          if (host) {
+            document.cookie = cookieBase + ';domain=' + host;
+          }
+        } catch (e) {
+          // swallow errors to avoid breaking page load
+        }
+      }
+
+      // Default translate from Chinese to Japanese on load
+      setTranslateCookie('/zh-CN/ja');
+
+      function googleTranslateElementInit() {
+        new google.translate.TranslateElement({
+          pageLanguage: 'zh-CN',
+          includedLanguages: 'ja,zh-CN,en',
+          layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+          autoDisplay: true
+        }, 'google_translate_element');
+      }
+    </script>
+    <script type="text/javascript" src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
     <!--
       This HTML file is a template.
       If you open it directly in the browser, you will see an empty page.

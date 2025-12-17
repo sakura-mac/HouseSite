@@ -12,6 +12,7 @@ import {
 import Logo1 from '../../../assets/images/img_2.png';
 import { Row, Col, Navbar } from 'react-bootstrap';
 import { FiMail, FiPhone } from "react-icons/fi";
+import { withI18n } from '../../../i18n/i18n';
 
 class Header extends React.Component {
 
@@ -34,6 +35,7 @@ class Header extends React.Component {
   }
 
   render() {
+    const { t, locale, setLocale } = this.props.i18n || {};
     return (
         <React.Fragment>
           <header className="header-area header-area-2 header-area-4">
@@ -43,15 +45,15 @@ class Header extends React.Component {
                   <div className="header-left-side text-center text-sm-left">
                     <ul>
                       <li>
-                        <a href="mailto:88swallow@gmail.com" target="__blank">
+                        <a href={`mailto:${t('header.email')}`} target="__blank">
                           <FiMail size="1.4em" />{' '}
-                          88swallow@gmail.com
+                          {t('header.email')}
                         </a>
                       </li>
                       <li>
-                        <a href="tel:09052562484">
+                        <a href={`tel:${t('header.phone')}`}>
                           <FiPhone size="1.4em" />{' '}
-                          09052562484
+                          {t('header.phone')}
                         </a>
                       </li>
                     </ul>
@@ -60,6 +62,15 @@ class Header extends React.Component {
                 <Col md="6" sm="5">
                   <div className="header-right-social text-center text-sm-right">
                     <SocialLink />
+                    <select
+                      aria-label="language-switcher"
+                      value={locale}
+                      onChange={(e) => setLocale && setLocale(e.target.value)}
+                      style={{ marginLeft: 12 }}
+                    >
+                      <option value="zh">中文</option>
+                      <option value="ja">日本語</option>
+                    </select>
                   </div>
                 </Col>
               </Row>
@@ -131,11 +142,11 @@ class Header extends React.Component {
                             }}
                         />
                         <span className="custom-brand-text">
-                        Swallow Homes 小燕房地产
+                          {t('header.brandTitle')}
                       </span>
                       </div>
                       <span className="custom-subtext">
-                      选 择 日 本 品 质 房 产 · 创 造 美 好 生 活
+                        {t('header.brandSubtitle')}
                     </span>
                     </div>
                   </Navbar.Brand>
@@ -191,4 +202,4 @@ class Header extends React.Component {
   }
 }
 
-export default Header;
+export default withI18n(Header);
