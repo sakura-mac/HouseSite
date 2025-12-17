@@ -3,18 +3,20 @@ import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {faLongArrowAltRight} from "@fortawesome/free-solid-svg-icons";
 import { Container, Row, Col, Card,Accordion } from 'react-bootstrap';
+import { withI18n } from '../../i18n/i18n';
 
 class OueChoosePart extends React.Component {
 
     render() { 
+        const { t } = this.props.i18n || {};
         return ( 
           <div className="our-choose-area">
             <Container>
               <Row>
                 <Col lg="6">
                   <div className="section-title mt-30">
-                    <span>Best agecy for you</span>
-                    <h2 className="title">为何选择我们？</h2>
+                    <span>{t('home.choose.subtitle', 'Best agecy for you')}</span>
+                    <h2 className="title">{t('home.choose.title', '为何选择我们？')}</h2>
                   </div>
                   {/* section title */}
                   <Accordion defaultActiveKey="0">
@@ -22,13 +24,13 @@ class OueChoosePart extends React.Component {
                       <Card.Header>
                         <Accordion.Toggle as={Link} to="#be" variant="link" eventKey="0">
                           <FontAwesomeIcon icon={faLongArrowAltRight} />
-                          专业团队
+                          {t('home.choose.items.team.title', '专业团队')}
                         </Accordion.Toggle>
                       </Card.Header>
                       <Accordion.Collapse eventKey="0">
                         <Card.Body>
                           <p>
-                            我们拥有经验丰富的专业团队，为您提供优质的房产咨询服务，确保每一个决策都精准可靠。
+                            {t('home.choose.items.team.desc', '我们拥有经验丰富的专业团队，为您提供优质的房产咨询服务，确保每一个决策都精准可靠。')}
                           </p>
                         </Card.Body>
                       </Accordion.Collapse>
@@ -37,13 +39,13 @@ class OueChoosePart extends React.Component {
                       <Card.Header>
                         <Accordion.Toggle as={Link} to="#be" variant="link" eventKey="1">
                           <FontAwesomeIcon icon={faLongArrowAltRight} />
-                          优质房源
+                          {t('home.choose.items.assets.title', '优质房源')}
                         </Accordion.Toggle>
                       </Card.Header>
                       <Accordion.Collapse eventKey="1">
                         <Card.Body>
                           <p>
-                            我们提供市场上精选的优质房源，满足您对理想居住环境的所有期待与需求。
+                            {t('home.choose.items.assets.desc', '我们提供市场上精选的优质房源，满足您对理想居住环境的所有期待与需求。')}
                           </p>
                         </Card.Body>
                       </Accordion.Collapse>
@@ -52,13 +54,13 @@ class OueChoosePart extends React.Component {
                       <Card.Header>
                         <Accordion.Toggle as={Link} to="#be" variant="link" eventKey="2">
                           <FontAwesomeIcon icon={faLongArrowAltRight} />
-                          高效交易
+                          {t('home.choose.items.efficient.title', '高效交易')}
                         </Accordion.Toggle>
                       </Card.Header>
                       <Accordion.Collapse eventKey="2">
                         <Card.Body>
                           <p>
-                            简化房产交易流程，让您在最短的时间内完成交易，节省宝贵时间。
+                            {t('home.choose.items.efficient.desc', '简化房产交易流程，让您在最短的时间内完成交易，节省宝贵时间。')}
                           </p>
                         </Card.Body>
                       </Accordion.Collapse>
@@ -67,13 +69,13 @@ class OueChoosePart extends React.Component {
                       <Card.Header>
                         <Accordion.Toggle as={Link} to="#be" variant="link" eventKey="3">
                           <FontAwesomeIcon icon={faLongArrowAltRight} />
-                          贴心服务
+                          {t('home.choose.items.service.title', '贴心服务')}
                         </Accordion.Toggle>
                       </Card.Header>
                       <Accordion.Collapse eventKey="3">
                         <Card.Body>
                           <p>
-                            为您提供一对一的专属服务，从咨询到售后，确保每个细节都得到妥善处理。
+                            {t('home.choose.items.service.desc', '为您提供一对一的专属服务，从咨询到售后，确保每个细节都得到妥善处理。')}
                           </p>
                         </Card.Body>
                       </Accordion.Collapse>
@@ -101,9 +103,9 @@ class OueChoosePart extends React.Component {
                           <sub>
                             <span className="counter">数年</span> <sup></sup>
                           </sub>
-                          <span>房地产经验</span>
+                          <span>{t('home.choose.counters.experience.title', '房地产经验')}</span>
                           <p>
-                            拥有多年的房地产从业经验，积累了丰富的市场洞察与行业知识。
+                            {t('home.choose.counters.experience.desc', '拥有多年的房地产从业经验，积累了丰富的市场洞察与行业知识。')}
                           </p>
                         </div>
                         <div
@@ -121,9 +123,9 @@ class OueChoosePart extends React.Component {
                           <sub>
                             <span className="counter">500</span> <sup>+</sup>
                           </sub>
-                          <span>成交项目</span>
+                          <span>{t('home.choose.counters.deals.title', '成交项目')}</span>
                           <p>
-                            我们已成功完成500多个房产项目，确保每一位客户都能找到理想的家园。
+                            {t('home.choose.counters.deals.desc', '我们已成功完成500多个房产项目，确保每一位客户都能找到理想的家园。')}
                           </p>
                         </div>
                       </div>
@@ -136,9 +138,9 @@ class OueChoosePart extends React.Component {
                           <sub>
                             <span className="counter">98%</span> <sup>+</sup>
                           </sub>
-                          <span>客户好评</span>
+                          <span>{t('home.choose.counters.praise.title', '客户好评')}</span>
                           <p>
-                            98%的客户给予了高度好评，感谢我们专业、高效、贴心的房产服务。
+                            {t('home.choose.counters.praise.desc', '98%的客户给予了高度好评，感谢我们专业、高效、贴心的房产服务。')}
                           </p>
                         </div>
                         <div
@@ -163,4 +165,4 @@ class OueChoosePart extends React.Component {
     }
 }
  
-export default OueChoosePart;
+export default withI18n(OueChoosePart);

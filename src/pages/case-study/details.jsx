@@ -3,8 +3,10 @@ import { Link, useParams } from 'react-router-dom';
 import Layout from '../../layouts';
 import { Container, Row, Col } from 'react-bootstrap';
 import ReactMarkdown from 'react-markdown';
+import { useI18n } from '../../i18n/i18n';
 
 const CaseDetails = () => {
+    const { t } = useI18n();
     const { folderName } = useParams(); // 从URL中获取folderName
     const [content, setContent] = useState('');
     const [error, setError] = useState(null);
@@ -21,7 +23,7 @@ const CaseDetails = () => {
         fetch(filePath)
             .then(response => {
                 if (!response.ok) {
-                    throw new Error("房源未找到");
+                    throw new Error(t('case.notFound'));
                 }
                 return response.text();
             })
@@ -32,7 +34,7 @@ const CaseDetails = () => {
             .catch(err => {
                 setError(err.message);
             });
-    }, [folderName]);
+    }, [folderName, t]);
 
     // 样式对象
     const styles = {
@@ -123,14 +125,14 @@ const CaseDetails = () => {
                     <Row>
                         <Col lg="12">
                             <div className="page-title-item text-center">
-                                <h2 className="title"><br />房源详情</h2>
+                                <h2 className="title"><br />{t('case.detailTitle')}</h2>
                                 <nav aria-label="breadcrumb">
                                     <ol className="breadcrumb">
                                         <li className="breadcrumb-item">
-                                            <Link to={"/"}>Home</Link>
+                                            <Link to={"/"}>{t('header.nav.home')}</Link>
                                         </li>
                                         <li className="breadcrumb-item active" aria-current="page">
-                                            House
+                                            {t('case.listCrumb')}
                                         </li>
                                     </ol>
                                 </nav>

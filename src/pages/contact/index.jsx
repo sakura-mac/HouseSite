@@ -6,6 +6,7 @@ import Layout from '../../layouts';
 import { Container, Row, Col } from 'react-bootstrap';
 import PlayVideoControl from "../../componets/PlayVideoControl/PlayVideoControl";
 import AutoSizedVideo from '../../componets/autoSizedVideo/AutoSizedVideo';
+import { withI18n } from '../../i18n/i18n';
 
 class ContactPage extends React.Component {
 
@@ -33,6 +34,7 @@ class ContactPage extends React.Component {
   }
 
     render() { 
+        const { t } = this.props.i18n || {};
         return ( 
           <Layout>
             <PlayVideoControl videoSrc="assets/videos/ContactUs.mp4" />
@@ -41,16 +43,16 @@ class ContactPage extends React.Component {
             <Row>
               <Col lg="12">
                 <div className="page-title-item text-center">
-                  <h2 className="title">联系我们</h2>
+                  <h2 className="title">{t('contact.title')}</h2>
                   <nav aria-label="breadcrumb">
 
                   
                     <ol className="breadcrumb">
                       <li className="breadcrumb-item">
-                        <Link  to={"/"}>Home </Link>
+                        <Link  to={"/"}>{t('header.nav.home')}</Link>
                       </li>
                       <li className="breadcrumb-item active" aria-current="page">
-                      Contact Us
+                        {t('contact.title')}
                       </li>
                     </ol>
                   </nav>
@@ -82,36 +84,36 @@ class ContactPage extends React.Component {
                         <div className="contact-item-1">
                           <div className="contact-info-item text-center">
                             <i className="fal fa-map"/>
-                            <h5 className="title">公司地点</h5>
-                            <p>神戸市東灘区本山南町8丁目6番26号<br/>東神戸センタービルW棟8階SD1号室</p>
+                            <h5 className="title">{t('contact.locationTitle')}</h5>
+                            <p>{t('contact.address')}</p>
                           </div>
                           <div className="contact-info-item text-center">
                             <i className="fal fa-phone-office"/>
-                            <h5 className="title">TEL</h5>
-                            <p>078-891-7099</p>
+                            <h5 className="title">{t('contact.telTitle')}</h5>
+                            <p>{t('contact.tel')}</p>
                           </div>
                           <div className="contact-info-item text-center">
                             <i className="fal fa-fax"/>
-                            <h5 className="title">FAX</h5>
-                            <p>078-452-7633</p>
+                            <h5 className="title">{t('contact.faxTitle')}</h5>
+                            <p>{t('contact.fax')}</p>
                           </div>
 
                         </div>
                         <div className="contact-item-1">
                           <div className="contact-info-item text-center">
                             <i className="fal fa-phone"/>
-                            <h5 className="title">携帯</h5>
-                            <p>09052562484</p>
+                            <h5 className="title">{t('contact.mobileTitle')}</h5>
+                            <p>{t('contact.mobile')}</p>
                           </div>
                           <div className="contact-info-item text-center">
                             <i className="fal fa-envelope"/>
-                            <h5 className="title">メール</h5>
-                            <p>88swallow@gmail.com</p>
+                            <h5 className="title">{t('contact.emailTitle')}</h5>
+                            <p>{t('contact.email')}</p>
                           </div>
                           <div className="contact-info-item text-center">
                             <i className="fal fa-phone-plus"/>
-                            <h5 className="title">联系人</h5>
-                            <p>李小燕</p>
+                            <h5 className="title">{t('contact.personTitle')}</h5>
+                            <p>{t('contact.person')}</p>
                           </div>
                           {/*<div className="contact-info-item text-center">*/}
                           {/*  <i className="fal fa-globe"/>*/}
@@ -216,4 +218,4 @@ class ContactPage extends React.Component {
     }
 }
 
-export default ContactPage;
+export default withI18n(ContactPage);

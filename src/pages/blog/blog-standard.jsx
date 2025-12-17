@@ -3,9 +3,11 @@ import BlogSideBar from '../../componets/blog/BlogSideBar';
 import { Link } from 'react-router-dom';
 import Layout from '../../layouts';
 import { Container, Row, Col } from 'react-bootstrap';
+import { withI18n } from '../../i18n/i18n';
 
 class BlogStandard extends React.Component {
     render() {
+        const { t } = this.props.i18n || {};
         return (
             <Layout>
                 <div className="page-title-area">
@@ -13,14 +15,14 @@ class BlogStandard extends React.Component {
                         <Row>
                             <Col lg="12">
                                 <div className="page-title-item text-center">
-                                    <h2 className="title"><br/>新闻中心</h2>
+                                    <h2 className="title"><br/>{t('blog.title')}</h2>
                                     <nav aria-label="breadcrumb">
                                         <ol className="breadcrumb">
                                             <li className="breadcrumb-item">
-                                                <Link to={"/"}>Home </Link>
+                                                <Link to={"/"}>{t('header.nav.home')}</Link>
                                             </li>
                                             <li className="breadcrumb-item active" aria-current="page">
-                                                News
+                                                {t('blog.title')}
                                             </li>
                                         </ol>
                                     </nav>
@@ -37,4 +39,4 @@ class BlogStandard extends React.Component {
     }
 }
 
-export default BlogStandard;
+export default withI18n(BlogStandard);

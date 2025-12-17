@@ -3,9 +3,11 @@ import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLongArrowAltRight } from '@fortawesome/free-solid-svg-icons';
 import { Container, Row, Col } from 'react-bootstrap';
+import { useI18n } from '../../i18n/i18n';
 
 const LatestNewsPart = () => {
     const [latestBlogs, setLatestBlogs] = useState([]);
+    const { t, locale } = useI18n();
 
     useEffect(() => {
         // 加载最新的博客数据
@@ -25,8 +27,8 @@ const LatestNewsPart = () => {
                 <Row className="justify-content-center">
                     <Col lg="6">
                         <div className="section-title text-center">
-                            <span>latest news</span>
-                            <h2 className="title">新闻中心</h2>
+                            <span>{t('home.news.subtitle', 'latest news')}</span>
+                            <h2 className="title">{t('home.news.title', '新闻中心')}</h2>
                         </div>
                     </Col>
                 </Row>
@@ -46,7 +48,7 @@ const LatestNewsPart = () => {
                                         >
                                             <div className="letest-news-item mt-30" style={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
                                                 <div>
-                                                    <span>{new Date(blog.date).toLocaleDateString()}</span>
+                                                    <span>{new Date(blog.date).toLocaleDateString(locale === 'ja' ? 'ja-JP' : 'zh-CN')}</span>
                                                     <h4 className="title">
                                                         <Link to={`/blog-details/${blog.folderName}`}>
                                                             {blog.title}
@@ -56,7 +58,7 @@ const LatestNewsPart = () => {
                                                 </div>
                                                 <div style={{ marginTop: 'auto' }}>
                                                     <Link to={`/blog-details/${blog.folderName}`} className="main-btn">
-                                                        了解更多
+                                                        {t('home.news.cta', '了解更多')}
                                                         <FontAwesomeIcon icon={faLongArrowAltRight} className="pl-1" />
                                                     </Link>
                                                 </div>

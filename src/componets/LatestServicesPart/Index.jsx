@@ -3,9 +3,11 @@ import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLongArrowAltRight } from '@fortawesome/free-solid-svg-icons';
 import { Container, Row, Col } from 'react-bootstrap';
+import { useI18n } from '../../i18n/i18n';
 
 const LatestServicesPart = () => {
   const [houses, setHouses] = useState([]);
+  const { t } = useI18n();
 
   // 加载最新的房源
   useEffect(() => {
@@ -81,8 +83,8 @@ const LatestServicesPart = () => {
               <Col lg="12">
                 <div className="services-title-item text-center">
                   <div className="ring-shape" />
-                  <span>推荐房源</span>
-                  <h3 className="title">核心地带 or 品质住宅<br /> 样样精通</h3>
+                  <span>{t('home.services.subtitle', '推荐房源')}</span>
+                  <h3 className="title">{t('home.services.title.line1', '核心地带 or 品质住宅')}<br /> {t('home.services.title.line2', '样样精通')}</h3>
                 </div>
               </Col>
             </Row>
@@ -103,7 +105,7 @@ const LatestServicesPart = () => {
                         <p style={styles.description}>{house.description}</p>
                         <div style={styles.linkContainer}>
                           <Link to={`/house-details/${house.folderName}`} style={styles.link}>
-                            了解更多
+                            {t('home.services.cta', '了解更多')}
                             <FontAwesomeIcon icon={faLongArrowAltRight} style={styles.arrowIcon} />
                           </Link>
                         </div>

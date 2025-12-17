@@ -51,5 +51,115 @@
       "line": "LINE"
     },
     "copyright": "Copyright By@ swallow-homes - {year}"
+  },
+  "contact": {
+    "title": "联系我们",
+    "locationTitle": "公司地点",
+    "address": "神戸市東灘区本山南町8丁目6番26号 東神戸センタービルW棟8階SD1号室",
+    "telTitle": "TEL",
+    "tel": "078-891-7099",
+    "faxTitle": "FAX",
+    "fax": "078-452-7633",
+    "mobileTitle": "携帯",
+    "mobile": "09052562484",
+    "emailTitle": "邮件",
+    "email": "88swallow@gmail.com",
+    "personTitle": "联系人",
+    "person": "李小燕"
+  },
+  "case": {
+    "listTitle": "房源速览",
+    "listCrumb": "房源",
+    "detailTitle": "房源详情",
+    "notFound": "房源未找到"
+  },
+  "blog": {
+    "title": "新闻中心",
+    "notFound": "博客未找到"
+  },
+  "meta": {
+    "title": "Swallow Homes Japan"
+  },
+  "home": {
+    "banner": {
+      "tagline": "Estate Consultant",
+      "title": "发现完美住所",
+      "description": {
+        "line1": "在我们这里，每一处房产都拥有独特的魅力。",
+        "line2": "通过个性化方案和精确定位，轻松实现舒适居住。"
+      },
+      "cta": "房源速览"
+    },
+    "who": {
+      "subtitle": "关于我们",
+      "title": {
+        "line1": "行业积累",
+        "line2": "经验沉淀"
+      },
+      "description": {
+        "line1": "Swallow Homes公司创始团队具有多年经验。",
+        "line2": "多年来，公司始终坚持专心、专业、专注日本房产解决方案，帮助客户提供理想房产，",
+        "line3": "开拓日本财产的经营理念，通过全体员工的共同努力，公司已成为日本房地产行业的优秀企业"
+      },
+      "cards": {
+        "qualification": "公司资质",
+        "recognition": "行业认可",
+        "process": "流程规范",
+        "training": "团队培养"
+      }
+    },
+    "choose": {
+      "subtitle": "Best agecy for you",
+      "title": "为何选择我们？",
+      "items": {
+        "team": {
+          "title": "专业团队",
+          "desc": "我们拥有经验丰富的专业团队，为您提供优质的房产咨询服务，确保每一个决策都精准可靠。"
+        },
+        "assets": {
+          "title": "优质房源",
+          "desc": "我们提供市场上精选的优质房源，满足您对理想居住环境的所有期待与需求。"
+        },
+        "efficient": {
+          "title": "高效交易",
+          "desc": "简化房产交易流程，让您在最短的时间内完成交易，节省宝贵时间。"
+        },
+        "service": {
+          "title": "贴心服务",
+          "desc": "为您提供一对一的专属服务，从咨询到售后，确保每个细节都得到妥善处理。"
+        }
+      },
+      "counters": {
+        "experience": {
+          "title": "房地产经验",
+          "desc": "拥有多年的房地产从业经验，积累了丰富的市场洞察与行业知识。"
+        },
+        "deals": {
+          "title": "成交项目",
+          "desc": "我们已成功完成500多个房产项目，确保每一位客户都能找到理想的家园。"
+        },
+        "praise": {
+          "title": "客户好评",
+          "desc": "98%的客户给予了高度好评，感谢我们专业、高效、贴心的房产服务。"
+        }
+      }
+    },
+    "solution": {
+      "title": "集团鸟瞰",
+      "description": "集团总部及产业园区布局合理，涵盖住宅、商业地产等多个领域，注重现代化设计与绿色环保，为城市发展提供多元化服务与支持。"
+    },
+    "services": {
+      "subtitle": "推荐房源",
+      "title": {
+        "line1": "核心地带 or 品质住宅",
+        "line2": "样样精通"
+      },
+      "cta": "了解更多"
+    },
+    "news": {
+      "subtitle": "latest news",
+      "title": "新闻中心",
+      "cta": "了解更多"
+    }
   }
 }

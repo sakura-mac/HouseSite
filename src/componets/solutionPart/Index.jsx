@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faPlay } from '@fortawesome/free-solid-svg-icons';
 import { Container, Row, Col } from 'react-bootstrap';
 import VideoModal from './VideoModal'; // 确保路径正确
+import { withI18n } from '../../i18n/i18n';
 
 class SolutionPart extends React.Component {
   constructor() {
@@ -25,6 +26,7 @@ class SolutionPart extends React.Component {
   };
 
   render() {
+    const { t } = this.props.i18n || {};
     return (
         <div className="solution-area bg_cover" style={{ backgroundImage: "url(/assets/images/Image_20231018235738.jpg)" }}>
           <div className="solution-overlay pt-120">
@@ -33,9 +35,9 @@ class SolutionPart extends React.Component {
                 <Col lg="8">
                   <div className="solution-box">
                     <div className="solution-content">
-                      <h3 className="title">集团鸟瞰</h3>
+                      <h3 className="title">{t('home.solution.title', '集团鸟瞰')}</h3>
                       <p>
-                        集团总部及产业园区布局合理，涵盖住宅、商业地产等多个领域，注重现代化设计与绿色环保，为城市发展提供多元化服务与支持。
+                        {t('home.solution.description', '集团总部及产业园区布局合理，涵盖住宅、商业地产等多个领域，注重现代化设计与绿色环保，为城市发展提供多元化服务与支持。')}
                       </p>
 
                       {/* 播放按钮（移动端显示） */}
@@ -66,4 +68,4 @@ class SolutionPart extends React.Component {
   }
 }
 
-export default SolutionPart;
+export default withI18n(SolutionPart);

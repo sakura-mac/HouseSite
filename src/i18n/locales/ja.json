@@ -51,5 +51,115 @@
       "line": "LINE"
     },
     "copyright": "Copyright By@ swallow-homes - {year}"
+  },
+  "contact": {
+    "title": "お問い合わせ",
+    "locationTitle": "所在地",
+    "address": "神戸市東灘区本山南町8丁目6番26号 東神戸センタービルW棟8階SD1号室",
+    "telTitle": "TEL",
+    "tel": "078-891-7099",
+    "faxTitle": "FAX",
+    "fax": "078-452-7633",
+    "mobileTitle": "携帯",
+    "mobile": "09052562484",
+    "emailTitle": "メール",
+    "email": "88swallow@gmail.com",
+    "personTitle": "担当",
+    "person": "李小燕"
+  },
+  "case": {
+    "listTitle": "物件一覧",
+    "listCrumb": "物件",
+    "detailTitle": "物件詳細",
+    "notFound": "物件が見つかりません"
+  },
+  "blog": {
+    "title": "ニュース",
+    "notFound": "記事が見つかりません"
+  },
+  "meta": {
+    "title": "Swallow Homes Japan"
+  },
+  "home": {
+    "banner": {
+      "tagline": "Estate Consultant",
+      "title": "理想の住まいを見つける",
+      "description": {
+        "line1": "一つひとつの物件に独自の魅力があると信じています。",
+        "line2": "個別提案と的確なマッチングで、快適な暮らしを叶えます。"
+      },
+      "cta": "物件一覧"
+    },
+    "who": {
+      "subtitle": "私たちについて",
+      "title": {
+        "line1": "業界の蓄積",
+        "line2": "経験の結晶"
+      },
+      "description": {
+        "line1": "Swallow Homes の創業チームは長年の経験を有しています。",
+        "line2": "専門性と専念をもって日本の不動産ソリューションを提供し、理想の物件探しをサポート。",
+        "line3": "社員全員の努力により、日本の不動産業界で評価される企業へと成長しました。"
+      },
+      "cards": {
+        "qualification": "会社の資格",
+        "recognition": "業界からの信頼",
+        "process": "プロセスの標準化",
+        "training": "チーム育成"
+      }
+    },
+    "choose": {
+      "subtitle": "あなたに最適なエージェンシー",
+      "title": "なぜ私たちを選ぶのか？",
+      "items": {
+        "team": {
+          "title": "プロのチーム",
+          "desc": "経験豊富な専門チームが的確な不動産コンサルティングを提供し、確かな意思決定を支えます。"
+        },
+        "assets": {
+          "title": "厳選物件",
+          "desc": "市場から厳選した良質な物件をご案内し、理想の住環境への期待に応えます。"
+        },
+        "efficient": {
+          "title": "効率的な取引",
+          "desc": "取引プロセスを簡素化し、短時間で完了できるようサポートします。"
+        },
+        "service": {
+          "title": "手厚いサービス",
+          "desc": "相談からアフターサポートまで一対一で伴走し、細部まで丁寧に対応します。"
+        }
+      },
+      "counters": {
+        "experience": {
+          "title": "不動産経験",
+          "desc": "長年の不動産実務で培った市場洞察と知識を活かします。"
+        },
+        "deals": {
+          "title": "成約実績",
+          "desc": "500件以上の成約を達成し、多くのお客様に理想の住まいをお届けしています。"
+        },
+        "praise": {
+          "title": "高い満足度",
+          "desc": "98%のお客様から高評価をいただき、プロ・スピード・手厚さを評価されています。"
+        }
+      }
+    },
+    "solution": {
+      "title": "グループ俯瞰",
+      "description": "本社と産業パークは計画的に配置され、住宅・商業不動産など多分野を網羅。モダンなデザインと環境配慮を重視し、都市発展を多角的に支えます。"
+    },
+    "services": {
+      "subtitle": "おすすめ物件",
+      "title": {
+        "line1": "中心立地も良質住宅も",
+        "line2": "幅広くカバー"
+      },
+      "cta": "詳しく見る"
+    },
+    "news": {
+      "subtitle": "latest news",
+      "title": "ニュース",
+      "cta": "詳しく見る"
+    }
   }
 }

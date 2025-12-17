@@ -6,10 +6,12 @@ import {
    faFingerprint, faLaptopCode, faLongArrowAltRight,
 } from '@fortawesome/free-solid-svg-icons';
 import { Container, Row } from 'react-bootstrap';
+import { withI18n } from '../../i18n/i18n';
 
 class WhoWeAreArea extends React.Component {
 
     render() { 
+        const { t } = this.props.i18n || {};
         return ( 
           <div className="who-we-are-area pt-110 pb-120">
             <Container>
@@ -20,10 +22,10 @@ class WhoWeAreArea extends React.Component {
                   data-wow-delay="0s"
                 >
                   <div className="section-title">
-                    <span>关于我们</span>
+                    <span>{t('home.who.subtitle', '关于我们')}</span>
                     <h2 className="title">
-                      行业积累<br/>
-                      经验沉淀
+                      {t('home.who.title.line1', '行业积累')}<br/>
+                      {t('home.who.title.line2', '经验沉淀')}
                     </h2>
                   </div>
                   {/* section title */}
@@ -35,10 +37,10 @@ class WhoWeAreArea extends React.Component {
                 >
                   <div className="section-title">
                     <p>
-                      Swallow Homes公司创始团队具有多年经验。
+                      {t('home.who.description.line1', 'Swallow Homes公司创始团队具有多年经验。')}
 
-                      多年来，公司始终坚持专心、专业、专注日本房产解决方案，帮助客户提供理想房产，
-                      开拓日本财产的经营理念，通过全体员工的共同努力，公司已成为日本房地产行业的优秀企业
+                      {t('home.who.description.line2', '多年来，公司始终坚持专心、专业、专注日本房产解决方案，帮助客户提供理想房产，')}
+                      {t('home.who.description.line3', '开拓日本财产的经营理念，通过全体员工的共同努力，公司已成为日本房地产行业的优秀企业')}
                     </p>
                   </div>
                   {/* section title */}
@@ -52,7 +54,7 @@ class WhoWeAreArea extends React.Component {
                 >
                   <div className="what-we-do-item text-center mt-30">
                     <FontAwesomeIcon  icon={faLaptopCode} />
-                    <h5 className="title">公司资质</h5>
+                    <h5 className="title">{t('home.who.cards.qualification', '公司资质')}</h5>
                     <Link to={"about"}>
                       <FontAwesomeIcon icon={faLongArrowAltRight}/>
                     </Link>
@@ -66,7 +68,7 @@ class WhoWeAreArea extends React.Component {
                 >
                   <div className="what-we-do-item text-center mt-30">
                     <FontAwesomeIcon icon={faFingerprint}  />
-                    <h5 className="title">行业认可</h5>
+                    <h5 className="title">{t('home.who.cards.recognition', '行业认可')}</h5>
                     <Link to={"about"}>
                       <FontAwesomeIcon icon={faLongArrowAltRight}/>
                     </Link>
@@ -80,7 +82,7 @@ class WhoWeAreArea extends React.Component {
                 >
                   <div className="what-we-do-item text-center mt-30">
                     <FontAwesomeIcon icon={faChalkboard} />
-                    <h5 className="title">流程规范</h5>
+                    <h5 className="title">{t('home.who.cards.process', '流程规范')}</h5>
                     <Link to={"about"}>
                       <FontAwesomeIcon icon={faLongArrowAltRight}/>
                     </Link>
@@ -94,7 +96,7 @@ class WhoWeAreArea extends React.Component {
                 >
                   <div className="what-we-do-item text-center mt-30">
                     <FontAwesomeIcon icon={faDatabase} />
-                    <h5 className="title">团队培养</h5>
+                    <h5 className="title">{t('home.who.cards.training', '团队培养')}</h5>
                     <Link to={"about"}>
                       <FontAwesomeIcon icon={faLongArrowAltRight}/>
                     </Link>
@@ -113,4 +115,4 @@ class WhoWeAreArea extends React.Component {
     }
 }
  
-export default WhoWeAreArea;
+export default withI18n(WhoWeAreArea);

@@ -7,6 +7,7 @@ import {
   faAngleRight,
 } from '@fortawesome/free-solid-svg-icons';
 import { Container, Row, Col } from 'react-bootstrap';
+import { withI18n } from '../../i18n/i18n';
 
 function NextArrow(props) {
   const { style, onClick } = props;
@@ -31,6 +32,8 @@ class Banner extends React.Component {
 
 
     render() { 
+
+      const { t } = this.props.i18n || {};
 
       var settings = {
         autoplay: true,
@@ -65,18 +68,18 @@ class Banner extends React.Component {
                       <Col lg="9">
                         <div className="banner-content">
                           <span data-animation="fadeInLeft" data-delay="0.5s">
-                            Estate Consultant
+                            {t('home.banner.tagline', 'Estate Consultant')}
                           </span>
                           <h1
                             data-animation="fadeInLeft"
                             data-delay="0.9s"
                             className="title"
                           >
-                            发现完美住所
+                            {t('home.banner.title', '发现完美住所')}
                           </h1>
                           <p data-animation="fadeInLeft" data-delay="1.3s">
-                            在我们这里，每一处房产都拥有独特的魅力。<br />
-                            通过个性化方案和精确定位，轻松实现舒适居住。
+                            {t('home.banner.description.line1', '在我们这里，每一处房产都拥有独特的魅力。')}<br />
+                            {t('home.banner.description.line2', '通过个性化方案和精确定位，轻松实现舒适居住。')}
                           </p>
                           <Link
                             data-animation="fadeInUp"
@@ -84,7 +87,7 @@ class Banner extends React.Component {
                             className="main-btn"
                             to={"/case-study"}
                           >
-                            房源速览 <i className="fal fa-long-arrow-right" />
+                            {t('home.banner.cta', '房源速览')} <i className="fal fa-long-arrow-right" />
                           </Link>
                         </div>
                         {/* banner content */}
@@ -103,18 +106,18 @@ class Banner extends React.Component {
                       <Col lg="9">
                         <div className="banner-content">
                           <span data-animation="fadeInLeft" data-delay="0.5s">
-                            Estate Consultant
+                            {t('home.banner.tagline', 'Estate Consultant')}
                           </span>
                           <h1
                               data-animation="fadeInLeft"
                               data-delay="0.9s"
                               className="title"
                           >
-                            发现完美住所
+                            {t('home.banner.title', '发现完美住所')}
                           </h1>
                           <p data-animation="fadeInLeft" data-delay="1.3s">
-                            在我们这里，每一处房产都拥有独特的魅力。<br/>
-                            通过个性化方案和精确定位，轻松实现舒适居住。
+                            {t('home.banner.description.line1', '在我们这里，每一处房产都拥有独特的魅力。')}<br/>
+                            {t('home.banner.description.line2', '通过个性化方案和精确定位，轻松实现舒适居住。')}
                           </p>
                           <Link
                               data-animation="fadeInUp"
@@ -122,7 +125,7 @@ class Banner extends React.Component {
                               className="main-btn"
                               to={"/case-study"}
                           >
-                            房源速览 <i className="fal fa-long-arrow-right"/>
+                            {t('home.banner.cta', '房源速览')} <i className="fal fa-long-arrow-right"/>
                           </Link>
                         </div>
                         {/* banner content */}
@@ -142,18 +145,18 @@ class Banner extends React.Component {
                       <Col lg="9">
                         <div className="banner-content">
                           <span data-animation="fadeInLeft" data-delay="0.5s">
-                            Estate Consultant
+                            {t('home.banner.tagline', 'Estate Consultant')}
                           </span>
                           <h1
                               data-animation="fadeInLeft"
                               data-delay="0.9s"
                               className="title"
                           >
-                            发现完美住所
+                            {t('home.banner.title', '发现完美住所')}
                           </h1>
                           <p data-animation="fadeInLeft" data-delay="1.3s">
-                            在我们这里，每一处房产都拥有独特的魅力。<br/>
-                            通过个性化方案和精确定位，轻松实现舒适居住。
+                            {t('home.banner.description.line1', '在我们这里，每一处房产都拥有独特的魅力。')}<br/>
+                            {t('home.banner.description.line2', '通过个性化方案和精确定位，轻松实现舒适居住。')}
                           </p>
                           <Link
                               data-animation="fadeInUp"
@@ -161,7 +164,7 @@ class Banner extends React.Component {
                               className="main-btn"
                               to={"/case-study"}
                           >
-                            房源速览 <i className="fal fa-long-arrow-right"/>
+                            {t('home.banner.cta', '房源速览')} <i className="fal fa-long-arrow-right"/>
                           </Link>
                         </div>
                         {/* banner content */}
@@ -179,4 +182,4 @@ class Banner extends React.Component {
     }
 }
 
-export default Banner;
+export default withI18n(Banner);
