@@ -48,7 +48,6 @@ function AdminLayout() {
           background: '#fff',
         }}>
           <span style={{ fontSize: '16px', fontWeight: '600' }}>后台管理系统</span>
-          <span style={{ color: '#999', fontSize: '13px' }}>由 Cloudflare Access 保护</span>
         </Header>
         <Content style={{ margin: '24px 16px', padding: 24, background: '#fff', borderRadius: 8 }}>
           <Routes>
