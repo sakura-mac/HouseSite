@@ -157,6 +157,18 @@ function slugify(text) {
     .toLowerCase();
 }
 
+// 从正文 content 中提取所有 R2 图片 key（/api/images/xxx → xxx）
+function extractContentImages(content) {
+  if (!content) return [];
+  const keys = [];
+  const regex = /\/api\/images\/([^\s)"'\]]+)/g;
+  let match;
+  while ((match = regex.exec(content)) !== null) {
+    keys.push(match[1]);
+  }
+  return keys;
+}
+
 // ============ 房源 CRUD ============
 async function getHouses(request, env) {
   const url = new URL(request.url);
@@ -248,10 +260,13 @@ async function updateHouse(request, env) {
 
 async function deleteHouse(request, env) {
   const id = getId(request);
-  // 获取 cover 路径用于清理 R2
-  const house = await env.DB.prepare('SELECT cover FROM houses WHERE id = ?').bind(id).first();
-  if (house && house.cover) {
-    try { await env.BUCKET.delete(house.cover); } catch {}
+  // 获取 cover 和 content 用于清理 R2
+  const house = await env.DB.prepare('SELECT cover, content FROM houses WHERE id = ?').bind(id).first();
+  if (house) {
+    if (house.cover) { try { await env.BUCKET.delete(house.cover); } catch {} }
+    for (const key of extractContentImages(house.content)) {
+      try { await env.BUCKET.delete(key); } catch {}
+    }
   }
   await env.DB.prepare('DELETE FROM houses WHERE id = ?').bind(id).run();
   return json({ success: true });
@@ -333,9 +348,12 @@ async function updateBlog(request, env) {
 
 async function deleteBlog(request, env) {
   const id = getId(request);
-  const blog = await env.DB.prepare('SELECT cover FROM blogs WHERE id = ?').bind(id).first();
-  if (blog && blog.cover) {
-    try { await env.BUCKET.delete(blog.cover); } catch {}
+  const blog = await env.DB.prepare('SELECT cover, content FROM blogs WHERE id = ?').bind(id).first();
+  if (blog) {
+    if (blog.cover) { try { await env.BUCKET.delete(blog.cover); } catch {} }
+    for (const key of extractContentImages(blog.content)) {
+      try { await env.BUCKET.delete(key); } catch {}
+    }
   }
   await env.DB.prepare('DELETE FROM blogs WHERE id = ?').bind(id).run();
   return json({ success: true });
@@ -417,9 +435,12 @@ async function updateVisa(request, env) {
 
 async function deleteVisa(request, env) {
   const id = getId(request);
-  const visa = await env.DB.prepare('SELECT cover FROM visas WHERE id = ?').bind(id).first();
-  if (visa && visa.cover) {
-    try { await env.BUCKET.delete(visa.cover); } catch {}
+  const visa = await env.DB.prepare('SELECT cover, content FROM visas WHERE id = ?').bind(id).first();
+  if (visa) {
+    if (visa.cover) { try { await env.BUCKET.delete(visa.cover); } catch {} }
+    for (const key of extractContentImages(visa.content)) {
+      try { await env.BUCKET.delete(key); } catch {}
+    }
   }
   await env.DB.prepare('DELETE FROM visas WHERE id = ?').bind(id).run();
   return json({ success: true });
