@@ -11,7 +11,7 @@
       "houses": "房源速览",
       "blog": "新闻中心",
       "contact": "联系我们",
-      "more": "更多推荐",
+      "more": "签证咨询",
       "regions": {
         "kobe": "神户",
         "osaka": "大阪",
@@ -36,7 +36,7 @@
       "about": "关于我们",
       "blog": "新闻中心",
       "contact": "联系我们",
-      "more": "更多推荐"
+      "more": "签证咨询"
     },
     "contactTitle": "联系我们",
     "contact": {
@@ -181,5 +181,16 @@
     "loading": "加载中...",
     "error": "错误",
     "readMore": "了解更多"
+  },
+  "visa": {
+    "title": "签证咨询",
+    "contactTitle": "联系我们",
+    "contactSubtitle": "如果您有签证方面的问题或需要咨询，请随时与我们联系。",
+    "email": "邮件",
+    "phone": "电话",
+    "wechat": "微信",
+    "whatsapp": "WhatsApp",
+    "line": "LINE",
+    "listTitle": "签证相关文章"
   }
 }
