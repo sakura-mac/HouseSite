@@ -36,7 +36,7 @@ const BlogSideBar = () => {
                       <div className="blog-standard-thumb">
                         {/* 直接从文件夹中加载 cover.jpg */}
                         <img
-                            src={`/blogs/${blog.folderName}/cover.jpg`}
+src={`/blogs/${blog.folderName}/cover.webp`}
                             alt={blog.title || 'Blog cover'}
                         />
                       </div>

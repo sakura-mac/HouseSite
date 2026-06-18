@@ -113,10 +113,11 @@ const BlogDetails = () => {
         strong: ({ children }) => <strong style={styles.strong}>{children}</strong>,
         em: ({ children }) => <em style={styles.em}>{children}</em>,
         hr: () => <hr style={styles.hr} />,
-        img: ({ node, ...props }) => {
-            const src = `${process.env.PUBLIC_URL}/blogs/${folderName}/${props.src}`;
-            return <img {...props} src={src} alt={props.alt} style={styles.img} />;
-        },
+            img: ({ node, ...props }) => {
+                let src = `${process.env.PUBLIC_URL}/blogs/${folderName}/${props.src}`;
+                src = src.replace(/\.(jpg|JPG|jpeg|png)$/i, '.webp');
+                return <img {...props} src={src} alt={props.alt} style={styles.img} />;
+            },
     };
 
     return (

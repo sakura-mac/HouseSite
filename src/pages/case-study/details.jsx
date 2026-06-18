@@ -112,7 +112,9 @@ const CaseDetails = () => {
         em: ({ children }) => <em style={styles.em}>{children}</em>,
         hr: () => <hr style={styles.hr} />,
         img: ({ node, ...props }) => {
-            const src = `${process.env.PUBLIC_URL}/house/${folderName}/${props.src}`;
+            let src = `${process.env.PUBLIC_URL}/house/${folderName}/${props.src}`;
+            // Prefer WebP version
+            src = src.replace(/\.(jpg|JPG|jpeg|png)$/i, '.webp');
             return <img {...props} src={src} alt={props.alt} style={styles.img} />;
         },
     };

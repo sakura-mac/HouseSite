@@ -83,7 +83,7 @@ class Header extends React.Component {
                     {`
                     @font-face {
                       font-family: 'Xique';
-                      src: url('/assets/fonts/xique.ttf') format('truetype');
+                      src: url('/assets/fonts/xique.woff2') format('woff2');
                       font-weight: normal;
                       font-style: normal;
                     }

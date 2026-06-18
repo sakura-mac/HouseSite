@@ -98,7 +98,7 @@ const LatestServicesPart = () => {
                     <div className="single-services" style={styles.singleService}>
                       {/* 使用房源的封面图片 */}
                       <div className="services-thumb" style={styles.imgContainer}>
-                        <img src={`/house/${house.folderName}/cover.jpg`} alt={house.title} style={styles.img} />
+<img src={`/house/${house.folderName}/cover.webp`} alt={house.title} style={styles.img} />
                       </div>
                       <div className="services-content" style={styles.content}>
                         <h4 className="title" style={styles.title}>{house.title}</h4>

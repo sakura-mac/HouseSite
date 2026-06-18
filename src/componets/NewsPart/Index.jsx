@@ -159,7 +159,7 @@ const NewsPart = () => {
                       }}
                   >
                     <img
-                        src={`/house/${house.folderName}/cover.jpg`}
+src={`/house/${house.folderName}/cover.webp`}
                         alt={house.title}
                         style={styles.img}
                     />
