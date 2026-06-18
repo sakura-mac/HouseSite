@@ -24,7 +24,7 @@ function VisaPage() {
           <Row className="justify-content-center">
             <Col lg="8">
               <div className="page-title-item text-center" style={{ paddingTop: '0' }}>
-                <br /><br /><br />
+                <br /><br /><br /><br /><br />
                 <h3 style={{ fontSize: '34px', fontWeight: '800', marginBottom: '28px', color: '#2c3e50' }}>
                   {t('visa.contactTitle')}
                 </h3>
