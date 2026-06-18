@@ -1,10 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-  faChalkboard, faDatabase,
-   faFingerprint, faLaptopCode, faLongArrowAltRight,
-} from '@fortawesome/free-solid-svg-icons';
 import { Container, Row } from 'react-bootstrap';
 import { withI18n } from '../../i18n/i18n';
 
@@ -40,56 +34,6 @@ class WhoWeAreArea extends React.Component {
                     </p>
                   </div>
                   {/* section title */}
-                </div>
-              </Row>
-              <Row>
-                <div
-                  className="col-lg-3 col-md-6 col-sm-6"
-                >
-                  <div className="what-we-do-item text-center mt-30">
-                    <FontAwesomeIcon  icon={faLaptopCode} />
-                    <h5 className="title">{t('home.who.cards.qualification', '公司资质')}</h5>
-                    <Link to={"about"}>
-                      <FontAwesomeIcon icon={faLongArrowAltRight}/>
-                    </Link>
-                  </div>
-                  {/* what we do item */}
-                </div>
-                <div
-                  className="col-lg-3 col-md-6 col-sm-6"
-                >
-                  <div className="what-we-do-item text-center mt-30">
-                    <FontAwesomeIcon icon={faFingerprint}  />
-                    <h5 className="title">{t('home.who.cards.recognition', '行业认可')}</h5>
-                    <Link to={"about"}>
-                      <FontAwesomeIcon icon={faLongArrowAltRight}/>
-                    </Link>
-                  </div>
-                  {/* what we do item */}
-                </div>
-                <div
-                  className="col-lg-3 col-md-6 col-sm-6"
-                >
-                  <div className="what-we-do-item text-center mt-30">
-                    <FontAwesomeIcon icon={faChalkboard} />
-                    <h5 className="title">{t('home.who.cards.process', '流程规范')}</h5>
-                    <Link to={"about"}>
-                      <FontAwesomeIcon icon={faLongArrowAltRight}/>
-                    </Link>
-                  </div>
-                  {/* what we do item */}
-                </div>
-                <div
-                  className="col-lg-3 col-md-6 col-sm-6"
-                >
-                  <div className="what-we-do-item text-center mt-30">
-                    <FontAwesomeIcon icon={faDatabase} />
-                    <h5 className="title">{t('home.who.cards.training', '团队培养')}</h5>
-                    <Link to={"about"}>
-                      <FontAwesomeIcon icon={faLongArrowAltRight}/>
-                    </Link>
-                  </div>
-                  {/* what we do item */}
                 </div>
               </Row>
               {/* row */}
