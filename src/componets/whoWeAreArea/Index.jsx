@@ -36,6 +36,8 @@ class WhoWeAreArea extends React.Component {
                   {/* section title */}
                 </div>
               </Row>
+              <Row style={{ minHeight: '200px' }}>
+              </Row>
               {/* row */}
             </Container>
             {/* container */}
