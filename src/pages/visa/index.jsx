@@ -19,38 +19,43 @@ function VisaPage() {
   return (
     <Layout>
       {/* 联系方式区 */}
-      <div className="visa-contact-area pt-60 pb-30" style={{ background: '#f7f7f7' }}>
+      <div className="visa-contact-area" style={{ background: 'linear-gradient(135deg, #f8f9fa 0%, #eef1f5 100%)', padding: '60px 0 50px' }}>
         <Container>
           <Row className="justify-content-center">
             <Col lg="8">
               <div className="text-center">
-                <h3 style={{ fontSize: '28px', fontWeight: '700', marginBottom: '12px', color: '#333' }}>
+                <h3 style={{ fontSize: '26px', fontWeight: '700', marginBottom: '16px', color: '#2c3e50' }}>
                   {t('visa.contactTitle')}
                 </h3>
-                <p style={{ fontSize: '16px', color: '#666', marginBottom: '24px' }}>
+                <p style={{ fontSize: '17px', color: '#555', marginBottom: '8px', lineHeight: '1.8' }}>
                   {t('visa.contactSubtitle')}
+                </p>
+                <p style={{ fontSize: '15px', color: '#888', marginBottom: '32px', lineHeight: '1.8' }}>
+                  {t('visa.contactDesc')}
                 </p>
                 <div style={{
                   display: 'flex',
                   flexWrap: 'wrap',
                   justifyContent: 'center',
-                  gap: '20px',
+                  gap: '24px',
                 }}>
                   <a href="mailto:88swallow@gmail.com" style={{
-                    display: 'inline-flex', alignItems: 'center', gap: '8px',
-                    padding: '10px 24px', background: '#fff', borderRadius: '30px',
-                    color: '#333', textDecoration: 'none', fontSize: '15px',
-                    boxShadow: '0 2px 8px rgba(0,0,0,0.08)',
+                    display: 'inline-flex', alignItems: 'center', gap: '10px',
+                    padding: '14px 32px', background: '#fff', borderRadius: '50px',
+                    color: '#333', textDecoration: 'none', fontSize: '15px', fontWeight: '500',
+                    boxShadow: '0 4px 12px rgba(0,0,0,0.08)',
+                    transition: 'all 0.3s ease',
                   }}>
-                    <i className="fal fa-envelope" /> 88swallow@gmail.com
+                    <i className="fal fa-envelope" style={{ color: '#e74c3c' }} /> 88swallow@gmail.com
                   </a>
                   <a href="tel:078-891-7099" style={{
-                    display: 'inline-flex', alignItems: 'center', gap: '8px',
-                    padding: '10px 24px', background: '#fff', borderRadius: '30px',
-                    color: '#333', textDecoration: 'none', fontSize: '15px',
-                    boxShadow: '0 2px 8px rgba(0,0,0,0.08)',
+                    display: 'inline-flex', alignItems: 'center', gap: '10px',
+                    padding: '14px 32px', background: '#fff', borderRadius: '50px',
+                    color: '#333', textDecoration: 'none', fontSize: '15px', fontWeight: '500',
+                    boxShadow: '0 4px 12px rgba(0,0,0,0.08)',
+                    transition: 'all 0.3s ease',
                   }}>
-                    <i className="fal fa-phone" /> 078-891-7099
+                    <i className="fal fa-phone" style={{ color: '#27ae60' }} /> 078-891-7099
                   </a>
                 </div>
               </div>
