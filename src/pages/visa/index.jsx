@@ -76,82 +76,72 @@ function VisaPage() {
         </Container>
       </div>
 
-      {/* 签证文章列表 */}
-      <div className="news-area news-area-2 pt-60 pb-90">
+      {/* 页面标题 */}
+      <div className="page-title-area">
         <Container>
-          <Row className="justify-content-center mb-4">
-            <Col lg="12" className="text-center">
-              <h3 style={{ fontSize: '24px', fontWeight: '700', color: '#333' }}>
-                {t('visa.listTitle')}
-              </h3>
+          <Row>
+            <Col lg="12">
+              <div className="page-title-item text-center">
+                <h2 className="title">{t('visa.title')}</h2>
+                <nav aria-label="breadcrumb">
+                  <ol className="breadcrumb">
+                    <li className="breadcrumb-item">
+                      <Link to={"/"}>{t('header.nav.home')}</Link>
+                    </li>
+                    <li className="breadcrumb-item active" aria-current="page">
+                      {t('visa.title')}
+                    </li>
+                  </ol>
+                </nav>
+              </div>
             </Col>
           </Row>
-          {visas.length === 0 ? (
-            <p style={{ textAlign: 'center', color: '#999', padding: '60px 0' }}>
-              {locale === 'ja' ? 'まだ記事がありません。' : '暂无文章。'}
-            </p>
-          ) : (
-            <Row className="justify-content-center">
-              {visas.map((visa, index) => (
-                <div className="col-lg-4 col-md-6 col-sm-9" key={index}>
-                  <div
-                    className="single-news"
-                    style={{
-                      position: 'relative',
-                      overflow: 'hidden',
-                      marginBottom: '30px',
-                      height: '300px',
-                    }}
-                    onMouseEnter={(e) => {
-                      e.currentTarget.querySelector('.single-news-overlay').style.backgroundColor = 'rgba(15, 60, 158, 0.9)';
-                      e.currentTarget.querySelector('.content').style.transform = 'translateY(-50%)';
-                    }}
-                    onMouseLeave={(e) => {
-                      e.currentTarget.querySelector('.single-news-overlay').style.backgroundColor = 'rgba(0, 0, 0, 0.5)';
-                      e.currentTarget.querySelector('.content').style.transform = 'translateY(0)';
-                    }}
-                  >
-                    <img
-                      src={getCoverUrl(visa, 'visa')}
-                      alt={visa.title || 'Visa cover'}
-                      style={{ width: '100%', height: '100%', objectFit: 'cover', transition: 'transform 0.5s ease' }}
-                    />
-                    <div
-                      className="single-news-overlay"
-                      style={{
-                        position: 'absolute',
-                        bottom: '0',
-                        left: '0',
-                        width: '100%',
-                        height: '100%',
-                        backgroundColor: 'rgba(0, 0, 0, 0.5)',
-                        color: 'white',
-                        padding: '20px',
-                        display: 'flex',
-                        flexDirection: 'column',
-                        justifyContent: 'flex-end',
-                        transition: 'background-color 0.5s ease',
-                      }}
-                    >
-                      <div className="content" style={{ transition: 'transform 0.5s ease' }}>
-                        <span style={{ color: '#fff', fontWeight: 'bold' }}>
-                          {visa.category || t('visa.title')}
-                        </span>
-                        <h5 className="title" style={{ margin: '0', fontSize: '1.5rem', color: '#fff' }}>
-                          <Link to={`/visa-details/${visa.folderName}`} style={{ color: 'white', textDecoration: 'none' }}>
-                            {visa.title}
-                          </Link>
-                        </h5>
-                        <Link to={`/visa-details/${visa.folderName}`} style={{ display: 'inline-block', marginLeft: '10px' }}>
-                          <i className="fal fa-long-arrow-right" style={{ color: 'white' }} />
-                        </Link>
+        </Container>
+      </div>
+
+      {/* 签证文章列表 */}
+      <div className="blog-standard-area pt-90 pb-120">
+        <Container>
+          <Row className="justify-content-center">
+            <Col lg="12">
+              <div className="blog-standard">
+                {visas.length === 0 ? (
+                  <p style={{ textAlign: 'center', color: '#999', padding: '60px 0' }}>
+                    {locale === 'ja' ? 'まだ記事がありません。' : '暂无文章。'}
+                  </p>
+                ) : (
+                  visas.map((visa, index) => (
+                    <div className="single-blog-standard mt-30" key={index}>
+                      <div className="blog-standard-thumb">
+                        <img
+                          src={getCoverUrl(visa, 'visa')}
+                          alt={visa.title || 'Visa cover'}
+                        />
+                      </div>
+                      <div className="blog-standard-content">
+                        <span>{visa.category || t('visa.title')}</span>
+                        <h2 className="title">
+                          <Link to={`/visa-details/${visa.folderName}`}>{visa.title}</Link>
+                        </h2>
+                        <ul>
+                          <li><i className="fal fa-calendar-alt" /> {new Date(visa.date).toLocaleDateString(locale === 'ja' ? 'ja-JP' : 'zh-CN')}</li>
+                          {visa.author && <li><i className="fal fa-user" /> {visa.author}</li>}
+                        </ul>
+                        <p>{visa.description}</p>
+                        <div className="blog-flex">
+                          <div className="blog-right">
+                            <Link to={`/visa-details/${visa.folderName}`}>
+                              <i className="fal fa-arrow-right" /> {t('common.readMore')}
+                            </Link>
+                          </div>
+                        </div>
                       </div>
                     </div>
-                  </div>
-                </div>
-              ))}
-            </Row>
-          )}
+                  ))
+                )}
+              </div>
+            </Col>
+          </Row>
         </Container>
       </div>
     </Layout>
