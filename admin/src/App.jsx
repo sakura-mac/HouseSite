@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter, Routes, Route, Navigate, Link } from 'react-router-dom';
+import { HashRouter, Routes, Route, Navigate, Link } from 'react-router-dom';
 import { Layout, Menu } from 'antd';
 import ErrorBoundary from './ErrorBoundary';
 import {
@@ -72,10 +72,10 @@ function AdminLayout() {
 
 export default function App() {
   return (
-    <BrowserRouter basename="/admin">
+    <HashRouter>
       <Routes>
         <Route path="/*" element={<AdminLayout />} />
       </Routes>
-    </BrowserRouter>
+    </HashRouter>
   );
 }
