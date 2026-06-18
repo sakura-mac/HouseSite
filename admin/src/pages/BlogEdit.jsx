@@ -5,6 +5,7 @@ import { useNavigate, useParams } from 'react-router-dom';
 import MDEditor from '@uiw/react-md-editor';
 import dayjs from 'dayjs';
 import { blogsApi, uploadApi } from '../api';
+import { getImageUrl } from '../utils/imageUrl';
 
 const { TextArea } = Input;
 
@@ -28,8 +29,7 @@ export default function BlogEdit() {
         setContent(data.content || '');
         const cover = data.cover || '';
         setCoverKey(cover);
-        const WORKER_URL = import.meta.env.VITE_API_URL ? import.meta.env.VITE_API_URL.replace(/\/api$/, '') : '';
-        if (cover) setCoverUrl(cover.startsWith('/api/') ? `${WORKER_URL}${cover}` : `${WORKER_URL}/api/images/${cover}`);
+        if (cover) setCoverUrl(getImageUrl(cover));
       }).catch(err => {
         message.error(err.error || '加载博客数据失败');
       });

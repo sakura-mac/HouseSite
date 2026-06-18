@@ -3,6 +3,7 @@ import { Table, Button, Space, Tag, Popconfirm, message, Input } from 'antd';
 import { PlusOutlined, EditOutlined, DeleteOutlined } from '@ant-design/icons';
 import { Link } from 'react-router-dom';
 import { housesApi } from '../api';
+import { getImageUrl } from '../utils/imageUrl';
 
 const TAG_LABELS = {
   selling: '在售房源',
@@ -55,8 +56,7 @@ export default function Houses() {
       width: 80,
       render: (cover) => {
         if (!cover) return <span style={{ color: '#ccc' }}>无</span>;
-        const WORKER_URL = import.meta.env.VITE_API_URL ? import.meta.env.VITE_API_URL.replace(/\/api$/, '') : '';
-        const url = cover.startsWith('/api/') ? `${WORKER_URL}${cover}` : `${WORKER_URL}/api/images/${cover}`;
+        const url = getImageUrl(cover);
         return <img src={url} alt="" style={{ width: 60, height: 40, objectFit: 'cover', borderRadius: 4 }} />;
       },
     },
