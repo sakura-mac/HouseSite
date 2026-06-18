@@ -18,12 +18,13 @@ function VisaPage() {
 
   return (
     <Layout>
-      {/* 联系方式区 - 使用原有蓝色banner背景风格 */}
-      <div className="page-title-area" style={{ height: 'auto', padding: '80px 0 70px' }}>
+      {/* 联系方式区 - 使用原有蓝色banner背景 */}
+      <div className="page-title-area" style={{ height: 'auto', paddingBottom: '70px' }}>
         <Container>
           <Row className="justify-content-center">
             <Col lg="8">
               <div className="page-title-item text-center" style={{ paddingTop: '0' }}>
+                <br /><br /><br />
                 <h3 style={{ fontSize: '28px', fontWeight: '700', marginBottom: '24px', color: '#2c3e50' }}>
                   {t('visa.contactTitle')}
                 </h3>
