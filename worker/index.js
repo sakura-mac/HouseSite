@@ -53,7 +53,7 @@ export default {
 
     // 图片代理：R2 读取
     if (pathname.startsWith('/api/images/')) {
-      const key = pathname.replace('/api/images/', '');
+      const key = decodeURIComponent(pathname.replace('/api/images/', ''));
       const object = await env.BUCKET.get(key);
       if (!object) return new Response('Not Found', { status: 404 });
       const headers = new Headers();
