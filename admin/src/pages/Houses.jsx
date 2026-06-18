@@ -8,12 +8,14 @@ const TAG_LABELS = {
   selling: '在售房源',
   managed: '在管房源',
   sold: '成交案例',
+  owned: '持有房源',
 };
 
 const TAG_COLORS = {
   selling: 'green',
   managed: 'blue',
   sold: 'gold',
+  owned: 'purple',
 };
 
 export default function Houses() {

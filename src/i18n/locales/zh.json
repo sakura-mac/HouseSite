@@ -174,7 +174,8 @@
     "tags": {
       "selling": "在售房源",
       "managed": "在管房源",
-      "sold": "成交案例"
+      "sold": "成交案例",
+      "owned": "持有房源"
     }
   },
   "common": {

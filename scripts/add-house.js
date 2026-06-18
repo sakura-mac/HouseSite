@@ -20,6 +20,7 @@ const TAG_OPTIONS = [
   { key: 'selling', label: '在售房源 / 販売中' },
   { key: 'managed', label: '在管房源 / 管理物件' },
   { key: 'sold', label: '成交案例 / 成約実績' },
+  { key: 'owned', label: '持有房源 / 持有物件' },
 ];
 
 async function main() {
