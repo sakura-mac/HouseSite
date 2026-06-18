@@ -127,7 +127,7 @@ const BlogDetails = () => {
                     <Row>
                         <Col lg="12">
                             <div className="page-title-item text-center">
-                                <h2 className="title"><br />{t('blog.title')}</h2>
+                                <h2 className="title">{t('blog.title')}</h2>
                                 <nav aria-label="breadcrumb">
                                     <ol className="breadcrumb">
                                         <li className="breadcrumb-item">
@@ -152,8 +152,8 @@ const BlogDetails = () => {
                             <div className="blog-standard">
                                 <div className="single-blog-standard mt-30">
                                     <div className="blog-details-content blog-border">
-                                        {error && <div>Error: {error}</div>}
-                                        {!content && !error && <div>Loading...</div>}
+                                        {error && <div>{t('common.error')}: {error}</div>}
+                                        {!content && !error && <div>{t('common.loading')}</div>}
                                         {content && (
                                             <div>
                                                 {/* 渲染 Markdown 并确保图片路径处理 */}

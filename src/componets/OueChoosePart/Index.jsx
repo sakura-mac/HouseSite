@@ -89,9 +89,7 @@ class OueChoosePart extends React.Component {
                     <Row>
                       <div className="col-md-6 col-sm-6">
                         <div
-                            className="our-choose-counter wow slideInUp"
-                            data-wow-duration=".5s"
-                            data-wow-delay="0s"
+                            className="our-choose-counter"
                         >
                           {/*<sub>*/}
                           {/*  <span className="counter">2456万</span> <sup>+</sup>*/}
@@ -109,9 +107,7 @@ class OueChoosePart extends React.Component {
                           </p>
                         </div>
                         <div
-                            className="our-choose-counter wow slideInUp mt-55"
-                            data-wow-duration="1s"
-                            data-wow-delay="0s"
+                            className="our-choose-counter mt-55"
                         >
                           {/*<sub>*/}
                           {/*  <span className="counter">多年</span> <sup></sup>*/}
@@ -131,9 +127,7 @@ class OueChoosePart extends React.Component {
                       </div>
                       <div className="col-md-6 col-sm-6">
                         <div
-                            className="our-choose-counter wow slideInUp"
-                            data-wow-duration="1.5s"
-                            data-wow-delay="0s"
+                            className="our-choose-counter"
                         >
                           <sub>
                             <span className="counter">98%</span> <sup>+</sup>
@@ -144,9 +138,7 @@ class OueChoosePart extends React.Component {
                           </p>
                         </div>
                         <div
-                          className="our-choose-counter wow slideInUp mt-55"
-                          data-wow-duration="2s"
-                          data-wow-delay="0s"
+                          className="our-choose-counter mt-55"
                         >
 
                         </div>

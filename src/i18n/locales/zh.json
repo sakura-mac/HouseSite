@@ -4,7 +4,7 @@
     "brandTitle": "Swallow Homes 小燕房地产",
     "brandSubtitle": "选 择 日 本 品 质 房 产 · 创 造 美 好 生 活",
     "email": "88swallow@gmail.com",
-    "phone": "09052562484",
+    "phone": "078-891-7099",
     "nav": {
       "home": "首页",
       "about": "关于我们",
@@ -42,8 +42,7 @@
     "contact": {
       "email": "联系邮箱：88swallow@gmail.com",
       "address": "联系地址：神戸市東灘区本山南町8丁目6番26号 東神戸センタービルW棟8階SD1号室",
-      "phone": "联系电话：078-891-7099",
-      "mobile": "手机号码：090-5256-2484"
+"phone": "联系电话：078-891-7099"
     },
     "qr": {
       "whatsapp": "WhatsApp",
@@ -60,12 +59,8 @@
     "tel": "078-891-7099",
     "faxTitle": "FAX",
     "fax": "078-452-7633",
-    "mobileTitle": "携帯",
-    "mobile": "09052562484",
     "emailTitle": "邮件",
-    "email": "88swallow@gmail.com",
-    "personTitle": "联系人",
-    "person": "李小燕"
+    "email": "88swallow@gmail.com"
   },
   "case": {
     "listTitle": "房源速览",
@@ -161,5 +156,40 @@
       "title": "新闻中心",
       "cta": "了解更多"
     }
+  },
+  "about": {
+    "title": "关于我们",
+    "experience": {
+      "subtitle": "多年经验",
+      "title": "不止温馨住宅",
+      "description": "凭借多年的房地产行业经验，致力于提供卓越的服务和创新的解决方案。买卖房产是人生中的重大决策，团队始终以客户为中心，提供从咨询到交易的全方位支持。无论是住宅、商业地产还是投资物业，都能帮助您做出明智选择，打造理想的生活与投资环境。"
+    },
+    "intro": {
+      "subtitle": "Swallow Homes",
+      "ceoTitle": "CEO介绍 — 李 小燕",
+      "desc1": "公司创始团队具有多年的丰富经验，一直致力于为客户提供优质的日本房产解决方案。多年来，我们专心、专业、专注于开拓日本房地产市场，帮助客户找到理想的房产。",
+      "desc2": "通过全体员工的共同努力，公司已成为日本房地产行业中的佼佼者。",
+      "stat1Value": "丰富",
+      "stat1Label": "房地产专业经验",
+      "stat2Value": "98%",
+      "stat2Label": "客户满意度"
+    }
+  },
+  "house": {
+    "filterLabel": "筛选房源：",
+    "all": "全部",
+    "loadMore": "加载更多 +",
+    "defaultCategory": "房产",
+    "tags": {
+      "贩卖中": "在售房源",
+      "管理物件": "在管房源",
+      "成約事例": "成交案例",
+      "所有物件": "自有房源"
+    }
+  },
+  "common": {
+    "loading": "加载中...",
+    "error": "错误",
+    "readMore": "了解更多"
   }
 }

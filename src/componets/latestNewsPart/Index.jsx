@@ -42,8 +42,7 @@ const LatestNewsPart = () => {
                                 <Row>
                                     {latestBlogs.map((blog, index) => (
                                         <div
-                                            className="col-lg-4 col-md-6 wow slideInUp"
-                                            data-wow-duration={`${0.5 * (index + 1)}s`}
+                                            className="col-lg-4 col-md-6"
                                             key={index}
                                         >
                                             <div className="letest-news-item mt-30" style={{ display: 'flex', flexDirection: 'column', height: '100%' }}>

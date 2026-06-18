@@ -1,11 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Container, Row, Col } from 'react-bootstrap';
+import { useI18n } from '../../i18n/i18n';
 
 const BlogSideBar = () => {
   const [blogs, setBlogs] = useState([]);
   const [currentPage, setCurrentPage] = useState(1);
-  const blogsPerPage = 3; // 每页展示的博客数量
+  const blogsPerPage = 3;
+  const { t, locale } = useI18n();
 
   useEffect(() => {
     // 加载博客列表的 JSON 文件
@@ -39,18 +41,18 @@ const BlogSideBar = () => {
                         />
                       </div>
                       <div className="blog-standard-content">
-                        <span>{blog.category || 'Uncategorized'}</span>
+                        <span>{blog.category ? (locale === 'ja' ? { '房地产投资': '不動産投資', '移民': '移民', 'Blog': 'ブログ' }[blog.category] || blog.category : blog.category) : t('blog.title')}</span>
                         <h2 className="title">
                           <Link to={`/blog-details/${blog.folderName}`}>{blog.title}</Link>
                         </h2>
                         <ul>
-                          <li><i className="fal fa-calendar-alt" /> {new Date(blog.date).toLocaleDateString()}</li>
+                          <li><i className="fal fa-calendar-alt" /> {new Date(blog.date).toLocaleDateString(locale === 'ja' ? 'ja-JP' : 'zh-CN')}</li>
                         </ul>
                         <p>{blog.description || blog.excerpt}</p>
                         <div className="blog-flex">
                           <div className="blog-right">
                             <Link to={`/blog-details/${blog.folderName}`}>
-                              <i className="fal fa-arrow-right" /> 了解更多
+                              <i className="fal fa-arrow-right" /> {t('common.readMore')}
                             </Link>
                           </div>
                         </div>

@@ -24,16 +24,12 @@ class AboutHistoryPart extends React.Component {
                 <Col lg="6" md="6">
                   <div className="history-item  pt-240">
                     <div
-                      className="history-thumb wow fadeInUp"
-                      data-wow-duration=".8s"
-                      data-wow-delay=".1s"
+                      className="history-thumb"
                     >
                       <img src="/assets/images/history-1.jpg" alt="history" />
                     </div>
                     <div
-                      className="history-content wow fadeInUp"
-                      data-wow-duration=".8s"
-                      data-wow-delay=".1s"
+                      className="history-content"
                     >
                       <span>1990 - Startup</span>
                       <h4 className="title">
@@ -47,16 +43,12 @@ class AboutHistoryPart extends React.Component {
                   {/* history item */}
                   <div className="history-item">
                     <div
-                      className="history-thumb wow fadeInUp"
-                      data-wow-duration=".1s"
-                      data-wow-delay=".2s"
+                      className="history-thumb"
                     >
                       <img src="/assets/images/history-2.jpg" alt="history" />
                     </div>
                     <div
-                      className="history-content wow fadeInUp"
-                      data-wow-duration=".1s"
-                      data-wow-delay=".2s"
+                      className="history-content"
                     >
                       <span>1990 - Startup</span>
                       <h4 className="title">
@@ -75,16 +67,12 @@ class AboutHistoryPart extends React.Component {
                 <Col lg="6" md="6">
                   <div className="history-item history-item-2">
                     <div
-                      className="history-thumb wow fadeInUp"
-                      data-wow-duration=".8s"
-                      data-wow-delay=".1s"
+                      className="history-thumb"
                     >
                       <img src="/assets/images/history-3.jpg" alt="history" />
                     </div>
                     <div
-                      className="history-content wow fadeInUp"
-                      data-wow-duration=".8s"
-                      data-wow-delay=".1s"
+                      className="history-content"
                     >
                       <span>1990 - Startup</span>
                       <h4 className="title">
@@ -98,16 +86,12 @@ class AboutHistoryPart extends React.Component {
                   {/* history item */}
                   <div className="history-item history-item-2">
                     <div
-                      className="history-thumb wow fadeInUp"
-                      data-wow-duration=".1s"
-                      data-wow-delay=".2s"
+                      className="history-thumb"
                     >
                       <img src="/assets/images/history-4.jpg" alt="history" />
                     </div>
                     <div
-                      className="history-content wow fadeInUp"
-                      data-wow-duration=".1s"
-                      data-wow-delay=".2s"
+                      className="history-content"
                     >
                       <span>1990 - Startup</span>
                       <h4 className="title">

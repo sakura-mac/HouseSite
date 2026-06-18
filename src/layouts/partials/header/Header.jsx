@@ -4,13 +4,16 @@ import { Link } from "react-router-dom";
 import SocialLink from './SocialLink';
 import Logo from '../../../assets/images/img_2.png';
 import { Row, Col, Navbar } from 'react-bootstrap';
-import { FiMail, FiSmartphone, FiShoppingCart } from "react-icons/fi";
+import { FiMail, FiPhone } from "react-icons/fi";
 import Logo1 from "../../../assets/images/img_2.png";
+import { withI18n } from '../../../i18n/i18n';
 
 
 class Header extends React.Component {
 
     render() {
+        const { t, locale } = this.props.i18n || {};
+        const brandFontClass = locale === 'ja' ? 'brand-font-ja' : 'brand-font-zh';
         return (
             <>
           <header className="header-area header-area-2 header-area-4">
@@ -20,16 +23,16 @@ class Header extends React.Component {
                   <div className="header-left-side text-center text-sm-left">
                     <ul>
                       <li>
-                        <a  href="mailto:webmaster@example.com" target="__blank">
+                        <a  href={`mailto:${t('header.email')}`} target="__blank">
                         <FiMail /> 
                         
-                        88swallow@gmail.com
+                        {t('header.email')}
                         </a>
                       </li>
                       <li>
-                        <a href="tel:786 875 864 75 7">
-                        <FiSmartphone /> 
-                        09052562484
+                        <a href={`tel:${t('header.phone')}`}>
+                        <FiPhone />{' '}
+                        {t('header.phone')}
                         </a>
                       </li>
                       </ul>
@@ -54,13 +57,19 @@ class Header extends React.Component {
                       font-style: normal;
                     }
 
+                    .brand-font-zh {
+                      font-family: 'Xique', serif;
+                    }
+                    .brand-font-ja {
+                      font-family: 'Noto Serif JP', serif;
+                      font-weight: 700;
+                    }
+
                     .custom-brand-text {
-                      font-family: 'Xique', sans-serif; /* 使用自定义字体 */
                       margin-left: 10px; /* 调整文字与图片的间距 */
                     }
                 
                     .custom-subtext {
-                      font-family: 'Xique', sans-serif; /* 使用自定义字体 */
                       text-align: center;
                       display: block;
                       margin-top: 5px; /* 调整文字与上方元素的间距 */
@@ -107,12 +116,12 @@ class Header extends React.Component {
                               height: 'auto'    // 保持图片的纵横比
                             }}
                         />
-                        <span className="custom-brand-text">
-                        Swallow Homes 小燕房地产
+                        <span className={`custom-brand-text ${brandFontClass}`}>
+                        {t('header.brandTitle')}
                       </span>
                       </div>
-                      <span className="custom-subtext">
-                      选 择 日 本 品 质 房 产 · 创 造 美 好 生 活
+                      <span className={`custom-subtext ${brandFontClass}`}>
+                      {t('header.brandSubtitle')}
                     </span>
                     </div>
                   </Navbar.Brand>
@@ -142,4 +151,4 @@ class Header extends React.Component {
     }
 }
 
-export default Header;
+export default withI18n(Header);

@@ -4,7 +4,7 @@
     "brandTitle": "Swallow Homes 小燕不動産",
     "brandSubtitle": "日本の優良不動産を選び、より良い暮らしをつくる",
     "email": "88swallow@gmail.com",
-    "phone": "09052562484",
+    "phone": "078-891-7099",
     "nav": {
       "home": "ホーム",
       "about": "会社概要",
@@ -42,12 +42,11 @@
     "contact": {
       "email": "メール：88swallow@gmail.com",
       "address": "住所：神戸市東灘区本山南町8丁目6番26号 東神戸センタービルW棟8階SD1号室",
-      "phone": "電話：078-891-7099",
-      "mobile": "携帯：090-5256-2484"
+"phone": "電話：078-891-7099"
     },
     "qr": {
       "whatsapp": "WhatsApp",
-      "wechat": "微信",
+      "wechat": "WeChat",
       "line": "LINE"
     },
     "copyright": "Copyright By@ swallow-homes - {year}"
@@ -60,12 +59,8 @@
     "tel": "078-891-7099",
     "faxTitle": "FAX",
     "fax": "078-452-7633",
-    "mobileTitle": "携帯",
-    "mobile": "09052562484",
     "emailTitle": "メール",
-    "email": "88swallow@gmail.com",
-    "personTitle": "担当",
-    "person": "李小燕"
+    "email": "88swallow@gmail.com"
   },
   "case": {
     "listTitle": "物件一覧",
@@ -161,5 +156,40 @@
       "title": "ニュース",
       "cta": "詳しく見る"
     }
+  },
+  "about": {
+    "title": "会社概要",
+    "experience": {
+      "subtitle": "長年の経験",
+      "title": "ただの住宅以上",
+      "description": "長年の不動産業界の経験を活かし、卓越したサービスと革新的なソリューションを提供します。不動産取引は人生の重大な決断であり、チームは常に顧客第一主義で、相談から取引まで全方位のサポートを提供します。住宅、商業不動産、投資用物件など、賢明な選択をサポートし、理想の生活と投資環境を実現します。"
+    },
+    "intro": {
+      "subtitle": "Swallow Homes",
+      "ceoTitle": "CEO紹介 — 李 小燕",
+      "desc1": "創業チームは長年の豊富な経験を持ち、お客様に質の高い日本の不動産ソリューションを提供することに尽力してきました。長年にわたり、日本の不動産市場の開拓に専念し、お客様の理想の物件探しをサポートしています。",
+      "desc2": "全社員の共同努力により、日本の不動産業界における優良企業へと成長しました。",
+      "stat1Value": "豊富",
+      "stat1Label": "不動産専門経験",
+      "stat2Value": "98%",
+      "stat2Label": "顧客満足度"
+    }
+  },
+  "house": {
+    "filterLabel": "物件絞り込み：",
+    "all": "すべて",
+    "loadMore": "もっと見る +",
+    "defaultCategory": "物件",
+    "tags": {
+      "贩卖中": "販売中",
+      "管理物件": "管理物件",
+      "成約事例": "成約実績",
+      "所有物件": "全物件"
+    }
+  },
+  "common": {
+    "loading": "読み込み中...",
+    "error": "エラー",
+    "readMore": "詳しく見る"
   }
 }

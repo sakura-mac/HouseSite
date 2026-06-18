@@ -17,9 +17,7 @@ class WhoWeAreArea extends React.Component {
             <Container>
               <Row>
                 <div
-                  className="col-lg-5 wow fadeInLeft"
-                  data-wow-duration="1s"
-                  data-wow-delay="0s"
+                  className="col-lg-5"
                 >
                   <div className="section-title">
                     <span>{t('home.who.subtitle', '关于我们')}</span>
@@ -31,9 +29,7 @@ class WhoWeAreArea extends React.Component {
                   {/* section title */}
                 </div>
                 <div
-                  className="col-lg-6 offset-lg-1 wow fadeInRight"
-                  data-wow-duration="1.5s"
-                  data-wow-delay="0s"
+                  className="col-lg-6 offset-lg-1"
                 >
                   <div className="section-title">
                     <p>
@@ -48,9 +44,7 @@ class WhoWeAreArea extends React.Component {
               </Row>
               <Row>
                 <div
-                  className="col-lg-3 col-md-6 col-sm-6 wow slideInUp"
-                  data-wow-duration=".5s"
-                  data-wow-delay="0s"
+                  className="col-lg-3 col-md-6 col-sm-6"
                 >
                   <div className="what-we-do-item text-center mt-30">
                     <FontAwesomeIcon  icon={faLaptopCode} />
@@ -62,9 +56,7 @@ class WhoWeAreArea extends React.Component {
                   {/* what we do item */}
                 </div>
                 <div
-                  className="col-lg-3 col-md-6 col-sm-6 wow slideInUp"
-                  data-wow-duration="1s"
-                  data-wow-delay="0s"
+                  className="col-lg-3 col-md-6 col-sm-6"
                 >
                   <div className="what-we-do-item text-center mt-30">
                     <FontAwesomeIcon icon={faFingerprint}  />
@@ -76,9 +68,7 @@ class WhoWeAreArea extends React.Component {
                   {/* what we do item */}
                 </div>
                 <div
-                  className="col-lg-3 col-md-6 col-sm-6 wow slideInUp"
-                  data-wow-duration="1.5s"
-                  data-wow-delay="0s"
+                  className="col-lg-3 col-md-6 col-sm-6"
                 >
                   <div className="what-we-do-item text-center mt-30">
                     <FontAwesomeIcon icon={faChalkboard} />
@@ -90,9 +80,7 @@ class WhoWeAreArea extends React.Component {
                   {/* what we do item */}
                 </div>
                 <div
-                  className="col-lg-3 col-md-6 col-sm-6 wow slideInUp"
-                  data-wow-duration="2s"
-                  data-wow-delay="0s"
+                  className="col-lg-3 col-md-6 col-sm-6"
                 >
                   <div className="what-we-do-item text-center mt-30">
                     <FontAwesomeIcon icon={faDatabase} />

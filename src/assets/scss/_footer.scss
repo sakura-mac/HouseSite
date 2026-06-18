@@ -31,11 +31,11 @@
 			padding-bottom: 17px;
 		}
 		& .footer-list{
-			display: flex;
+			display: block;
 			& ul{
-				display: inline-block;
-				& li{
-					line-height: 50px;
+				display: block;
+			& li{
+					line-height: 36px;
 					margin-right: 40px;
 					@media #{$lg} {
 						margin-right: 20px;

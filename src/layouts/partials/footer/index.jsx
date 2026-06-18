@@ -61,7 +61,6 @@ class Footer extends React.Component {
                         </ul>
                         <ul>
                           <li><Link to={"/blog-standard"}><i className="fal fa-angle-right"/> {t('footer.nav.blog')}</Link></li>
-                          <li><Link to={"/contact"}><i className="fal fa-angle-right"/> {t('footer.nav.contact')}</Link></li>
                           <li><a href="https://www.xiaohongshu.com/user/profile/5df991fd00000000010010eb" target="_blank" rel="noopener noreferrer"><i
                               className="fal fa-angle-right"/> {t('footer.nav.more')}</a></li>
                           {/*<li><Link to={"affiliate"}><i className="fal fa-angle-right" /> Affiliate</Link></li>*/}
@@ -78,8 +77,7 @@ class Footer extends React.Component {
                       <p>
                         {t('footer.contact.email')}<br/>
                         {t('footer.contact.address')}<br/>
-                        {t('footer.contact.phone')}<br/>
-                        {t('footer.contact.mobile')}
+                        {t('footer.contact.phone')}
                       </p>
                       <div style={{
                         display: 'flex',

@@ -46,32 +46,16 @@ class PartialNav extends React.Component {
                         <Link className="nav-link" to={'/case-study'}>{t('header.nav.houses')}</Link>
                         <ul className="sub-menu">
                             <li>
-                                <Link to={'/case-study'}>{t('header.nav.regions.kobe')}</Link>
+                                <Link to={'/case-study?tag=贩卖中'}>{t('house.tags.贩卖中')}</Link>
                             </li>
                             <li>
-                                <Link to={'/case-study'}>{t('header.nav.regions.osaka')}</Link>
+                                <Link to={'/case-study?tag=管理物件'}>{t('house.tags.管理物件')}</Link>
                             </li>
                             <li>
-                                <Link to={'/case-study'}>{t('header.nav.regions.kyoto')}</Link>
+                                <Link to={'/case-study?tag=成約事例'}>{t('house.tags.成約事例')}</Link>
                             </li>
                             <li>
-                                <Link to={'/case-study'}>{t('header.nav.regions.hokkaido')}</Link>
-                            </li>
-                            <li>
-                                <Link to={'/case-study'}>{t('header.nav.regions.okinawa')}</Link>
-                            </li>
-                            <li>
-                                <Link to={'/case-study'}>{t('header.nav.regions.east')}</Link>
-                            </li>
-
-                            <li>
-                                <Link to={'/case-study'}>{t('header.nav.regions.west')}</Link>
-                            </li>
-                            <li>
-                                <Link to={'/case-study'}>{t('header.nav.regions.tokyo')}</Link>
-                            </li>
-                            <li className="nav-item">
-                                <Link className="nav-link" to={'/contact'}>{t('header.nav.contact')}</Link>
+                                <Link to={'/case-study?tag=所有物件'}>{t('house.tags.所有物件')}</Link>
                             </li>
                         </ul>
                         {/* sub menu */}
@@ -110,9 +94,6 @@ class PartialNav extends React.Component {
                     {/*  </ul>*/}
                     {/*  /!* sub menu *!/*/}
                     {/*</li>*/}
-                    <li className="nav-item">
-                        <Link className="nav-link" to={'/contact'}>{t('header.nav.contact')}</Link>
-                    </li>
                     <li className="nav-item">
                         <a href="https://www.xiaohongshu.com/user/profile/5df991fd00000000010010eb" target="_blank" rel="noopener noreferrer"> {t('header.nav.more')}</a>
                     </li>

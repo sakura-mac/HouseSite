@@ -28,9 +28,9 @@ class Header extends React.Component {
                         info@webmail.com
                         </a>
                       </li>
-                      <li><a href="tel:786 875 864 75 7">
+                      <li><a href="tel:078-891-7099">
                         <FontAwesomeIcon icon={faPhone}   className="mr-1"/>
-                        786 875 864 75 7</a>
+                        078-891-7099</a>
                       </li>
                     </ul>
                   </div>

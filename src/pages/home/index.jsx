@@ -15,7 +15,6 @@ import OueChoosePart from '../../componets/OueChoosePart/Index';
 import MeetUsPart from '../../componets/MeetUsPart/Index';
 import LatestNewsPart from '../../componets/latestNewsPart/Index';
 import Brand2Part from '../../componets/brand2Part/Index';
-import PlayVideoControl from "../../componets/PlayVideoControl/PlayVideoControl";
 
 
 class Index1 extends React.Component {
@@ -24,7 +23,6 @@ class Index1 extends React.Component {
         return (
             <React.Fragment>
                 <Header />
-                <PlayVideoControl videoSrc="assets/videos/SwallowHome.mp4" />
                 <Banner/>
                 <WhoWeAreArea/>
                 <SolutionPart/>

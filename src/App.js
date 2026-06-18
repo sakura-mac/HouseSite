@@ -2,6 +2,8 @@ import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import { ToastContainer } from 'react-toastify';
 
+import { I18nProvider } from './i18n/i18n';
+
 import BlogList from './pages/blog/blog-standard';  // 博客列表页面
 import BlogDetails from './pages/blog/blog-details';  // 博客详情页面
 
@@ -11,7 +13,6 @@ import Index2 from './pages/home/index-2';
 import Index3 from './pages/home/index-3';
 import Index4 from './pages/home/index-4';
 import AboutPage from './pages/about';
-import ContactPage from './pages/contact';
 import ServicesPage from './pages/service';
 import ServicesDetails from './pages/service/details';
 import CaseStudy from './pages/case-study';
@@ -40,6 +41,7 @@ import Preloader from './componets/preloader';
 class App extends React.Component {
 	render() {
 		return (
+			<I18nProvider>
 			<BrowserRouter basename="/">
 				<Preloader />
 
@@ -69,7 +71,6 @@ class App extends React.Component {
 					<Route path="blog-grid" component={BlogGrid} />
 					{/*<Route path="/blog-details" component={BlogDetails} />*/}
 					<Route path="/blog-details2" component={BlogDetails2} />
-					<Route path="/contact" component={ContactPage} />
 					<Route path="buy-reasons" component={BuyReasons} />
 					<Route path="/blog-details/:folderName" component={BlogDetails} />
 
@@ -78,6 +79,7 @@ class App extends React.Component {
 				</Switch>
 				<ToastContainer />
 			</BrowserRouter>
+			</I18nProvider>
 		);
 	}
 }

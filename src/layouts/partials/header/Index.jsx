@@ -36,6 +36,7 @@ class Header extends React.Component {
 
   render() {
     const { t, locale, setLocale } = this.props.i18n || {};
+    const brandFontClass = locale === 'ja' ? 'brand-font-ja' : 'brand-font-zh';
     return (
         <React.Fragment>
           <header className="header-area header-area-2 header-area-4">
@@ -87,16 +88,22 @@ class Header extends React.Component {
                       font-style: normal;
                     }
 
+                    .brand-font-zh {
+                      font-family: 'Xique', serif;
+                    }
+                    .brand-font-ja {
+                      font-family: 'Noto Serif JP', serif;
+                      font-weight: 700;
+                    }
+
                     .custom-brand-text {
-                      font-family: 'Xique', sans-serif; /* 使用自定义字体 */
-                      margin-left: 10px; /* 调整文字与图片的间距 */
+                      margin-left: 10px;
                     }
                 
                     .custom-subtext {
-                      font-family: 'Xique', sans-serif; /* 使用自定义字体 */
                       text-align: center;
                       display: block;
-                      margin-top: 5px; /* 调整文字与上方元素的间距 */
+                      margin-top: 5px;
                     }
                 
                     /* 默认字体大小 */
@@ -141,11 +148,11 @@ class Header extends React.Component {
                               height: 'auto'    // 保持图片的纵横比
                             }}
                         />
-                        <span className="custom-brand-text">
+                        <span className={`custom-brand-text ${brandFontClass}`}>
                           {t('header.brandTitle')}
                       </span>
                       </div>
-                      <span className="custom-subtext">
+                      <span className={`custom-subtext ${brandFontClass}`}>
                         {t('header.brandSubtitle')}
                     </span>
                     </div>

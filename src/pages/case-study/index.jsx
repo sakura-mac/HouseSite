@@ -17,7 +17,7 @@ class CaseStudy extends React.Component {
                         <Row>
                             <Col lg="12">
                                 <div className="page-title-item text-center">
-                                    <h2 className="title"><br/>{t('case.listTitle')}</h2>
+                                    <h2 className="title">{t('case.listTitle')}</h2>
                                     <nav aria-label="breadcrumb">
 
 

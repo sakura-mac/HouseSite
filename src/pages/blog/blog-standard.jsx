@@ -15,7 +15,7 @@ class BlogStandard extends React.Component {
                         <Row>
                             <Col lg="12">
                                 <div className="page-title-item text-center">
-                                    <h2 className="title"><br/>{t('blog.title')}</h2>
+                                    <h2 className="title">{t('blog.title')}</h2>
                                     <nav aria-label="breadcrumb">
                                         <ol className="breadcrumb">
                                             <li className="breadcrumb-item">

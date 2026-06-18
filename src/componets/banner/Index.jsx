@@ -67,23 +67,19 @@ class Banner extends React.Component {
                     <Row>
                       <Col lg="9">
                         <div className="banner-content">
-                          <span data-animation="fadeInLeft" data-delay="0.5s">
+                          <span>
                             {t('home.banner.tagline', 'Estate Consultant')}
                           </span>
                           <h1
-                            data-animation="fadeInLeft"
-                            data-delay="0.9s"
                             className="title"
                           >
                             {t('home.banner.title', '发现完美住所')}
                           </h1>
-                          <p data-animation="fadeInLeft" data-delay="1.3s">
+                          <p>
                             {t('home.banner.description.line1', '在我们这里，每一处房产都拥有独特的魅力。')}<br />
                             {t('home.banner.description.line2', '通过个性化方案和精确定位，轻松实现舒适居住。')}
                           </p>
                           <Link
-                            data-animation="fadeInUp"
-                            data-delay="1.6s"
                             className="main-btn"
                             to={"/case-study"}
                           >
@@ -105,23 +101,19 @@ class Banner extends React.Component {
                     <Row>
                       <Col lg="9">
                         <div className="banner-content">
-                          <span data-animation="fadeInLeft" data-delay="0.5s">
+                          <span>
                             {t('home.banner.tagline', 'Estate Consultant')}
                           </span>
                           <h1
-                              data-animation="fadeInLeft"
-                              data-delay="0.9s"
                               className="title"
                           >
                             {t('home.banner.title', '发现完美住所')}
                           </h1>
-                          <p data-animation="fadeInLeft" data-delay="1.3s">
+                          <p>
                             {t('home.banner.description.line1', '在我们这里，每一处房产都拥有独特的魅力。')}<br/>
                             {t('home.banner.description.line2', '通过个性化方案和精确定位，轻松实现舒适居住。')}
                           </p>
                           <Link
-                              data-animation="fadeInUp"
-                              data-delay="1.6s"
                               className="main-btn"
                               to={"/case-study"}
                           >
@@ -144,23 +136,19 @@ class Banner extends React.Component {
                     <Row>
                       <Col lg="9">
                         <div className="banner-content">
-                          <span data-animation="fadeInLeft" data-delay="0.5s">
+                          <span>
                             {t('home.banner.tagline', 'Estate Consultant')}
                           </span>
                           <h1
-                              data-animation="fadeInLeft"
-                              data-delay="0.9s"
                               className="title"
                           >
                             {t('home.banner.title', '发现完美住所')}
                           </h1>
-                          <p data-animation="fadeInLeft" data-delay="1.3s">
+                          <p>
                             {t('home.banner.description.line1', '在我们这里，每一处房产都拥有独特的魅力。')}<br/>
                             {t('home.banner.description.line2', '通过个性化方案和精确定位，轻松实现舒适居住。')}
                           </p>
                           <Link
-                              data-animation="fadeInUp"
-                              data-delay="1.6s"
                               className="main-btn"
                               to={"/case-study"}
                           >
