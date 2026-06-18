@@ -15,7 +15,7 @@ const LatestServicesPart = () => {
     const fetchHouses = async () => {
       const response = await fetch(`${API_BASE}/api/houses`);
       const data = await response.json();
-      const latestHouses = data.slice(0, 6);
+      const latestHouses = data.slice(0, 3);
       setHouses(latestHouses.map(h => ({ ...h, folderName: h.folder_name })));
     };
     fetchHouses();
