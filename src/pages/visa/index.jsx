@@ -25,13 +25,13 @@ function VisaPage() {
             <Col lg="8">
               <div className="page-title-item text-center" style={{ paddingTop: '0' }}>
                 <br /><br /><br />
-                <h3 style={{ fontSize: '28px', fontWeight: '700', marginBottom: '24px', color: '#2c3e50' }}>
+                <h3 style={{ fontSize: '34px', fontWeight: '800', marginBottom: '28px', color: '#2c3e50' }}>
                   {t('visa.contactTitle')}
                 </h3>
-                <p style={{ fontSize: '16px', color: '#555', marginBottom: '10px', lineHeight: '2' }}>
+                <p style={{ fontSize: '19px', color: '#555', marginBottom: '12px', lineHeight: '2', fontWeight: '600' }}>
                   {t('visa.contactSubtitle')}
                 </p>
-                <p style={{ fontSize: '15px', color: '#777', marginBottom: '40px', lineHeight: '2' }}>
+                <p style={{ fontSize: '17px', color: '#777', marginBottom: '44px', lineHeight: '2', fontWeight: '500' }}>
                   {t('visa.contactDesc')}
                 </p>
                 <div style={{
