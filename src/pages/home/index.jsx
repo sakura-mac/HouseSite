@@ -5,7 +5,6 @@ import Footer from '../../layouts/partials/footer/index';
 
 import Banner from '../../componets/banner/Index';
 import WhoWeAreArea from '../../componets/whoWeAreArea/Index';
-import SolutionPart from '../../componets/solutionPart/Index';
 import LatestServicesPart from '../../componets/LatestServicesPart/Index';
 import WhyChoosePart from '../../componets/whyChoosePart/Index';
 import CaseStudiesPart from '../../componets/whoWeAreArea/Index';
@@ -25,7 +24,6 @@ class Index1 extends React.Component {
                 <Header />
                 <Banner/>
                 <WhoWeAreArea/>
-                <SolutionPart/>
                 <LatestServicesPart/>
 
                 {/*<WhyChoosePart/>*/}
