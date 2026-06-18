@@ -6,8 +6,9 @@ import { withI18n } from '../../../i18n/i18n';
 class Footer extends React.Component {
 
   render() {
-    const { t } = this.props.i18n || {};
+    const { t, locale } = this.props.i18n || {};
     const year = new Date().getFullYear();
+    const footerFontClass = locale === 'ja' ? 'footer-font-ja' : 'footer-font-zh';
     return (
         <React.Fragment>
           <footer className="footer-area footer-area-2 footer-area-1 bg_cover" style={{backgroundImage: 'url(assets/images/footer-bg.jpg)'}}>
@@ -21,7 +22,8 @@ class Footer extends React.Component {
                         @font-face {
                           font-family: 'Xique';
                           src: url('/assets/fonts/xique.woff2') format('woff2');
-
+                          font-weight: normal;
+                          font-style: normal;
                         }
 
                         .footer-img {
@@ -31,17 +33,24 @@ class Footer extends React.Component {
                         }
 
                         .footer-text {
-                          font-family: 'Xique', sans-serif; /* 使用自定义字体 */
                           font-size: 38px !important;
                           display: inline-block; /* 让文字和图片在一行显示 */
                           vertical-align: middle; /* 垂直对齐文字 */
                           margin-left: 10px; /* 图片和文字之间的间距 */
                         }
+
+                        .footer-font-zh {
+                          font-family: 'Xique', serif;
+                        }
+                        .footer-font-ja {
+                          font-family: 'Noto Serif JP', serif;
+                          font-weight: 700;
+                        }
                       `}
                       </style>
                       <div style={{display: 'flex', alignItems: 'center'}}>
                         <img src="/assets/images/IMG_6715.JPG.jpg" alt="" className="footer-img"/>
-                        <h4 className="footer-text" style={{color: 'white'}}>{t('footer.introTitle')}</h4>
+                        <h4 className={`footer-text ${footerFontClass}`} style={{color: 'white'}}>{t('footer.introTitle')}</h4>
                       </div>
                       <p>{t('footer.intro')}</p>
                     </div> {/* widget item 1 */}
