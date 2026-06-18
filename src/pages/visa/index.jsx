@@ -18,33 +18,6 @@ function VisaPage() {
 
   return (
     <Layout>
-      {/* 页头横幅 */}
-      <div className="page-title-area" style={{
-        backgroundImage: 'url(assets/images/page-title-bg.jpg)',
-        backgroundSize: 'cover',
-        backgroundPosition: 'center',
-      }}>
-        <Container>
-          <Row>
-            <Col lg="12">
-              <div className="page-title-item text-center">
-                <h2 className="title">{t('visa.title')}</h2>
-                <nav aria-label="breadcrumb">
-                  <ol className="breadcrumb">
-                    <li className="breadcrumb-item">
-                      <Link to={"/"}>{t('header.nav.home')}</Link>
-                    </li>
-                    <li className="breadcrumb-item active" aria-current="page">
-                      {t('visa.title')}
-                    </li>
-                  </ol>
-                </nav>
-              </div>
-            </Col>
-          </Row>
-        </Container>
-      </div>
-
       {/* 联系方式区 */}
       <div className="visa-contact-area pt-60 pb-30" style={{ background: '#f7f7f7' }}>
         <Container>
