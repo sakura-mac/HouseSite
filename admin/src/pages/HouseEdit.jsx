@@ -6,6 +6,7 @@ import MDEditor from '@uiw/react-md-editor';
 import dayjs from 'dayjs';
 import { housesApi, uploadApi } from '../api';
 import { getImageUrl } from '../utils/imageUrl';
+import { useMarkdownUpload } from '../hooks/useMarkdownUpload';
 
 const { TextArea } = Input;
 
@@ -43,13 +44,18 @@ export default function HouseEdit() {
     }
   }, [id]);
 
+  const { handleDrop, handlePaste } = useMarkdownUpload(
+    'houses',
+    () => form.getFieldValue('folder_name')
+  );
+
   const handleCoverUpload = async (file) => {
     const folderName = form.getFieldValue('folder_name') || 'misc';
     const hide = message.loading('正在压缩图片为 WebP...', 0);
     try {
       const res = await uploadApi.upload(file, 'houses', folderName);
       setCoverKey(res.key);
-      setCoverUrl(`/api/images/${res.key}`);
+      setCoverUrl(getImageUrl(res.key));
       hide();
       message.success(`封面上传成功（WebP, ${(res.size / 1024).toFixed(0)}KB）`);
     } catch (err) {
@@ -57,13 +63,6 @@ export default function HouseEdit() {
       message.error(err.error || '上传失败');
     }
     return false; // 阻止 antd 默认上传
-  };
-
-  // Markdown 编辑器拖拽/粘贴图片上传
-  const handleEditorImage = async (file) => {
-    const folderName = form.getFieldValue('folder_name') || 'misc';
-    const res = await uploadApi.upload(file, 'houses', folderName);
-    return `/api/images/${res.key}`;
   };
 
   const handleSubmit = async () => {
@@ -144,7 +143,7 @@ export default function HouseEdit() {
 
         <Col span={14}>
           <Card title="房源正文（Markdown）" bodyStyle={{ padding: 0 }}>
-            <div data-color-mode="light">
+            <div data-color-mode="light" onDrop={(e) => handleDrop(e, content, setContent)} onPaste={(e) => handlePaste(e, content, setContent)}>
               <MDEditor
                 value={content}
                 onChange={setContent}
@@ -153,7 +152,7 @@ export default function HouseEdit() {
               />
             </div>
             <div style={{ padding: '8px 16px', background: '#fafafa', fontSize: 12, color: '#999' }}>
-              提示：可直接拖拽图片到编辑器中，或用 ![](图片URL) 语法插入图片
+              提示：可直接拖拽或粘贴图片到编辑器中，自动压缩为 WebP 并上传；也支持 ![](图片URL) 语法
             </div>
           </Card>
         </Col>

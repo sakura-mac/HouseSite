@@ -25,13 +25,9 @@ api.interceptors.response.use(
   (res) => res.data,
   (err) => {
     if (err.response?.status === 401) {
-      // 生产环境通过同域 Pages Function 代理，Cloudflare Access 会自动处理鉴权
-      // 如果仍然 401，说明 Access session 过期，重定向到 Access 登录页
+      // 清除过期 token，不做 reload（避免无限刷新循环）
+      // Cloudflare Access 会自动处理鉴权跳转
       localStorage.removeItem('admin_token');
-      if (import.meta.env.PROD && !window.location.pathname.includes('/cdn-cgi/')) {
-        // 刷新页面触发 Cloudflare Access 重新认证
-        window.location.reload();
-      }
     }
     return Promise.reject(err.response?.data || err);
   }

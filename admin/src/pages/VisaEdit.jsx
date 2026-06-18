@@ -6,6 +6,7 @@ import MDEditor from '@uiw/react-md-editor';
 import dayjs from 'dayjs';
 import { visasApi, uploadApi } from '../api';
 import { getImageUrl } from '../utils/imageUrl';
+import { useMarkdownUpload } from '../hooks/useMarkdownUpload';
 
 const { TextArea } = Input;
 
@@ -36,13 +37,18 @@ export default function VisaEdit() {
     }
   }, [id]);
 
+  const { handleDrop, handlePaste } = useMarkdownUpload(
+    'visas',
+    () => form.getFieldValue('folder_name')
+  );
+
   const handleCoverUpload = async (file) => {
     const folderName = form.getFieldValue('folder_name') || 'misc';
     const hide = message.loading('正在压缩图片为 WebP...', 0);
     try {
       const res = await uploadApi.upload(file, 'visas', folderName);
       setCoverKey(res.key);
-      setCoverUrl(`/api/images/${res.key}`);
+      setCoverUrl(getImageUrl(res.key));
       hide();
       message.success(`封面上传成功（WebP, ${(res.size / 1024).toFixed(0)}KB）`);
     } catch (err) {
@@ -123,11 +129,11 @@ export default function VisaEdit() {
 
         <Col span={14}>
           <Card title="签证文章正文（Markdown）" bodyStyle={{ padding: 0 }}>
-            <div data-color-mode="light">
+            <div data-color-mode="light" onDrop={(e) => handleDrop(e, content, setContent)} onPaste={(e) => handlePaste(e, content, setContent)}>
 <MDEditor value={content} onChange={setContent} height={600} preview="live" />
             </div>
             <div style={{ padding: '8px 16px', background: '#fafafa', fontSize: 12, color: '#999' }}>
-              提示：可直接拖拽图片到编辑器中，或用 ![](图片URL) 语法插入图片
+              提示：可直接拖拽或粘贴图片到编辑器中，自动压缩为 WebP 并上传；也支持 ![](图片URL) 语法
             </div>
           </Card>
         </Col>
