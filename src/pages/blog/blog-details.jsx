@@ -5,6 +5,7 @@ import Layout from '../../layouts';
 import { Container, Row, Col } from 'react-bootstrap';
 import ReactMarkdown from 'react-markdown';
 import { useI18n } from '../../i18n/i18n';
+import { API_BASE, getContentImageUrl } from '../../config';
 
 const BlogDetails = () => {
     const { t } = useI18n();
@@ -12,25 +13,17 @@ const BlogDetails = () => {
     const [content, setContent] = useState('');
     const [error, setError] = useState(null);
 
-    // 移除 frontmatter 的函数
-    const removeFrontmatter = (markdownContent) => {
-        return markdownContent.replace(/^---[\s\S]+?---/, '').trim();
-    };
-
-    // 加载Markdown文件内容
+    // 加载博客内容（从 API 获取）
     useEffect(() => {
-        const filePath = `${process.env.PUBLIC_URL}/blogs/${folderName}/index.md`;
-        console.log("Fetching:", filePath);  // 输出请求路径用于调试
-        fetch(filePath)
+        fetch(`${API_BASE}/api/blogs/${folderName}`)
             .then(response => {
                 if (!response.ok) {
                     throw new Error(t('blog.notFound', 'Blog not found'));
                 }
-                return response.text();
+                return response.json();
             })
             .then(data => {
-                const cleanContent = removeFrontmatter(data);
-                setContent(cleanContent);
+                setContent(data.content || '');
             })
             .catch(err => {
                 setError(err.message);
@@ -114,8 +107,7 @@ const BlogDetails = () => {
         em: ({ children }) => <em style={styles.em}>{children}</em>,
         hr: () => <hr style={styles.hr} />,
             img: ({ node, ...props }) => {
-                let src = `${process.env.PUBLIC_URL}/blogs/${folderName}/${props.src}`;
-                src = src.replace(/\.(jpg|JPG|jpeg|png)$/i, '.webp');
+                const src = getContentImageUrl(props.src, folderName, 'blog');
                 return <img {...props} src={src} alt={props.alt} style={styles.img} />;
             },
     };

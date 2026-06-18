@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLongArrowAltRight } from '@fortawesome/free-solid-svg-icons';
 import { Container, Row, Col } from 'react-bootstrap';
 import { useI18n } from '../../i18n/i18n';
+import { API_BASE, getCoverUrl } from '../../config';
 
 const LatestServicesPart = () => {
   const [houses, setHouses] = useState([]);
@@ -12,11 +13,10 @@ const LatestServicesPart = () => {
   // 加载最新的房源
   useEffect(() => {
     const fetchHouses = async () => {
-      const response = await fetch('/house/house-list.json'); // 获取房源列表的 JSON 文件
+      const response = await fetch(`${API_BASE}/api/houses`);
       const data = await response.json();
-      // 获取最近6个房源
       const latestHouses = data.slice(0, 6);
-      setHouses(latestHouses);
+      setHouses(latestHouses.map(h => ({ ...h, folderName: h.folder_name })));
     };
     fetchHouses();
   }, []);
@@ -98,7 +98,7 @@ const LatestServicesPart = () => {
                     <div className="single-services" style={styles.singleService}>
                       {/* 使用房源的封面图片 */}
                       <div className="services-thumb" style={styles.imgContainer}>
-<img src={`/house/${house.folderName}/cover.webp`} alt={house.title} style={styles.img} />
+<img src={getCoverUrl(house)} alt={house.title} style={styles.img} />
                       </div>
                       <div className="services-content" style={styles.content}>
                         <h4 className="title" style={styles.title}>{house.title}</h4>

@@ -51,3 +51,14 @@ Thumbs.db
 .idea/
 /website_resources/
 /build.zip
+
+# 后台管理前端
+admin/node_modules/
+admin/dist/
+
+# Cloudflare Worker
+worker/.wrangler/
+.wrangler/
+
+# 测试目录
+/test/

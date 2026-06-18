@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Container, Row, Col } from 'react-bootstrap';
 import { useI18n } from '../../i18n/i18n';
+import { API_BASE, getCoverUrl } from '../../config';
 
 const BlogSideBar = () => {
   const [blogs, setBlogs] = useState([]);
@@ -10,10 +11,9 @@ const BlogSideBar = () => {
   const { t, locale } = useI18n();
 
   useEffect(() => {
-    // 加载博客列表的 JSON 文件
-    fetch('/blogs/blog-list.json')
+    fetch(`${API_BASE}/api/blogs`)
         .then(response => response.json())
-        .then(data => setBlogs(data))
+        .then(data => setBlogs(data.map(b => ({ ...b, folderName: b.folder_name }))))
         .catch(error => console.error('Error loading blog list:', error));
   }, []);
 
@@ -36,7 +36,7 @@ const BlogSideBar = () => {
                       <div className="blog-standard-thumb">
                         {/* 直接从文件夹中加载 cover.jpg */}
                         <img
-src={`/blogs/${blog.folderName}/cover.webp`}
+src={getCoverUrl(blog, 'blog')}
                             alt={blog.title || 'Blog cover'}
                         />
                       </div>

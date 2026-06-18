@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
 import { Container, Row, Col } from 'react-bootstrap';
 import { useI18n } from '../../i18n/i18n';
+import { API_BASE, getCoverUrl } from '../../config';
 
 const NewsPart = () => {
   const [houses, setHouses] = useState([]);
@@ -24,9 +25,10 @@ const NewsPart = () => {
   // 加载房产数据
   useEffect(() => {
     const fetchHouses = async () => {
-      const response = await fetch('/house/house-list.json');
+      const response = await fetch(`${API_BASE}/api/houses`);
       const data = await response.json();
-      setHouses(data);
+      // API 返回 folder_name，前台需要映射为 folderName
+      setHouses(data.map(h => ({ ...h, folderName: h.folder_name })));
     };
     fetchHouses();
   }, []);
@@ -159,7 +161,7 @@ const NewsPart = () => {
                       }}
                   >
                     <img
-src={`/house/${house.folderName}/cover.webp`}
+src={getCoverUrl(house)}
                         alt={house.title}
                         style={styles.img}
                     />

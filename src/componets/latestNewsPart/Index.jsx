@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLongArrowAltRight } from '@fortawesome/free-solid-svg-icons';
 import { Container, Row, Col } from 'react-bootstrap';
 import { useI18n } from '../../i18n/i18n';
+import { API_BASE } from '../../config';
 
 const LatestNewsPart = () => {
     const [latestBlogs, setLatestBlogs] = useState([]);
@@ -11,12 +12,12 @@ const LatestNewsPart = () => {
 
     useEffect(() => {
         // 加载最新的博客数据
-        fetch('/blogs/blog-list.json')
+        fetch(`${API_BASE}/api/blogs`)
             .then(response => response.json())
             .then(data => {
-                // 获取最新的三篇博客（按日期排序后提取前三条）
-                const sortedBlogs = data.sort((a, b) => new Date(b.date) - new Date(a.date));
-                setLatestBlogs(sortedBlogs.slice(0, 3)); // 只取前三条
+                const mapped = data.map(b => ({ ...b, folderName: b.folder_name }));
+                const sortedBlogs = mapped.sort((a, b) => new Date(b.date) - new Date(a.date));
+                setLatestBlogs(sortedBlogs.slice(0, 3));
             })
             .catch(error => console.error('Error loading blog list:', error));
     }, []);
