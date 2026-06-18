@@ -26,8 +26,11 @@ export default function VisaEdit() {
           date: data.date ? dayjs(data.date) : null,
         });
         setContent(data.content || '');
-        setCoverKey(data.cover || '');
-        if (data.cover) setCoverUrl(`/api/images/${data.cover}`);
+        const cover = data.cover || '';
+        setCoverKey(cover);
+        if (cover) setCoverUrl(cover.startsWith('/api/') ? cover : `/api/images/${cover}`);
+      }).catch(err => {
+        message.error(err.error || '加载签证数据失败');
       });
     }
   }, [id]);

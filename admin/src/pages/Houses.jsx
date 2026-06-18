@@ -53,9 +53,11 @@ export default function Houses() {
       title: '封面',
       dataIndex: 'cover',
       width: 80,
-      render: (cover) => cover
-        ? <img src={`/api/images/${cover}`} alt="" style={{ width: 60, height: 40, objectFit: 'cover', borderRadius: 4 }} />
-        : <span style={{ color: '#ccc' }}>无</span>,
+      render: (cover) => {
+        if (!cover) return <span style={{ color: '#ccc' }}>无</span>;
+        const url = cover.startsWith('/api/') ? cover : `/api/images/${cover}`;
+        return <img src={url} alt="" style={{ width: 60, height: 40, objectFit: 'cover', borderRadius: 4 }} />;
+      },
     },
     { title: '标题', dataIndex: 'title' },
     { title: '作者', dataIndex: 'author', width: 100 },
