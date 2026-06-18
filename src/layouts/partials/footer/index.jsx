@@ -93,17 +93,21 @@ class Footer extends React.Component {
                         justifyContent: 'space-between',
                         marginTop: '10px'
                       }}>
-                        <div style={{textAlign: 'center', flex: '0 0 calc(33% - 10px)', marginBottom: '10px'}}>
+                        <div style={{textAlign: 'center', flex: '0 0 calc(25% - 8px)', marginBottom: '10px'}}>
                           <img src="contact/whatsapp.jpg" alt="WhatsApp" style={{maxWidth: '80%', height: 'auto'}}/>
                           <p style={{fontSize: '14px', color: 'white'}}>{t('footer.qr.whatsapp')}</p>
                         </div>
-                        <div style={{textAlign: 'center', flex: '0 0 calc(33% - 10px)', marginBottom: '10px'}}>
+                        <div style={{textAlign: 'center', flex: '0 0 calc(25% - 8px)', marginBottom: '10px'}}>
                           <img src="contact/wechat.jpg" alt="微信" style={{maxWidth: '80%', height: 'auto'}}/>
                           <p style={{fontSize: '14px', color: 'white'}}>{t('footer.qr.wechat')}</p>
                         </div>
-                        <div style={{textAlign: 'center', flex: '0 0 calc(33% - 10px)', marginBottom: '10px'}}>
+                        <div style={{textAlign: 'center', flex: '0 0 calc(25% - 8px)', marginBottom: '10px'}}>
                           <img src="contact/line.jpg" alt="LINE" style={{maxWidth: '80%', height: 'auto'}}/>
                           <p style={{fontSize: '14px', color: 'white'}}>{t('footer.qr.line')}</p>
+                        </div>
+                        <div style={{textAlign: 'center', flex: '0 0 calc(25% - 8px)', marginBottom: '10px'}}>
+                          <img src="contact/linepublic.jpg" alt="LINE Public" style={{maxWidth: '80%', height: 'auto'}}/>
+                          <p style={{fontSize: '14px', color: 'white'}}>{t('footer.qr.linepublic')}</p>
                         </div>
                       </div>
                     </div>

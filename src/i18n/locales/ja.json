@@ -47,7 +47,8 @@
     "qr": {
       "whatsapp": "WhatsApp",
       "wechat": "WeChat",
-      "line": "LINE"
+      "line": "LINE",
+      "linepublic": "LINE公式"
     },
     "copyright": "Copyright By@ swallow-homes - {year}"
   },
