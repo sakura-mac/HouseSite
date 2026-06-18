@@ -6,7 +6,6 @@ import {
   DashboardOutlined,
   HomeOutlined,
   FileTextOutlined,
-  GlobalOutlined,
   SolutionOutlined,
 } from '@ant-design/icons';
 import Dashboard from './pages/Dashboard';
@@ -16,7 +15,6 @@ import Blogs from './pages/Blogs';
 import BlogEdit from './pages/BlogEdit';
 import Visas from './pages/Visas';
 import VisaEdit from './pages/VisaEdit';
-import Translations from './pages/Translations';
 
 const { Header, Sider, Content } = Layout;
 
@@ -28,7 +26,6 @@ function AdminLayout() {
     { key: '/houses', icon: <HomeOutlined />, label: <Link to="/houses">房源管理</Link> },
     { key: '/blogs', icon: <FileTextOutlined />, label: <Link to="/blogs">博客管理</Link> },
     { key: '/visas', icon: <SolutionOutlined />, label: <Link to="/visas">签证管理</Link> },
-    { key: '/translations', icon: <GlobalOutlined />, label: <Link to="/translations">翻译管理</Link> },
   ];
 
   return (
@@ -64,7 +61,6 @@ function AdminLayout() {
             <Route path="/visas" element={<Visas />} />
             <Route path="/visas/new" element={<VisaEdit />} />
             <Route path="/visas/:id" element={<VisaEdit />} />
-            <Route path="/translations" element={<Translations />} />
             <Route path="*" element={<Navigate to="/dashboard" />} />
           </Routes>
           </ErrorBoundary>
