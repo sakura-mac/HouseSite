@@ -2,8 +2,8 @@ import axios from 'axios';
 import { compressToWebP } from './utils/imageCompress';
 
 // API 基础地址
-// 开发环境通过 Vite proxy 代理到 localhost:8787 (wrangler dev)
-// 生产环境直接调用 Worker URL
+// 开发环境通过 Vite proxy 代理到 Worker
+// 生产环境通过同域 Pages Function 代理（/api/*），自动携带 Cloudflare Access 凭证
 const API_BASE = import.meta.env.VITE_API_URL || '/api';
 
 const api = axios.create({
@@ -25,9 +25,13 @@ api.interceptors.response.use(
   (res) => res.data,
   (err) => {
     if (err.response?.status === 401) {
-      // 登录页已移除，鉴权由 Cloudflare Access 处理
-      // 不再刷新页面，仅清理 token，交由 Cloudflare Access 重定向
+      // 生产环境通过同域 Pages Function 代理，Cloudflare Access 会自动处理鉴权
+      // 如果仍然 401，说明 Access session 过期，重定向到 Access 登录页
       localStorage.removeItem('admin_token');
+      if (import.meta.env.PROD && !window.location.pathname.includes('/cdn-cgi/')) {
+        // 刷新页面触发 Cloudflare Access 重新认证
+        window.location.reload();
+      }
     }
     return Promise.reject(err.response?.data || err);
   }

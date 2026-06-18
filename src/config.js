@@ -1,5 +1,6 @@
 // API 基础地址
-// 开发环境可通过 REACT_APP_API_URL 覆盖，默认指向线上 Worker
+// 开发环境可通过 REACT_APP_API_URL 覆盖
+// 生产环境通过同域 Pages Function 代理（/api/*）
 export const API_BASE =
   process.env.REACT_APP_API_URL || 'https://swallow-homes-api.perriersuda.workers.dev';
 
