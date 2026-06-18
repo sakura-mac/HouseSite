@@ -46,16 +46,16 @@ class PartialNav extends React.Component {
                         <Link className="nav-link" to={'/case-study'}>{t('header.nav.houses')}</Link>
                         <ul className="sub-menu">
                             <li>
-                                <Link to={'/case-study?tag=贩卖中'}>{t('house.tags.贩卖中')}</Link>
+                                <Link to={'/case-study?tag=selling'}>{t('house.tags.selling')}</Link>
                             </li>
                             <li>
-                                <Link to={'/case-study?tag=管理物件'}>{t('house.tags.管理物件')}</Link>
+                                <Link to={'/case-study?tag=managed'}>{t('house.tags.managed')}</Link>
                             </li>
                             <li>
-                                <Link to={'/case-study?tag=成約事例'}>{t('house.tags.成約事例')}</Link>
+                                <Link to={'/case-study?tag=sold'}>{t('house.tags.sold')}</Link>
                             </li>
                             <li>
-                                <Link to={'/case-study?tag=所有物件'}>{t('house.tags.所有物件')}</Link>
+                                <Link to={'/case-study?tag=owned'}>{t('house.tags.owned')}</Link>
                             </li>
                         </ul>
                         {/* sub menu */}
