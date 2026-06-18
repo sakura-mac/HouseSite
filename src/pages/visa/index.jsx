@@ -18,19 +18,19 @@ function VisaPage() {
 
   return (
     <Layout>
-      {/* 联系方式区 */}
-      <div style={{ background: 'linear-gradient(135deg, #f8f9fa 0%, #eef1f5 100%)', padding: '100px 20px 100px', position: 'relative', zIndex: '10' }}>
+      {/* 联系方式区 - 使用蓝色渐变背景 */}
+      <div style={{ background: 'linear-gradient(135deg, #a9c7ec 0%, #8bb5e0 100%)', padding: '100px 20px 100px', position: 'relative', zIndex: '10' }}>
         <Container>
           <Row className="justify-content-center">
             <Col lg="8">
               <div className="text-center">
-                <h3 style={{ fontSize: '28px', fontWeight: '700', marginBottom: '30px', color: '#2c3e50' }}>
+                <h3 style={{ fontSize: '28px', fontWeight: '700', marginBottom: '30px', color: '#fff' }}>
                   {t('visa.contactTitle')}
                 </h3>
-                <p style={{ fontSize: '17px', color: '#555', marginBottom: '16px', lineHeight: '2.2' }}>
+                <p style={{ fontSize: '17px', color: 'rgba(255,255,255,0.9)', marginBottom: '16px', lineHeight: '2.2' }}>
                   {t('visa.contactSubtitle')}
                 </p>
-                <p style={{ fontSize: '15px', color: '#888', marginBottom: '50px', lineHeight: '2.2' }}>
+                <p style={{ fontSize: '15px', color: 'rgba(255,255,255,0.75)', marginBottom: '50px', lineHeight: '2.2' }}>
                   {t('visa.contactDesc')}
                 </p>
                 <div style={{
@@ -43,7 +43,7 @@ function VisaPage() {
                     display: 'inline-flex', alignItems: 'center', gap: '10px',
                     padding: '14px 32px', background: '#fff', borderRadius: '50px',
                     color: '#333', textDecoration: 'none', fontSize: '15px', fontWeight: '500',
-                    boxShadow: '0 4px 12px rgba(0,0,0,0.08)',
+                    boxShadow: '0 4px 12px rgba(0,0,0,0.15)',
                     transition: 'all 0.3s ease',
                   }}>
                     <i className="fal fa-envelope" style={{ color: '#e74c3c' }} /> 88swallow@gmail.com
@@ -52,35 +52,12 @@ function VisaPage() {
                     display: 'inline-flex', alignItems: 'center', gap: '10px',
                     padding: '14px 32px', background: '#fff', borderRadius: '50px',
                     color: '#333', textDecoration: 'none', fontSize: '15px', fontWeight: '500',
-                    boxShadow: '0 4px 12px rgba(0,0,0,0.08)',
+                    boxShadow: '0 4px 12px rgba(0,0,0,0.15)',
                     transition: 'all 0.3s ease',
                   }}>
                     <i className="fal fa-phone" style={{ color: '#27ae60' }} /> 078-891-7099
                   </a>
                 </div>
-              </div>
-            </Col>
-          </Row>
-        </Container>
-      </div>
-
-      {/* 页面标题 */}
-      <div className="page-title-area">
-        <Container>
-          <Row>
-            <Col lg="12">
-              <div className="page-title-item text-center">
-                <h2 className="title">{t('visa.title')}</h2>
-                <nav aria-label="breadcrumb">
-                  <ol className="breadcrumb">
-                    <li className="breadcrumb-item">
-                      <Link to={"/"}>{t('header.nav.home')}</Link>
-                    </li>
-                    <li className="breadcrumb-item active" aria-current="page">
-                      {t('visa.title')}
-                    </li>
-                  </ol>
-                </nav>
               </div>
             </Col>
           </Row>
