@@ -25,8 +25,9 @@ api.interceptors.response.use(
   (res) => res.data,
   (err) => {
     if (err.response?.status === 401) {
+      // 登录页已移除，鉴权由 Cloudflare Access 处理
+      // 不再刷新页面，仅清理 token，交由 Cloudflare Access 重定向
       localStorage.removeItem('admin_token');
-      window.location.reload();
     }
     return Promise.reject(err.response?.data || err);
   }

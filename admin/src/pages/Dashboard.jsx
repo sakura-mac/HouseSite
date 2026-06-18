@@ -22,7 +22,13 @@ export default function Dashboard() {
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    dashboardApi.get().then(setData).finally(() => setLoading(false));
+    dashboardApi.get()
+      .then(setData)
+      .catch((err) => {
+        console.error('Dashboard load failed:', err);
+        setData({ houseCount: 0, blogCount: 0, visaCount: 0, tagCounts: {}, recentHouses: [] });
+      })
+      .finally(() => setLoading(false));
   }, []);
 
   if (loading) return <Spin size="large" />;

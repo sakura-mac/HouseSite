@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter, Routes, Route, Navigate, Link } from 'react-router-dom';
 import { Layout, Menu } from 'antd';
+import ErrorBoundary from './ErrorBoundary';
 import {
   DashboardOutlined,
   HomeOutlined,
@@ -51,6 +52,7 @@ function AdminLayout() {
           <span style={{ fontSize: '16px', fontWeight: '600' }}>后台管理系统</span>
         </Header>
         <Content style={{ margin: '24px 16px', padding: 24, background: '#fff', borderRadius: 8 }}>
+          <ErrorBoundary>
           <Routes>
             <Route path="/dashboard" element={<Dashboard />} />
             <Route path="/houses" element={<Houses />} />
@@ -65,6 +67,7 @@ function AdminLayout() {
             <Route path="/translations" element={<Translations />} />
             <Route path="*" element={<Navigate to="/dashboard" />} />
           </Routes>
+          </ErrorBoundary>
         </Content>
       </Layout>
     </Layout>

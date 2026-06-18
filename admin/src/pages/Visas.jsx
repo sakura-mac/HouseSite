@@ -11,7 +11,13 @@ export default function Visas() {
 
   const loadData = () => {
     setLoading(true);
-    visasApi.list().then(setVisas).finally(() => setLoading(false));
+    visasApi.list()
+      .then(setVisas)
+      .catch((err) => {
+        message.error(err.error || '加载签证列表失败');
+        setVisas([]);
+      })
+      .finally(() => setLoading(false));
   };
 
   useEffect(() => { loadData(); }, []);

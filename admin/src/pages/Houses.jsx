@@ -25,7 +25,13 @@ export default function Houses() {
 
   const loadData = () => {
     setLoading(true);
-    housesApi.list().then(setHouses).finally(() => setLoading(false));
+    housesApi.list()
+      .then(setHouses)
+      .catch((err) => {
+        message.error(err.error || '加载房源列表失败');
+        setHouses([]);
+      })
+      .finally(() => setLoading(false));
   };
 
   useEffect(() => { loadData(); }, []);

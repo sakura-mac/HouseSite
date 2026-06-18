@@ -11,7 +11,13 @@ export default function Blogs() {
 
   const loadData = () => {
     setLoading(true);
-    blogsApi.list().then(setBlogs).finally(() => setLoading(false));
+    blogsApi.list()
+      .then(setBlogs)
+      .catch((err) => {
+        message.error(err.error || '加载博客列表失败');
+        setBlogs([]);
+      })
+      .finally(() => setLoading(false));
   };
 
   useEffect(() => { loadData(); }, []);
