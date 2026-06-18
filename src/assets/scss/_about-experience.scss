@@ -26,12 +26,12 @@
 
 		}
 		& .title{
-			font-size: 60px;
-			line-height: 70px;
+			font-size: 36px;
+			line-height: 48px;
 			padding-top: 24px;
 			@media #{$lg} {
-				font-size: 46px;
-				line-height: 56px;
+				font-size: 32px;
+				line-height: 42px;
 			}
 			@media #{$md} {
 				padding-right: 130px;
