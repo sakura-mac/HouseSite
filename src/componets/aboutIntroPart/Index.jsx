@@ -26,47 +26,6 @@ class AboutIntroPart extends React.Component {
                   <p>
                     {t('about.intro.desc2')}
                   </p>
-                  <ul style={{
-                    display: 'flex',
-                    justifyContent: 'space-between',
-                    listStyle: 'none',
-                    padding: 0,
-                    marginTop: '20px',
-                    color: '#000',
-                  }}>
-                    <li style={{marginRight: '20px'}}>
-                      <strong style={{color: '#000', fontSize: '2em'}}>{t('about.intro.stat1Value')}</strong>
-                      <br/>
-                      <p style={{color: '#808080'}}>{t('about.intro.stat1Label')}</p>
-                    </li>
-                    <li style={{}}>
-                      <strong style={{color: '#000', fontSize: '2em'}}>{t('about.intro.stat2Value')}</strong>
-                      <br/>
-                      <p style={{color: '#808080'}}>{t('about.intro.stat2Label')}</p>
-                    </li>
-                    <br/>
-
-                  </ul>
-                  <div style={{
-                    display: 'flex',
-                    flexWrap: 'wrap',
-                    justifyContent: 'space-between',
-                    alignItems: 'flex-end',
-                    marginTop: '17px'
-                  }}>
-                    <div style={{textAlign: 'center', flex: '0 0 calc(33% - 10px)', marginBottom: '10px'}}>
-                      <img src="contact/whatsapp.jpg" alt="WhatsApp" style={{maxWidth: '100%', height: 'auto',color: 'black'}}/>
-                      <p style={{fontSize: '14px', color: 'black'}}>{t('footer.qr.whatsapp')}</p>
-                    </div>
-                    <div style={{textAlign: 'center', flex: '0 0 calc(33% - 10px)', marginBottom: '10px'}}>
-                      <img src="contact/wechat.jpg" alt="WeChat" style={{maxWidth: '100%', height: 'auto',color: 'black'}}/>
-                      <p style={{fontSize: '14px', color: 'black'}}>{t('footer.qr.wechat')}</p>
-                    </div>
-                    <div style={{textAlign: 'center', flex: '0 0 calc(33% - 10px)', marginBottom: '10px'}}>
-                      <img src="contact/line.jpg" alt="LINE" style={{maxWidth: '100%', height: 'auto',color: 'black'}}/>
-                      <p style={{fontSize: '14px', color: 'black'}}>{t('footer.qr.line')}</p>
-                    </div>
-                  </div>
                 </div>
               </Col>
             </Row>
