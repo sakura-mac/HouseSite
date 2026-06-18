@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { BrowserRouter, Routes, Route, Navigate, useNavigate, Link } from 'react-router-dom';
+import { BrowserRouter, Routes, Route, Navigate, Link } from 'react-router-dom';
 import { Layout, Menu } from 'antd';
 import {
   DashboardOutlined,
@@ -28,11 +28,6 @@ function AdminLayout() {
     { key: '/translations', icon: <GlobalOutlined />, label: <Link to="/translations">翻译管理</Link> },
     { key: '/settings', icon: <SettingOutlined />, label: <Link to="/settings">站点设置</Link> },
   ];
-
-  const handleLogout = () => {
-    authApi.logout();
-    navigate('/login');
-  };
 
   return (
     <Layout style={{ minHeight: '100vh' }}>
