@@ -52,8 +52,9 @@
   },
   "scripts": {
     "start": "NODE_OPTIONS=--openssl-legacy-provider react-scripts start",
-    "build:ci": "CI=false NODE_OPTIONS=--openssl-legacy-provider react-scripts build",
-    "build": "NODE_OPTIONS=--openssl-legacy-provider react-scripts build",
+  "build:ci": "CI=false NODE_OPTIONS=--openssl-legacy-provider react-scripts build && npm run build:admin",
+  "build": "NODE_OPTIONS=--openssl-legacy-provider react-scripts build && npm run build:admin",
+  "build:admin": "cd admin && npm install && npm run build && cp -r dist ../build/admin",
     "test": "react-scripts test",
     "translate:ja": "node scripts/auto-translate.js ja",
     "add-house": "node scripts/add-house.js",
