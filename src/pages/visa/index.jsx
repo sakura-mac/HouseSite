@@ -53,23 +53,6 @@ function VisaPage() {
                     <i className="fal fa-phone" /> 078-891-7099
                   </a>
                 </div>
-                <div style={{
-                  display: 'flex', flexWrap: 'wrap', justifyContent: 'center',
-                  gap: '16px', marginTop: '16px',
-                }}>
-                  <span style={{
-                    padding: '6px 16px', background: '#07c160', borderRadius: '20px',
-                    color: '#fff', fontSize: '13px',
-                  }}>{t('visa.wechat')}: 88swallow</span>
-                  <span style={{
-                    padding: '6px 16px', background: '#25D366', borderRadius: '20px',
-                    color: '#fff', fontSize: '13px',
-                  }}>{t('visa.whatsapp')}: 88swallow</span>
-                  <span style={{
-                    padding: '6px 16px', background: '#06C755', borderRadius: '20px',
-                    color: '#fff', fontSize: '13px',
-                  }}>{t('visa.line')}: 88swallow</span>
-                </div>
               </div>
             </Col>
           </Row>
