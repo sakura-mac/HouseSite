@@ -19,25 +19,25 @@ function VisaPage() {
   return (
     <Layout>
       {/* 联系方式区 */}
-      <div className="visa-contact-area" style={{ background: 'linear-gradient(135deg, #f8f9fa 0%, #eef1f5 100%)', padding: '60px 0 50px' }}>
+      <div className="visa-contact-area" style={{ background: 'linear-gradient(135deg, #f8f9fa 0%, #eef1f5 100%)', padding: '80px 0 80px' }}>
         <Container>
           <Row className="justify-content-center">
             <Col lg="8">
               <div className="text-center">
-                <h3 style={{ fontSize: '26px', fontWeight: '700', marginBottom: '16px', color: '#2c3e50' }}>
+                <h3 style={{ fontSize: '26px', fontWeight: '700', marginBottom: '24px', color: '#2c3e50' }}>
                   {t('visa.contactTitle')}
                 </h3>
-                <p style={{ fontSize: '17px', color: '#555', marginBottom: '8px', lineHeight: '1.8' }}>
+                <p style={{ fontSize: '17px', color: '#555', marginBottom: '12px', lineHeight: '2' }}>
                   {t('visa.contactSubtitle')}
                 </p>
-                <p style={{ fontSize: '15px', color: '#888', marginBottom: '32px', lineHeight: '1.8' }}>
+                <p style={{ fontSize: '15px', color: '#888', marginBottom: '40px', lineHeight: '2' }}>
                   {t('visa.contactDesc')}
                 </p>
                 <div style={{
                   display: 'flex',
                   flexWrap: 'wrap',
                   justifyContent: 'center',
-                  gap: '24px',
+                  gap: '28px',
                 }}>
                   <a href="mailto:88swallow@gmail.com" style={{
                     display: 'inline-flex', alignItems: 'center', gap: '10px',
