@@ -1,16 +1,13 @@
 import React, { useState, useEffect } from 'react';
 import { BrowserRouter, Routes, Route, Navigate, useNavigate, Link } from 'react-router-dom';
-import { Layout, Menu, theme } from 'antd';
+import { Layout, Menu } from 'antd';
 import {
   DashboardOutlined,
   HomeOutlined,
   FileTextOutlined,
   GlobalOutlined,
   SettingOutlined,
-  LogoutOutlined,
 } from '@ant-design/icons';
-import { authApi } from './api';
-import Login from './pages/Login';
 import Dashboard from './pages/Dashboard';
 import Houses from './pages/Houses';
 import HouseEdit from './pages/HouseEdit';
@@ -23,7 +20,6 @@ const { Header, Sider, Content } = Layout;
 
 function AdminLayout() {
   const [collapsed, setCollapsed] = useState(false);
-  const navigate = useNavigate();
 
   const menuItems = [
     { key: '/dashboard', icon: <DashboardOutlined />, label: <Link to="/dashboard">仪表盘</Link> },
@@ -57,9 +53,7 @@ function AdminLayout() {
           background: '#fff',
         }}>
           <span style={{ fontSize: '16px', fontWeight: '600' }}>后台管理系统</span>
-          <a onClick={handleLogout} style={{ color: '#666', cursor: 'pointer' }}>
-            <LogoutOutlined /> 退出登录
-          </a>
+          <span style={{ color: '#999', fontSize: '13px' }}>由 Cloudflare Access 保护</span>
         </Header>
         <Content style={{ margin: '24px 16px', padding: 24, background: '#fff', borderRadius: 8 }}>
           <Routes>
@@ -80,21 +74,11 @@ function AdminLayout() {
   );
 }
 
-function ProtectedRoute({ children }) {
-  if (!authApi.isLoggedIn()) return <Navigate to="/login" />;
-  return children;
-}
-
 export default function App() {
   return (
     <BrowserRouter basename="/admin">
       <Routes>
-        <Route path="/login" element={<Login />} />
-        <Route path="/*" element={
-          <ProtectedRoute>
-            <AdminLayout />
-          </ProtectedRoute>
-        } />
+        <Route path="/*" element={<AdminLayout />} />
       </Routes>
     </BrowserRouter>
   );
