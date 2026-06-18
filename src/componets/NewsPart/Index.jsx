@@ -34,7 +34,7 @@ const NewsPart = () => {
   }, []);
 
   // 可选标签列表（用原始中文 key 做匹配，显示用 i18n）
-  const tagKeys = ['selling', 'managed', 'sold', 'owned'];
+  const tagKeys = ['selling', 'managed', 'sold'];
 
   // 根据 tag 筛选房源
   const currentTag = selectedTag || activeTag;

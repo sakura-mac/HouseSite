@@ -8,14 +8,12 @@ const TAG_LABELS = {
   selling: '在售房源',
   managed: '在管房源',
   sold: '成交案例',
-  owned: '自有房源',
 };
 
 const TAG_COLORS = {
   selling: 'green',
   managed: 'blue',
   sold: 'gold',
-  owned: 'purple',
 };
 
 export default function Houses() {
@@ -55,7 +53,8 @@ export default function Houses() {
       width: 80,
       render: (cover) => {
         if (!cover) return <span style={{ color: '#ccc' }}>无</span>;
-        const url = cover.startsWith('/api/') ? cover : `/api/images/${cover}`;
+        const WORKER_URL = import.meta.env.VITE_API_URL ? import.meta.env.VITE_API_URL.replace(/\/api$/, '') : '';
+        const url = cover.startsWith('/api/') ? `${WORKER_URL}${cover}` : `${WORKER_URL}/api/images/${cover}`;
         return <img src={url} alt="" style={{ width: 60, height: 40, objectFit: 'cover', borderRadius: 4 }} />;
       },
     },

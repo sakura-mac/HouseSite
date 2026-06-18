@@ -12,7 +12,6 @@ const TAG_OPTIONS = [
   { value: 'selling', label: '在售房源 / 販売中' },
   { value: 'managed', label: '在管房源 / 管理物件' },
   { value: 'sold', label: '成交案例 / 成約実績' },
-  { value: 'owned', label: '自有房源 / 所有物件' },
 ];
 
 export default function HouseEdit() {
@@ -35,7 +34,8 @@ export default function HouseEdit() {
         setContent(data.content || '');
         const cover = data.cover || '';
         setCoverKey(cover);
-        if (cover) setCoverUrl(cover.startsWith('/api/') ? cover : `/api/images/${cover}`);
+        const WORKER_URL = import.meta.env.VITE_API_URL ? import.meta.env.VITE_API_URL.replace(/\/api$/, '') : '';
+        if (cover) setCoverUrl(cover.startsWith('/api/') ? `${WORKER_URL}${cover}` : `${WORKER_URL}/api/images/${cover}`);
       }).catch(err => {
         message.error(err.error || '加载房源数据失败');
       });
@@ -102,7 +102,7 @@ export default function HouseEdit() {
       <Row gutter={24}>
         <Col span={10}>
           <Card title="基本信息">
-            <Form form={form} layout="vertical" initialValues={{ tags: ['owned'], author: '李 小燕' }}>
+            <Form form={form} layout="vertical" initialValues={{ tags: ['managed'], author: '李 小燕' }}>
               <Form.Item name="title" label="标题" rules={[{ required: true, message: '请输入标题' }]}>
                 <Input placeholder="如：大阪中央区塔楼" />
               </Form.Item>
@@ -148,7 +148,7 @@ export default function HouseEdit() {
                 value={content}
                 onChange={setContent}
                 height={600}
-                preview="edit"
+                preview="live"
               />
             </div>
             <div style={{ padding: '8px 16px', background: '#fafafa', fontSize: 12, color: '#999' }}>

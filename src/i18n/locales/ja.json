@@ -174,8 +174,7 @@
     "tags": {
       "selling": "販売中",
       "managed": "管理物件",
-      "sold": "成約実績",
-      "owned": "持有物件"
+      "sold": "成約実績"
     }
   },
   "common": {

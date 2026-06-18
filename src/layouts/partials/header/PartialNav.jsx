@@ -54,9 +54,6 @@ class PartialNav extends React.Component {
                             <li>
                                 <Link to={'/case-study?tag=sold'}>{t('house.tags.sold')}</Link>
                             </li>
-                            <li>
-                                <Link to={'/case-study?tag=owned'}>{t('house.tags.owned')}</Link>
-                            </li>
                         </ul>
                         {/* sub menu */}
                     </li>

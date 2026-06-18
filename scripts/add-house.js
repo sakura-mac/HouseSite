@@ -20,7 +20,6 @@ const TAG_OPTIONS = [
   { key: 'selling', label: '在售房源 / 販売中' },
   { key: 'managed', label: '在管房源 / 管理物件' },
   { key: 'sold', label: '成交案例 / 成約実績' },
-  { key: 'owned', label: '自有房源 / 所有物件' },
 ];
 
 async function main() {
@@ -44,10 +43,7 @@ async function main() {
     .filter((n) => n >= 1 && n <= TAG_OPTIONS.length)
     .map((n) => TAG_OPTIONS[n - 1].key);
 
-  // 默认加 owned
-  if (!selectedTags.includes('owned')) {
-    selectedTags.push('owned');
-  }
+  // 默认不加 owned
 
   // 3. 图片文件夹
   const imgPath = (await question('\n图片所在文件夹路径 (拖入终端即可，留空则跳过): ')).trim().replace(/['"]/g, '');
@@ -102,7 +98,7 @@ title: "${title}"
 date: "${date}"
 author: "${author}"
 category: ""
-tags: ${JSON.stringify(selectedTags.filter((t) => !['selling', 'managed', 'sold', 'owned'].includes(t)))}
+tags: ${JSON.stringify(selectedTags.filter((t) => !['selling', 'managed', 'sold'].includes(t)))}
 description: "${description}"
 ---
 

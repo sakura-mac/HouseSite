@@ -28,7 +28,8 @@ export default function BlogEdit() {
         setContent(data.content || '');
         const cover = data.cover || '';
         setCoverKey(cover);
-        if (cover) setCoverUrl(cover.startsWith('/api/') ? cover : `/api/images/${cover}`);
+        const WORKER_URL = import.meta.env.VITE_API_URL ? import.meta.env.VITE_API_URL.replace(/\/api$/, '') : '';
+        if (cover) setCoverUrl(cover.startsWith('/api/') ? `${WORKER_URL}${cover}` : `${WORKER_URL}/api/images/${cover}`);
       }).catch(err => {
         message.error(err.error || '加载博客数据失败');
       });
@@ -123,7 +124,7 @@ export default function BlogEdit() {
         <Col span={14}>
           <Card title="博客正文（Markdown）" bodyStyle={{ padding: 0 }}>
             <div data-color-mode="light">
-              <MDEditor value={content} onChange={setContent} height={600} preview="edit" />
+<MDEditor value={content} onChange={setContent} height={600} preview="live" />
             </div>
             <div style={{ padding: '8px 16px', background: '#fafafa', fontSize: 12, color: '#999' }}>
               提示：可直接拖拽图片到编辑器中，或用 ![](图片URL) 语法插入图片
