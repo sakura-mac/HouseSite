@@ -18,6 +18,8 @@ const BlogDetails = lazy(() => import('./pages/blog/blog-details'));
 const BlogGrid = lazy(() => import('./pages/blog/blog-grid'));
 const BlogDetails2 = lazy(() => import('./pages/blog/blog-details2'));
 const BuyReasons = lazy(() => import('./pages/blog/buy-reasons'));
+const VisaPage = lazy(() => import('./pages/visa'));
+const VisaDetails = lazy(() => import('./pages/visa/details'));
 const NoMatch = lazy(() => import('./pages/errors/no-match'));
 
 const LoadingFallback = () => <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '50vh' }} />;
@@ -44,6 +46,8 @@ class App extends React.Component {
 					<Route path="/blog-details2" component={BlogDetails2} />
 					<Route path="buy-reasons" component={BuyReasons} />
 					<Route path="/blog-details/:folderName" component={BlogDetails} />
+					<Route exact path="/visa" component={VisaPage} />
+					<Route path="/visa-details/:folderName" component={VisaDetails} />
 				</Switch>
 				</Suspense>
 				<ToastContainer />

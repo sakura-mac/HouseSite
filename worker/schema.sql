@@ -35,6 +35,23 @@ CREATE TABLE IF NOT EXISTS blogs (
   updated_at TEXT DEFAULT (datetime('now'))
 );
 
+-- 签证表
+CREATE TABLE IF NOT EXISTS visas (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  folder_name TEXT UNIQUE NOT NULL,
+  title TEXT NOT NULL,
+  date TEXT NOT NULL,
+  author TEXT DEFAULT '',
+  description TEXT DEFAULT '',
+  category TEXT DEFAULT '',
+  tags TEXT DEFAULT '[]',
+  content TEXT DEFAULT '',
+  cover TEXT DEFAULT '',
+  sort_order INTEGER DEFAULT 0,
+  created_at TEXT DEFAULT (datetime('now')),
+  updated_at TEXT DEFAULT (datetime('now'))
+);
+
 -- 翻译表
 CREATE TABLE IF NOT EXISTS translations (
   lang TEXT NOT NULL,
@@ -62,3 +79,4 @@ CREATE TABLE IF NOT EXISTS admin_users (
 CREATE INDEX IF NOT EXISTS idx_houses_tags ON houses(tags);
 CREATE INDEX IF NOT EXISTS idx_houses_sort ON houses(sort_order DESC);
 CREATE INDEX IF NOT EXISTS idx_blogs_sort ON blogs(sort_order DESC);
+CREATE INDEX IF NOT EXISTS idx_visas_sort ON visas(sort_order DESC);

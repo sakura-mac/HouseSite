@@ -6,12 +6,15 @@ import {
   HomeOutlined,
   FileTextOutlined,
   GlobalOutlined,
+  SolutionOutlined,
 } from '@ant-design/icons';
 import Dashboard from './pages/Dashboard';
 import Houses from './pages/Houses';
 import HouseEdit from './pages/HouseEdit';
 import Blogs from './pages/Blogs';
 import BlogEdit from './pages/BlogEdit';
+import Visas from './pages/Visas';
+import VisaEdit from './pages/VisaEdit';
 import Translations from './pages/Translations';
 
 const { Header, Sider, Content } = Layout;
@@ -23,6 +26,7 @@ function AdminLayout() {
     { key: '/dashboard', icon: <DashboardOutlined />, label: <Link to="/dashboard">仪表盘</Link> },
     { key: '/houses', icon: <HomeOutlined />, label: <Link to="/houses">房源管理</Link> },
     { key: '/blogs', icon: <FileTextOutlined />, label: <Link to="/blogs">博客管理</Link> },
+    { key: '/visas', icon: <SolutionOutlined />, label: <Link to="/visas">签证管理</Link> },
     { key: '/translations', icon: <GlobalOutlined />, label: <Link to="/translations">翻译管理</Link> },
   ];
 
@@ -55,6 +59,9 @@ function AdminLayout() {
             <Route path="/blogs" element={<Blogs />} />
             <Route path="/blogs/new" element={<BlogEdit />} />
             <Route path="/blogs/:id" element={<BlogEdit />} />
+            <Route path="/visas" element={<Visas />} />
+            <Route path="/visas/new" element={<VisaEdit />} />
+            <Route path="/visas/:id" element={<VisaEdit />} />
             <Route path="/translations" element={<Translations />} />
             <Route path="*" element={<Navigate to="/dashboard" />} />
           </Routes>

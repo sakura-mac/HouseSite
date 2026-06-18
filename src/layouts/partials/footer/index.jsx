@@ -70,8 +70,7 @@ class Footer extends React.Component {
                         </ul>
                         <ul>
                           <li><Link to={"/blog-standard"}><i className="fal fa-angle-right"/> {t('footer.nav.blog')}</Link></li>
-                          <li><a href="https://www.xiaohongshu.com/user/profile/5df991fd00000000010010eb" target="_blank" rel="noopener noreferrer"><i
-                              className="fal fa-angle-right"/> {t('footer.nav.more')}</a></li>
+                          <li><Link to={"/visa"}><i className="fal fa-angle-right"/> {t('footer.nav.more')}</Link></li>
                           {/*<li><Link to={"affiliate"}><i className="fal fa-angle-right" /> Affiliate</Link></li>*/}
 
                         </ul>

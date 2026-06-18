@@ -19,6 +19,13 @@ const router = {
   'PUT /api/blogs/:id': updateBlog,
   'DELETE /api/blogs/:id': deleteBlog,
 
+  // --- 签证 ---
+  'GET /api/visas': getVisas,
+  'GET /api/visas/:id': getVisa,
+  'POST /api/visas': createVisa,
+  'PUT /api/visas/:id': updateVisa,
+  'DELETE /api/visas/:id': deleteVisa,
+
   // --- 图片上传 ---
   'POST /api/upload': uploadImage,
 
@@ -334,6 +341,90 @@ async function deleteBlog(request, env) {
   return json({ success: true });
 }
 
+// ============ 签证 CRUD ============
+async function getVisas(request, env) {
+  const url = new URL(request.url);
+  const limit = parseInt(url.searchParams.get('limit') || '0');
+
+  let sql = 'SELECT * FROM visas ORDER BY date DESC';
+  if (limit > 0) sql += ` LIMIT ${limit}`;
+
+  const result = await env.DB.prepare(sql).all();
+  const visas = result.results.map(v => ({
+    ...v,
+    tags: JSON.parse(v.tags || '[]'),
+  }));
+  return json(visas);
+}
+
+async function getVisa(request, env) {
+  const id = getId(request);
+  const result = await env.DB.prepare(
+    'SELECT * FROM visas WHERE id = ? OR folder_name = ?'
+  ).bind(id, id).first();
+
+  if (!result) return json({ error: 'Not found' }, 404);
+  return json({ ...result, tags: JSON.parse(result.tags || '[]') });
+}
+
+async function createVisa(request, env) {
+  const body = await parseBody(request);
+  const folderName = body.folder_name || slugify(body.title || 'untitled');
+
+  const result = await env.DB.prepare(
+    `INSERT INTO visas (folder_name, title, date, author, description, category, tags, content, cover, sort_order)
+     VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)`
+  ).bind(
+    folderName,
+    body.title || '',
+    body.date || new Date().toISOString().slice(0, 10),
+    body.author || '',
+    body.description || '',
+    body.category || '',
+    JSON.stringify(body.tags || []),
+    body.content || '',
+    body.cover || '',
+    body.sort_order || 0
+  ).run();
+
+  return json({ id: result.meta.last_row_id, folder_name: folderName }, 201);
+}
+
+async function updateVisa(request, env) {
+  const id = getId(request);
+  const body = await parseBody(request);
+
+  const fields = ['folder_name', 'title', 'date', 'author', 'description', 'category', 'tags', 'content', 'cover', 'sort_order'];
+  const updates = [];
+  const values = [];
+
+  for (const f of fields) {
+    if (body[f] !== undefined) {
+      updates.push(`${f} = ?`);
+      values.push(f === 'tags' ? JSON.stringify(body[f]) : body[f]);
+    }
+  }
+
+  if (updates.length === 0) return json({ error: 'No fields to update' }, 400);
+  updates.push("updated_at = datetime('now')");
+  values.push(id);
+
+  await env.DB.prepare(
+    `UPDATE visas SET ${updates.join(', ')} WHERE id = ?`
+  ).bind(...values).run();
+  return json({ success: true });
+}
+
+async function deleteVisa(request, env) {
+  const id = getId(request);
+  const visa = await env.DB.prepare('SELECT cover FROM visas WHERE id = ?').bind(id).first();
+  if (visa && visa.cover) {
+    try { await env.BUCKET.delete(visa.cover); } catch {}
+  }
+  await env.DB.prepare('DELETE FROM visas WHERE id = ?').bind(id).run();
+  return json({ success: true });
+}
+
 // ============ 图片上传 ============
 // 限制：仅接受 WebP 格式，最大 10MB
 // 前端已通过 Canvas 压缩为 WebP，此处做二次校验拦截
@@ -460,6 +551,7 @@ async function updateSettings(request, env) {
 async function getDashboard(request, env) {
   const houses = await env.DB.prepare('SELECT COUNT(*) as count FROM houses').first();
   const blogs = await env.DB.prepare('SELECT COUNT(*) as count FROM blogs').first();
+  const visas = await env.DB.prepare('SELECT COUNT(*) as count FROM visas').first();
 
   // 各标签数量
   const tagStats = await env.DB.prepare(
@@ -482,6 +574,7 @@ async function getDashboard(request, env) {
   return json({
     houseCount: houses.count,
     blogCount: blogs.count,
+    visaCount: visas.count,
     tagCounts,
     recentHouses: recent.results,
   });

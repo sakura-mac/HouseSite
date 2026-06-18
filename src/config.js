@@ -14,7 +14,8 @@ export function getCoverUrl(item, type = 'house') {
     if (item.cover.startsWith('http')) return item.cover;
     return item.cover;
   }
-  const dir = type === 'blog' ? 'blogs' : 'house';
+  const dirMap = { blog: 'blogs', visa: 'visas', house: 'house' };
+  const dir = dirMap[type] || 'house';
   return `/${dir}/${item.folder_name}/cover.webp`;
 }
 
@@ -27,7 +28,8 @@ export function getContentImageUrl(src, folderName, type = 'house') {
   if (!src) return src;
   if (src.startsWith('/api/')) return `${API_BASE}${src}`;
   if (src.startsWith('http')) return src;
-  const dir = type === 'blog' ? 'blogs' : 'house';
+  const dirMap = { blog: 'blogs', visa: 'visas', house: 'house' };
+  const dir = dirMap[type] || 'house';
   // 去掉 ./
   const cleanSrc = src.replace(/^\.\//, '');
   return `/${dir}/${folderName}/${cleanSrc}`;

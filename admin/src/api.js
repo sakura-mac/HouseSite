@@ -50,6 +50,15 @@ export const blogsApi = {
   delete: (id) => api.delete(`/blogs/${id}`),
 };
 
+// ============ 签证 ============
+export const visasApi = {
+  list: (params) => api.get('/visas', { params }),
+  get: (id) => api.get(`/visas/${id}`),
+  create: (data) => api.post('/visas', data),
+  update: (id, data) => api.put(`/visas/${id}`, data),
+  delete: (id) => api.delete(`/visas/${id}`),
+};
+
 // ============ 图片上传（自动压缩为 WebP） ============
 export const uploadApi = {
   upload: async (file, type, folderName) => {

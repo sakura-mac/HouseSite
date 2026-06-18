@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Card, Col, Row, Statistic, Table, Tag, Spin } from 'antd';
-import { HomeOutlined, FileTextOutlined, TagOutlined } from '@ant-design/icons';
+import { HomeOutlined, FileTextOutlined, TagOutlined, SolutionOutlined } from '@ant-design/icons';
 import { dashboardApi } from '../api';
 
 const TAG_LABELS = {
@@ -43,7 +43,7 @@ export default function Dashboard() {
   return (
     <div>
       <Row gutter={16} style={{ marginBottom: 24 }}>
-        <Col span={8}>
+        <Col span={6}>
           <Card>
             <Statistic
               title="房源总数"
@@ -52,7 +52,7 @@ export default function Dashboard() {
             />
           </Card>
         </Col>
-        <Col span={8}>
+        <Col span={6}>
           <Card>
             <Statistic
               title="博客总数"
@@ -61,7 +61,16 @@ export default function Dashboard() {
             />
           </Card>
         </Col>
-        <Col span={8}>
+        <Col span={6}>
+          <Card>
+            <Statistic
+              title="签证文章"
+              value={data?.visaCount || 0}
+              prefix={<SolutionOutlined />}
+            />
+          </Card>
+        </Col>
+        <Col span={6}>
           <Card>
             <Statistic
               title="标签种类"

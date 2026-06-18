@@ -95,7 +95,7 @@ class PartialNav extends React.Component {
                     {/*  /!* sub menu *!/*/}
                     {/*</li>*/}
                     <li className="nav-item">
-                        <a href="https://www.xiaohongshu.com/user/profile/5df991fd00000000010010eb" target="_blank" rel="noopener noreferrer"> {t('header.nav.more')}</a>
+                        <Link className="nav-link" to={'/visa'}>{t('header.nav.more')}</Link>
                     </li>
                 </Nav>
             </>
