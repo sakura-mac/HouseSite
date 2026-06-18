@@ -6,7 +6,6 @@ import {
   HomeOutlined,
   FileTextOutlined,
   GlobalOutlined,
-  SettingOutlined,
 } from '@ant-design/icons';
 import Dashboard from './pages/Dashboard';
 import Houses from './pages/Houses';
@@ -14,7 +13,6 @@ import HouseEdit from './pages/HouseEdit';
 import Blogs from './pages/Blogs';
 import BlogEdit from './pages/BlogEdit';
 import Translations from './pages/Translations';
-import Settings from './pages/Settings';
 
 const { Header, Sider, Content } = Layout;
 
@@ -26,7 +24,6 @@ function AdminLayout() {
     { key: '/houses', icon: <HomeOutlined />, label: <Link to="/houses">房源管理</Link> },
     { key: '/blogs', icon: <FileTextOutlined />, label: <Link to="/blogs">博客管理</Link> },
     { key: '/translations', icon: <GlobalOutlined />, label: <Link to="/translations">翻译管理</Link> },
-    { key: '/settings', icon: <SettingOutlined />, label: <Link to="/settings">站点设置</Link> },
   ];
 
   return (
@@ -59,7 +56,6 @@ function AdminLayout() {
             <Route path="/blogs/new" element={<BlogEdit />} />
             <Route path="/blogs/:id" element={<BlogEdit />} />
             <Route path="/translations" element={<Translations />} />
-            <Route path="/settings" element={<Settings />} />
             <Route path="*" element={<Navigate to="/dashboard" />} />
           </Routes>
         </Content>
