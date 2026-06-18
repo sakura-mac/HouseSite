@@ -31,7 +31,7 @@ class Index1 extends React.Component {
                 {/*<WhoWeAreArea/>*/}
                 {/*<TeamMemberPart/>*/}
                 {/*<ContactUsPart/>*/}
-                <OueChoosePart/>
+                {/*<OueChoosePart/>*/}
                 {/*<MeetUsPart/>*/}
                 <LatestNewsPart/>
                 {/*<Brand2Part/>*/}
