@@ -1,5 +1,5 @@
 
--- Migrated at: 2026-06-18T05:57:18.871Z
+-- Migrated at: 2026-06-18T07:38:05.922Z
 
 -- 房源数据
 INSERT INTO houses (folder_name, title, date, author, description, category, tags, content, cover, sort_order)
