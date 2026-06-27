@@ -1,20 +1,18 @@
 import React, { useState, useEffect } from 'react';
 import { useI18n } from '../../i18n/i18n';
 
-const FIRST_VISIT_KEY = 'lang_ball_shown';
+const FIRST_VISIT_KEY = 'lang_modal_shown';
 
 const MobileLangBall = () => {
   const { locale, setLocale } = useI18n();
   const [visible, setVisible] = useState(false);
-  const [expanded, setExpanded] = useState(false);
 
   useEffect(() => {
     // 只有第一次访问且未手动设置过语言时才显示
     const shown = localStorage.getItem(FIRST_VISIT_KEY);
     const userSet = localStorage.getItem('app_locale');
     if (!shown && !userSet) {
-      // 延迟 1.5 秒出现，避免和页面加载冲突
-      const timer = setTimeout(() => setVisible(true), 1500);
+      const timer = setTimeout(() => setVisible(true), 1200);
       return () => clearTimeout(timer);
     }
   }, []);
@@ -22,7 +20,6 @@ const MobileLangBall = () => {
   const handleSelect = (lang) => {
     setLocale(lang);
     localStorage.setItem(FIRST_VISIT_KEY, '1');
-    setExpanded(false);
     setVisible(false);
   };
 
@@ -34,124 +31,121 @@ const MobileLangBall = () => {
   if (!visible) return null;
 
   const styles = {
-    container: {
+    overlay: {
       position: 'fixed',
-      bottom: expanded ? '50%' : '80px',
-      left: '50%',
-      transform: 'translateX(-50%)',
-      zIndex: 9999,
-      transition: 'bottom 0.4s ease',
-      display: 'none', // 默认隐藏，通过媒体查询在移动端显示
-    },
-    ball: {
-      width: '56px',
-      height: '56px',
-      borderRadius: '50%',
-      background: 'linear-gradient(135deg, #0f3c9e, #1a5cc4)',
-      color: '#fff',
+      top: 0,
+      left: 0,
+      width: '100%',
+      height: '100%',
+      background: 'rgba(0, 0, 0, 0.35)',
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'center',
-      fontSize: '24px',
-      cursor: 'pointer',
-      boxShadow: '0 4px 20px rgba(15, 60, 158, 0.4)',
-      animation: 'langBallPulse 2s ease-in-out infinite',
-      margin: '0 auto',
+      zIndex: 9999,
+      animation: 'langFadeIn 0.3s ease',
     },
-    panel: {
+    modal: {
       background: '#fff',
-      borderRadius: '16px',
-      padding: '16px',
-      boxShadow: '0 8px 40px rgba(0,0,0,0.15)',
+      borderRadius: '14px',
+      padding: '28px 24px 24px',
+      width: '82%',
+      maxWidth: '340px',
       textAlign: 'center',
-      minWidth: '220px',
+      boxShadow: '0 12px 48px rgba(0,0,0,0.18)',
+      animation: 'langSlideUp 0.35s ease',
+    },
+    icon: {
+      fontSize: '32px',
       marginBottom: '12px',
     },
     title: {
-      fontSize: '15px',
-      fontWeight: '700',
-      color: '#333',
-      marginBottom: '14px',
+      fontSize: '17px',
+      fontWeight: '600',
+      color: '#2c2c2c',
+      marginBottom: '6px',
     },
-    btnRow: {
+    subtitle: {
+      fontSize: '13px',
+      color: '#999',
+      marginBottom: '22px',
+    },
+    btnGroup: {
       display: 'flex',
-      gap: '12px',
-      justifyContent: 'center',
+      flexDirection: 'column',
+      gap: '10px',
     },
     langBtn: {
-      padding: '10px 24px',
-      borderRadius: '8px',
-      border: '2px solid #0f3c9e',
-      background: '#fff',
-      color: '#0f3c9e',
+      padding: '13px 0',
+      borderRadius: '10px',
+      border: '1px solid #e0e0e0',
+      background: '#fafafa',
+      color: '#333',
       fontSize: '15px',
-      fontWeight: '600',
+      fontWeight: '500',
       cursor: 'pointer',
       transition: 'all 0.2s ease',
-    },
-    langBtnActive: {
-      background: '#0f3c9e',
-      color: '#fff',
-    },
-    closeBtn: {
-      position: 'absolute',
-      top: '-8px',
-      right: '-8px',
-      width: '24px',
-      height: '24px',
-      borderRadius: '50%',
-      background: '#ff4757',
-      color: '#fff',
-      border: 'none',
-      fontSize: '14px',
-      cursor: 'pointer',
       display: 'flex',
       alignItems: 'center',
       justifyContent: 'center',
-      lineHeight: 1,
+      gap: '8px',
+    },
+    langBtnHighlight: {
+      borderColor: '#0f3c9e',
+      background: '#0f3c9e',
+      color: '#fff',
+    },
+    skipBtn: {
+      marginTop: '14px',
+      background: 'none',
+      border: 'none',
+      color: '#bbb',
+      fontSize: '13px',
+      cursor: 'pointer',
     },
   };
 
   return (
-    <div style={styles.container} className="mobile-lang-ball-container">
-      {expanded ? (
-        <div style={{ position: 'relative' }}>
-          <div style={styles.panel}>
-            <div style={styles.title}>🌐 请选择语言 / 言語を選択してください</div>
-            <div style={styles.btnRow}>
-              <button
-                style={{ ...styles.langBtn, ...(locale === 'zh' ? styles.langBtnActive : {}) }}
-                onClick={() => handleSelect('zh')}
-              >
-                中文
-              </button>
-              <button
-                style={{ ...styles.langBtn, ...(locale === 'ja' ? styles.langBtnActive : {}) }}
-                onClick={() => handleSelect('ja')}
-              >
-                日本語
-              </button>
-            </div>
+    <>
+      <div style={styles.overlay} onClick={handleDismiss}>
+        <div style={styles.modal} onClick={(e) => e.stopPropagation()}>
+          <div style={styles.icon}>🌐</div>
+          <div style={styles.title}>言語を選択してください</div>
+          <div style={styles.subtitle}>请选择您偏好的语言</div>
+          <div style={styles.btnGroup}>
+            <button
+              style={{ ...styles.langBtn, ...(locale === 'zh' ? styles.langBtnHighlight : {}) }}
+              onClick={() => handleSelect('zh')}
+            >
+              🇨🇳 中文
+            </button>
+            <button
+              style={{ ...styles.langBtn, ...(locale === 'ja' ? styles.langBtnHighlight : {}) }}
+              onClick={() => handleSelect('ja')}
+            >
+              🇯🇵 日本語
+            </button>
           </div>
-          <button style={styles.closeBtn} onClick={handleDismiss}>✕</button>
+          <button style={styles.skipBtn} onClick={handleDismiss}>
+            {locale === 'ja' ? 'スキップ' : '跳过'}
+          </button>
         </div>
-      ) : (
-        <div style={styles.ball} onClick={() => setExpanded(true)}>
-          🌐
-        </div>
-      )}
+      </div>
       <style>{`
-        @keyframes langBallPulse {
-          0%, 100% { transform: scale(1); }
-          50% { transform: scale(1.08); }
+        @keyframes langFadeIn {
+          from { opacity: 0; }
+          to { opacity: 1; }
         }
-        @media (max-width: 768px) {
+        @keyframes langSlideUp {
+          from { opacity: 0; transform: translateY(20px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
+        @media (min-width: 769px) {
           .mobile-lang-ball-container {
-            display: block !important;
+            display: none !important;
           }
         }
       `}</style>
-    </div>
+    </>
   );
 };
 

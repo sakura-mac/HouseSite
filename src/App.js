@@ -51,7 +51,9 @@ class App extends React.Component {
 					<Route path="/visa-details/:folderName" component={VisaDetails} />
 				</Switch>
 				</Suspense>
-				<MobileLangBall />
+				<div className="mobile-lang-ball-container">
+					<MobileLangBall />
+				</div>
 				<ToastContainer />
 			</BrowserRouter>
 			</I18nProvider>
