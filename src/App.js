@@ -5,6 +5,7 @@ import { ToastContainer } from 'react-toastify';
 import { I18nProvider } from './i18n/i18n';
 import Preloader from './componets/preloader';
 import Index1 from './pages/home/index';
+import MobileLangBall from './componets/MobileLangBall/MobileLangBall';
 
 // Lazy load all non-home pages
 const Index2 = lazy(() => import('./pages/home/index-2'));
@@ -50,6 +51,7 @@ class App extends React.Component {
 					<Route path="/visa-details/:folderName" component={VisaDetails} />
 				</Switch>
 				</Suspense>
+				<MobileLangBall />
 				<ToastContainer />
 			</BrowserRouter>
 			</I18nProvider>
