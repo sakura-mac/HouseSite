@@ -13,7 +13,8 @@ export function getCoverUrl(item, type = 'house') {
   if (item.cover) {
     if (item.cover.startsWith('/api/')) return `${API_BASE}${item.cover}`;
     if (item.cover.startsWith('http')) return item.cover;
-    return item.cover;
+    // 纯 R2 key（如 houses/xxx/123.webp），拼接 /api/images/ 前缀
+    return `${API_BASE}/api/images/${encodeURI(item.cover)}`;
   }
   const dirMap = { blog: 'blogs', visa: 'visas', house: 'house' };
   const dir = dirMap[type] || 'house';
