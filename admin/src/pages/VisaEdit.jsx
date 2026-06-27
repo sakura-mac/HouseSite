@@ -7,6 +7,7 @@ import dayjs from 'dayjs';
 import { visasApi, uploadApi } from '../api';
 import { getImageUrl } from '../utils/imageUrl';
 import { useMarkdownUpload } from '../hooks/useMarkdownUpload';
+import EmojiBar from '../components/EmojiBar';
 
 const { TextArea } = Input;
 
@@ -130,6 +131,7 @@ export default function VisaEdit() {
         <Col span={14}>
           <Card title="签证文章正文（Markdown）" bodyStyle={{ padding: 0 }}>
             <div data-color-mode="light" onDrop={(e) => handleDrop(e, content, setContent)} onPaste={(e) => handlePaste(e, content, setContent)}>
+<EmojiBar content={content} setContent={setContent} />
 <MDEditor value={content} onChange={setContent} height={600} preview="live" />
             </div>
             <div style={{ padding: '8px 16px', background: '#fafafa', fontSize: 12, color: '#999' }}>
