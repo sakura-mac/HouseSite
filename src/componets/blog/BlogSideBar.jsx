@@ -3,9 +3,11 @@ import { Link } from 'react-router-dom';
 import { Container, Row, Col } from 'react-bootstrap';
 import { useI18n } from '../../i18n/i18n';
 import { API_BASE, getCoverUrl } from '../../config';
+import LoadingSpinner from '../LoadingSpinner/LoadingSpinner';
 
 const BlogSideBar = () => {
   const [blogs, setBlogs] = useState([]);
+  const [loading, setLoading] = useState(true);
   const [currentPage, setCurrentPage] = useState(1);
   const blogsPerPage = 3;
   const { t, locale } = useI18n();
@@ -14,7 +16,8 @@ const BlogSideBar = () => {
     fetch(`${API_BASE}/api/blogs`)
         .then(response => response.json())
         .then(data => setBlogs(data.map(b => ({ ...b, folderName: b.folder_name }))))
-        .catch(error => console.error('Error loading blog list:', error));
+        .catch(error => console.error('Error loading blog list:', error))
+        .finally(() => setLoading(false));
   }, []);
 
   // 分页逻辑
@@ -31,7 +34,7 @@ const BlogSideBar = () => {
           <Row className="justify-content-center">
             <Col lg="12">
               <div className="blog-standard">
-                {currentBlogs.map((blog, index) => (
+                {loading ? <LoadingSpinner text={t('common.loading')} height="300px" /> : currentBlogs.map((blog, index) => (
                     <div className="single-blog-standard mt-30" key={index}>
                       <div className="blog-standard-thumb">
                         {/* 直接从文件夹中加载 cover.jpg */}
@@ -60,6 +63,7 @@ src={getCoverUrl(blog, 'blog')}
                     </div>
                 ))}
                 {/* 分页 */}
+                {!loading && (
                 <Row>
                   <Col lg="12">
                     <nav className="mt-60" aria-label="Page navigation example">
@@ -100,6 +104,7 @@ src={getCoverUrl(blog, 'blog')}
                     </nav>
                   </Col>
                 </Row>
+                )}
               </div>
             </Col>
           </Row>

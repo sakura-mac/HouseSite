@@ -4,6 +4,7 @@ import Layout from '../../layouts';
 import { Container, Row, Col } from 'react-bootstrap';
 import { useI18n } from '../../i18n/i18n';
 import { API_BASE, getCoverUrl, getContentImageUrl } from '../../config';
+import LoadingSpinner from '../../componets/LoadingSpinner/LoadingSpinner';
 
 function VisaDetails() {
   const { folderName } = useParams();
@@ -45,9 +46,7 @@ function VisaDetails() {
   if (loading) {
     return (
       <Layout>
-        <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '50vh' }}>
-          <p>{t('common.loading')}</p>
-        </div>
+        <LoadingSpinner text={t('common.loading')} />
       </Layout>
     );
   }

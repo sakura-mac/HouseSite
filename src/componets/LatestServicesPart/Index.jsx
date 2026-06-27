@@ -5,22 +5,30 @@ import { faLongArrowAltRight } from '@fortawesome/free-solid-svg-icons';
 import { Container, Row, Col } from 'react-bootstrap';
 import { useI18n } from '../../i18n/i18n';
 import { API_BASE, getCoverUrl } from '../../config';
+import LoadingSpinner from '../LoadingSpinner/LoadingSpinner';
 
 const LatestServicesPart = () => {
   const [houses, setHouses] = useState([]);
+  const [loading, setLoading] = useState(true);
   const { t } = useI18n();
 
   // 加载首页指定展示的房源
   useEffect(() => {
     const fetchHouses = async () => {
-      const response = await fetch(`${API_BASE}/api/houses`);
-      const data = await response.json();
-      // 首页固定展示这3个房源，按指定顺序排列
-      const featuredFolders = ['Rita Hotel Namba', 'プラウドタワー神戸垂水', 'ワコーレヴィータ塚口'];
-      const featured = featuredFolders
-        .map(folder => data.find(h => h.folder_name === folder))
-        .filter(Boolean);
-      setHouses(featured.map(h => ({ ...h, folderName: h.folder_name })));
+      try {
+        const response = await fetch(`${API_BASE}/api/houses`);
+        const data = await response.json();
+        // 首页固定展示这3个房源，按指定顺序排列
+        const featuredFolders = ['Rita Hotel Namba', 'プラウドタワー神戸垂水', 'ワコーレヴィータ塚口'];
+        const featured = featuredFolders
+          .map(folder => data.find(h => h.folder_name === folder))
+          .filter(Boolean);
+        setHouses(featured.map(h => ({ ...h, folderName: h.folder_name })));
+      } catch (e) {
+        console.error('Error loading houses:', e);
+      } finally {
+        setLoading(false);
+      }
     };
     fetchHouses();
   }, []);
@@ -97,7 +105,7 @@ const LatestServicesPart = () => {
         <div className="latest-services-area">
           <Container>
             <Row className="justify-content-center">
-              {houses.map((house, index) => (
+              {loading ? <LoadingSpinner text={t('common.loading')} height="200px" /> : houses.map((house, index) => (
                   <div className="col-lg-4 col-md-6 col-sm-9" key={index}>
                     <div className="single-services" style={styles.singleService}>
                       {/* 使用房源的封面图片 */}

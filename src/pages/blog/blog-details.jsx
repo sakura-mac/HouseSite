@@ -6,12 +6,14 @@ import { Container, Row, Col } from 'react-bootstrap';
 import ReactMarkdown from 'react-markdown';
 import { useI18n } from '../../i18n/i18n';
 import { API_BASE, getContentImageUrl } from '../../config';
+import LoadingSpinner from '../../componets/LoadingSpinner/LoadingSpinner';
 
 const BlogDetails = () => {
     const { t } = useI18n();
     const { folderName } = useParams(); // 从URL中获取folderName
     const [content, setContent] = useState('');
     const [error, setError] = useState(null);
+    const [loading, setLoading] = useState(true);
 
     // 加载博客内容（从 API 获取）
     useEffect(() => {
@@ -27,7 +29,8 @@ const BlogDetails = () => {
             })
             .catch(err => {
                 setError(err.message);
-                });
+                })
+            .finally(() => setLoading(false));
             }, [folderName, t]);
 
     // 样式对象
@@ -146,7 +149,7 @@ const BlogDetails = () => {
                                 <div className="single-blog-standard mt-30">
                                     <div className="blog-details-content blog-border">
                                         {error && <div>{t('common.error')}: {error}</div>}
-                                        {!content && !error && <div>{t('common.loading')}</div>}
+                                        {loading && !error && <LoadingSpinner text={t('common.loading')} />}
                                         {content && (
                                             <div>
                                                 {/* 渲染 Markdown 并确保图片路径处理 */}

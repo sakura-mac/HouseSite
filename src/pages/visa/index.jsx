@@ -4,16 +4,19 @@ import Layout from '../../layouts';
 import { Container, Row, Col } from 'react-bootstrap';
 import { useI18n } from '../../i18n/i18n';
 import { API_BASE, getCoverUrl } from '../../config';
+import LoadingSpinner from '../../componets/LoadingSpinner/LoadingSpinner';
 
 function VisaPage() {
   const [visas, setVisas] = useState([]);
+  const [loading, setLoading] = useState(true);
   const { t, locale } = useI18n();
 
   useEffect(() => {
     fetch(`${API_BASE}/api/visas`)
       .then(res => res.json())
       .then(data => setVisas(data.map(v => ({ ...v, folderName: v.folder_name }))))
-      .catch(err => console.error('Error loading visas:', err));
+      .catch(err => console.error('Error loading visas:', err))
+      .finally(() => setLoading(false));
   }, []);
 
   return (
@@ -71,7 +74,7 @@ function VisaPage() {
           <Row className="justify-content-center">
             <Col lg="12">
               <div className="blog-standard">
-                {visas.length === 0 ? (
+                {loading ? <LoadingSpinner text={t('common.loading')} height="300px" /> : visas.length === 0 ? (
                   <p style={{ textAlign: 'center', color: '#999', padding: '60px 0' }}>
                     {locale === 'ja' ? 'まだ記事がありません。' : '暂无文章。'}
                   </p>

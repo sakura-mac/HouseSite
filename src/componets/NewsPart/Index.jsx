@@ -3,9 +3,11 @@ import { Link, useLocation } from 'react-router-dom';
 import { Container, Row, Col } from 'react-bootstrap';
 import { useI18n } from '../../i18n/i18n';
 import { API_BASE, getCoverUrl } from '../../config';
+import LoadingSpinner from '../LoadingSpinner/LoadingSpinner';
 
 const NewsPart = () => {
   const [houses, setHouses] = useState([]);
+  const [loading, setLoading] = useState(true);
   const [visibleHouses, setVisibleHouses] = useState(6);
   const location = useLocation();
   const { t } = useI18n();
@@ -25,10 +27,16 @@ const NewsPart = () => {
   // 加载房产数据
   useEffect(() => {
     const fetchHouses = async () => {
-      const response = await fetch(`${API_BASE}/api/houses`);
-      const data = await response.json();
-      // API 返回 folder_name，前台需要映射为 folderName
-      setHouses(data.map(h => ({ ...h, folderName: h.folder_name })));
+      try {
+        const response = await fetch(`${API_BASE}/api/houses`);
+        const data = await response.json();
+        // API 返回 folder_name，前台需要映射为 folderName
+        setHouses(data.map(h => ({ ...h, folderName: h.folder_name })));
+      } catch (e) {
+        console.error('Error loading houses:', e);
+      } finally {
+        setLoading(false);
+      }
     };
     fetchHouses();
   }, []);
@@ -145,6 +153,7 @@ const NewsPart = () => {
               </div>
             </Col>
           </Row>
+          {loading ? <LoadingSpinner text={t('common.loading')} height="300px" /> : (
           <Row className="justify-content-center">
             {filteredHouses.slice(0, visibleHouses).map((house, index) => (
                 <div className="col-lg-4 col-md-6 col-sm-9" key={index}>
@@ -187,6 +196,7 @@ src={getCoverUrl(house)}
                 </div>
             ))}
           </Row>
+          )}
           <Row>
             <Col lg="8" className="text-center">
               {visibleHouses < filteredHouses.length && (

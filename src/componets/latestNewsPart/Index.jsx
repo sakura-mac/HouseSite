@@ -5,9 +5,11 @@ import { faLongArrowAltRight } from '@fortawesome/free-solid-svg-icons';
 import { Container, Row, Col } from 'react-bootstrap';
 import { useI18n } from '../../i18n/i18n';
 import { API_BASE } from '../../config';
+import LoadingSpinner from '../LoadingSpinner/LoadingSpinner';
 
 const LatestNewsPart = () => {
     const [latestBlogs, setLatestBlogs] = useState([]);
+    const [loading, setLoading] = useState(true);
     const { t, locale } = useI18n();
 
     useEffect(() => {
@@ -19,7 +21,8 @@ const LatestNewsPart = () => {
                 const sortedBlogs = mapped.sort((a, b) => new Date(b.date) - new Date(a.date));
                 setLatestBlogs(sortedBlogs.slice(0, 3));
             })
-            .catch(error => console.error('Error loading blog list:', error));
+            .catch(error => console.error('Error loading blog list:', error))
+            .finally(() => setLoading(false));
     }, []);
 
     return (
@@ -41,7 +44,7 @@ const LatestNewsPart = () => {
                         <Col lg="12">
                             <div className="latest-news">
                                 <Row>
-                                    {latestBlogs.map((blog, index) => (
+                                    {loading ? <LoadingSpinner text={t('common.loading')} height="200px" /> : latestBlogs.map((blog, index) => (
                                         <div
                                             className="col-lg-4 col-md-6"
                                             key={index}
