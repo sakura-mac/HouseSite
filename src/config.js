@@ -1,8 +1,8 @@
 // API 基础地址
-// 开发环境可通过 REACT_APP_API_URL 覆盖
-// 生产环境通过同域 Pages Function 代理（/api/*）
+// 生产环境：同域 Pages Function 代理（/api/*），API_BASE 为空字符串
+// 开发环境：通过 .env.development 中 REACT_APP_API_URL 指向线上 API
 export const API_BASE =
-  process.env.REACT_APP_API_URL || 'https://swallow-homes-api.perriersuda.workers.dev';
+  process.env.REACT_APP_API_URL || '';
 
 /**
  * 获取房源封面图 URL
