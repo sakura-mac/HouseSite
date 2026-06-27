@@ -121,6 +121,9 @@ export default function HouseEdit() {
               <Form.Item name="tags" label="标签">
                 <Select mode="multiple" options={TAG_OPTIONS} placeholder="选择标签" />
               </Form.Item>
+              <Form.Item name="sort_order" label="排序权重" extra="数值越大越靠前，设为大于0的值可置顶到首页展示">
+                <Input type="number" placeholder="0" />
+              </Form.Item>
             </Form>
           </Card>
 

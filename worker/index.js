@@ -175,12 +175,12 @@ async function getHouses(request, env) {
   const tag = url.searchParams.get('tag');
   const limit = parseInt(url.searchParams.get('limit') || '0');
 
-  let sql = 'SELECT * FROM houses ORDER BY sort_order DESC, date DESC';
+  let sql = 'SELECT * FROM houses ORDER BY sort_order DESC, id DESC';
   let params = [];
 
   if (tag) {
     // tag 存在 JSON 数组中，用 LIKE 粗匹配
-    sql = 'SELECT * FROM houses WHERE tags LIKE ? ORDER BY sort_order DESC, date DESC';
+    sql = 'SELECT * FROM houses WHERE tags LIKE ? ORDER BY sort_order DESC, id DESC';
     params = [`%"${tag}"%`];
   }
 
