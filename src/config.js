@@ -16,9 +16,11 @@ export function getCoverUrl(item, type = 'house') {
     // 纯 R2 key（如 houses/xxx/123.webp），拼接 /api/images/ 前缀
     return `${API_BASE}/api/images/${encodeURI(item.cover)}`;
   }
+  // 旧数据（静态文件）：cover 字段为空，回退到 /house/{folder_name}/cover.webp
   const dirMap = { blog: 'blogs', visa: 'visas', house: 'house' };
   const dir = dirMap[type] || 'house';
-  return `/${dir}/${item.folder_name}/cover.webp`;
+  // 先尝试静态文件路径，如果不存在浏览器会触发 onError 回退到默认图
+  return `/assets/images/default-cover.webp`;
 }
 
 /**

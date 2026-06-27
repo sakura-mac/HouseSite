@@ -10,13 +10,17 @@ const LatestServicesPart = () => {
   const [houses, setHouses] = useState([]);
   const { t } = useI18n();
 
-  // 加载最新的房源
+  // 加载首页指定展示的房源
   useEffect(() => {
     const fetchHouses = async () => {
       const response = await fetch(`${API_BASE}/api/houses`);
       const data = await response.json();
-      const latestHouses = data.slice(0, 3);
-      setHouses(latestHouses.map(h => ({ ...h, folderName: h.folder_name })));
+      // 首页固定展示这3个房源，按指定顺序排列
+      const featuredFolders = ['Rita Hotel Namba', 'プラウドタワー神戸垂水', 'ワコーレヴィータ塚口'];
+      const featured = featuredFolders
+        .map(folder => data.find(h => h.folder_name === folder))
+        .filter(Boolean);
+      setHouses(featured.map(h => ({ ...h, folderName: h.folder_name })));
     };
     fetchHouses();
   }, []);

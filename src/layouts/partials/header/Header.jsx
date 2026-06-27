@@ -12,7 +12,7 @@ import { withI18n } from '../../../i18n/i18n';
 class Header extends React.Component {
 
     render() {
-        const { t, locale } = this.props.i18n || {};
+        const { t, locale, setLocale } = this.props.i18n || {};
         const brandFontClass = locale === 'ja' ? 'brand-font-ja' : 'brand-font-zh';
         return (
             <>
@@ -41,6 +41,15 @@ class Header extends React.Component {
                 <Col md="6" sm="5">
                   <div className="header-right-social text-center text-sm-right">
                     <SocialLink/>
+                    <select
+                      aria-label="language-switcher"
+                      value={locale}
+                      onChange={(e) => setLocale && setLocale(e.target.value)}
+                      style={{ marginLeft: 12 }}
+                    >
+                      <option value="zh">中文</option>
+                      <option value="ja">日本語</option>
+                    </select>
                   </div>
                 </Col>
               </Row>

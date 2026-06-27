@@ -14,7 +14,7 @@ const TAG_OPTIONS = [
   { value: 'selling', label: '在售房源 / 販売中' },
   { value: 'managed', label: '在管房源 / 管理物件' },
   { value: 'sold', label: '成交案例 / 成約実績' },
-  { value: 'owned', label: '持有房源 / 持有物件' },
+  { value: 'owned', label: '持有房源 / 所有物件' },
 ];
 
 export default function HouseEdit() {
