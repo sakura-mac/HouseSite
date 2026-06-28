@@ -28,9 +28,14 @@ const BlogSideBar = () => {
 
   // 处理翻页（边界保护）
   const paginate = (pageNumber) => {
-    if (pageNumber < 1 || pageNumber > totalPages) return;
     setCurrentPage(pageNumber);
+    // 回到列表顶部
+    const target = document.querySelector('.blog-standard-area');
+    if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
   };
+
+  const canPrev = currentPage > 1;
+  const canNext = currentPage < totalPages;
 
   return (
       <div className="blog-standard-area pt-90 pb-120">
@@ -76,39 +81,37 @@ src={getCoverUrl(blog, 'blog')}
                 {!loading && totalPages > 1 && (
                 <Row>
                   <Col lg="12">
-                    <nav className="mt-60" aria-label="Page navigation example">
+                    <nav className="mt-60" aria-label="Page navigation">
                       <ul className="pagination pagination-2 justify-content-center">
-                        <li className="page-item">
-                          <Link
-                              className={`page-link ${currentPage === 1 ? 'disabled' : ''}`}
-                              onClick={() => paginate(currentPage - 1)}
-                              to="#"
-                              tabIndex={-1}
-                              aria-disabled={currentPage === 1}
+                        <li className={`page-item ${!canPrev ? 'disabled' : ''}`}>
+                          <button
+                              className="page-link"
+                              onClick={() => canPrev && paginate(currentPage - 1)}
+                              disabled={!canPrev}
+                              aria-label="Previous"
                           >
                             <i className="far fa-chevron-double-left" />
-                          </Link>
+                          </button>
                         </li>
                         {[...Array(totalPages).keys()].map(page => (
-                            <li key={page + 1} className="page-item">
-                              <Link
-                                  className={`page-link ${currentPage === page + 1 ? 'active' : ''}`}
+                            <li key={page + 1} className={`page-item ${currentPage === page + 1 ? 'active' : ''}`}>
+                              <button
+                                  className="page-link"
                                   onClick={() => paginate(page + 1)}
-                                  to="#"
                               >
                                 {page + 1}
-                              </Link>
+                              </button>
                             </li>
                         ))}
-                        <li className="page-item">
-                          <Link
-                              className={`page-link ${currentPage === totalPages ? 'disabled' : ''}`}
-                              onClick={() => paginate(currentPage + 1)}
-                              to="#"
-                              aria-disabled={currentPage === totalPages}
+                        <li className={`page-item ${!canNext ? 'disabled' : ''}`}>
+                          <button
+                              className="page-link"
+                              onClick={() => canNext && paginate(currentPage + 1)}
+                              disabled={!canNext}
+                              aria-label="Next"
                           >
                             <i className="far fa-chevron-double-right" />
-                          </Link>
+                          </button>
                         </li>
                       </ul>
                     </nav>
