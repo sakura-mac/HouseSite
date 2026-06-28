@@ -91,16 +91,16 @@ export default function Houses() {
 
   return (
     <div>
-      <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 16 }}>
+      <div style={{ display: 'flex', flexDirection: 'column', gap: 12, marginBottom: 16 }}>
         <Input.Search
           placeholder="搜索标题或文件夹名"
           allowClear
-          style={{ width: 300 }}
+          style={{ width: '100%', maxWidth: 300 }}
           value={searchText}
           onChange={(e) => setSearchText(e.target.value)}
         />
         <Link to="/houses/new">
-          <Button type="primary" icon={<PlusOutlined />}>新增房源</Button>
+          <Button type="primary" icon={<PlusOutlined />} style={{ width: 'fit-content' }}>新增房源</Button>
         </Link>
       </div>
       <Table
@@ -109,6 +109,7 @@ export default function Houses() {
         loading={loading}
         rowKey="id"
         pagination={{ pageSize: 10 }}
+        scroll={{ x: 800 }}
       />
     </div>
   );

@@ -61,16 +61,16 @@ export default function Blogs() {
 
   return (
     <div>
-      <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 16 }}>
+      <div style={{ display: 'flex', flexDirection: 'column', gap: 12, marginBottom: 16 }}>
         <Input.Search
           placeholder="搜索标题"
           allowClear
-          style={{ width: 300 }}
+          style={{ width: '100%', maxWidth: 300 }}
           value={searchText}
           onChange={(e) => setSearchText(e.target.value)}
         />
         <Link to="/blogs/new">
-          <Button type="primary" icon={<PlusOutlined />}>新增博客</Button>
+          <Button type="primary" icon={<PlusOutlined />} style={{ width: 'fit-content' }}>新增博客</Button>
         </Link>
       </div>
       <Table
@@ -79,6 +79,7 @@ export default function Blogs() {
         loading={loading}
         rowKey="id"
         pagination={{ pageSize: 10 }}
+        scroll={{ x: 700 }}
       />
     </div>
   );

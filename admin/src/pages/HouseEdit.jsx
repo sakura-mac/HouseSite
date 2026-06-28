@@ -95,13 +95,13 @@ export default function HouseEdit() {
 
   return (
     <div>
-      <Space style={{ marginBottom: 16 }}>
+      <Space style={{ marginBottom: 16, flexWrap: 'wrap' }}>
         <Button icon={<ArrowLeftOutlined />} onClick={() => navigate('/houses')}>返回列表</Button>
         <span style={{ fontSize: 18, fontWeight: 600 }}>{isEdit ? '编辑房源' : '新增房源'}</span>
       </Space>
 
-      <Row gutter={24}>
-        <Col span={10}>
+      <Row gutter={[24, 16]}>
+        <Col xs={24} md={10}>
           <Card title="基本信息">
             <Form form={form} layout="vertical" initialValues={{ tags: ['managed'], author: '李 小燕' }}>
               <Form.Item name="title" label="标题" rules={[{ required: true, message: '请输入标题' }]}>
@@ -145,7 +145,7 @@ export default function HouseEdit() {
           </Card>
         </Col>
 
-        <Col span={14}>
+        <Col xs={24} md={14}>
           <Card title="房源正文（Markdown）" bodyStyle={{ padding: 0 }}>
             <div data-color-mode="light" onDrop={(e) => handleDrop(e, content, setContent)} onPaste={(e) => handlePaste(e, content, setContent)}>
               <EmojiBar content={content} setContent={setContent} />
@@ -154,6 +154,7 @@ export default function HouseEdit() {
                 onChange={setContent}
                 height={600}
                 preview="live"
+                style={{ whiteSpace: 'pre-wrap' }}
               />
             </div>
             <div style={{ padding: '8px 16px', background: '#fafafa', fontSize: 12, color: '#999' }}>

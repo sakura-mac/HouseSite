@@ -26,8 +26,9 @@ export default function Login() {
       minHeight: '100vh', display: 'flex',
       justifyContent: 'center', alignItems: 'center',
       background: 'linear-gradient(135deg, #667eea 0%, #764ba2 100%)',
+      padding: 16,
     }}>
-      <Card style={{ width: 400, boxShadow: '0 8px 32px rgba(0,0,0,0.15)' }}>
+      <Card style={{ width: '100%', maxWidth: 400, boxShadow: '0 8px 32px rgba(0,0,0,0.15)' }}>
         <div style={{ textAlign: 'center', marginBottom: 32 }}>
           <h2 style={{ margin: 0, fontSize: 24, color: '#333' }}>Swallow Homes</h2>
           <Typography.Text type="secondary">后台管理系统</Typography.Text>

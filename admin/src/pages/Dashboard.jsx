@@ -48,8 +48,8 @@ export default function Dashboard() {
 
   return (
     <div>
-      <Row gutter={16} style={{ marginBottom: 24 }}>
-        <Col span={6}>
+      <Row gutter={[16, 16]} style={{ marginBottom: 24 }}>
+        <Col xs={12} sm={12} md={6}>
           <Card>
             <Statistic
               title="房源总数"
@@ -58,7 +58,7 @@ export default function Dashboard() {
             />
           </Card>
         </Col>
-        <Col span={6}>
+        <Col xs={12} sm={12} md={6}>
           <Card>
             <Statistic
               title="博客总数"
@@ -67,7 +67,7 @@ export default function Dashboard() {
             />
           </Card>
         </Col>
-        <Col span={6}>
+        <Col xs={12} sm={12} md={6}>
           <Card>
             <Statistic
               title="签证文章"
@@ -76,7 +76,7 @@ export default function Dashboard() {
             />
           </Card>
         </Col>
-        <Col span={6}>
+        <Col xs={12} sm={12} md={6}>
           <Card>
             <Statistic
               title="标签种类"
@@ -87,8 +87,8 @@ export default function Dashboard() {
         </Col>
       </Row>
 
-      <Row gutter={16}>
-        <Col span={10}>
+      <Row gutter={[16, 16]}>
+        <Col xs={24} md={10}>
           <Card title="标签分布">
             {tagData.map(item => (
               <div key={item.key} style={{ display: 'flex', justifyContent: 'space-between', padding: '8px 0', borderBottom: '1px solid #f0f0f0' }}>
@@ -98,7 +98,7 @@ export default function Dashboard() {
             ))}
           </Card>
         </Col>
-        <Col span={14}>
+        <Col xs={24} md={14}>
           <Card title="最近更新的房源">
             <Table
               dataSource={data?.recentHouses || []}
@@ -106,6 +106,7 @@ export default function Dashboard() {
               pagination={false}
               size="small"
               rowKey="id"
+              scroll={{ x: 400 }}
             />
           </Card>
         </Col>
