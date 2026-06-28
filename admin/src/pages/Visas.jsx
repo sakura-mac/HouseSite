@@ -1,13 +1,17 @@
 import React, { useState, useEffect } from 'react';
-import { Table, Button, Space, Tag, Popconfirm, message, Input } from 'antd';
+import { Table, Button, Space, Tag, Popconfirm, message, Input, Grid, Card, List } from 'antd';
 import { PlusOutlined, EditOutlined, DeleteOutlined } from '@ant-design/icons';
 import { Link } from 'react-router-dom';
 import { visasApi } from '../api';
+
+const { useBreakpoint } = Grid;
 
 export default function Visas() {
   const [visas, setVisas] = useState([]);
   const [loading, setLoading] = useState(true);
   const [searchText, setSearchText] = useState('');
+  const screens = useBreakpoint();
+  const isMobile = !screens.md;
 
   const loadData = () => {
     setLoading(true);
@@ -32,6 +36,8 @@ export default function Visas() {
     v.title?.toLowerCase().includes(searchText.toLowerCase())
   );
 
+  const renderTags = (tags) => (tags || []).map(t => <Tag key={t} color="blue">{t}</Tag>);
+
   const columns = [
     { title: 'ID', dataIndex: 'id', width: 60 },
     { title: '标题', dataIndex: 'title' },
@@ -41,7 +47,7 @@ export default function Visas() {
       title: '标签',
       dataIndex: 'tags',
       width: 200,
-      render: (tags) => (tags || []).map(t => <Tag key={t} color="blue">{t}</Tag>),
+      render: renderTags,
     },
     {
       title: '操作',
@@ -65,7 +71,7 @@ export default function Visas() {
         <Input.Search
           placeholder="搜索标题"
           allowClear
-          style={{ width: '100%', maxWidth: 300 }}
+          style={{ width: '100%', maxWidth: isMobile ? '100%' : 300 }}
           value={searchText}
           onChange={(e) => setSearchText(e.target.value)}
         />
@@ -73,14 +79,49 @@ export default function Visas() {
           <Button type="primary" icon={<PlusOutlined />} style={{ width: 'fit-content' }}>新增签证文章</Button>
         </Link>
       </div>
-      <Table
-        dataSource={filteredVisas}
-        columns={columns}
-        loading={loading}
-        rowKey="id"
-        pagination={{ pageSize: 10 }}
-        scroll={{ x: 700 }}
-      />
+
+      {isMobile ? (
+        <List
+          loading={loading}
+          dataSource={filteredVisas}
+          grid={{ gutter: 12, column: 1 }}
+          renderItem={(item) => (
+            <Card size="small" style={{ marginBottom: 8 }} styles={{ body: { padding: 12 } }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: 6 }}>
+                <span style={{
+                  fontSize: 14, fontWeight: 500, color: '#333', flex: 1, minWidth: 0,
+                  overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap',
+                }}>
+                  {item.title}
+                </span>
+                <span style={{ color: '#999', fontSize: 12, flexShrink: 0, marginLeft: 8 }}>#{item.id}</span>
+              </div>
+              <div style={{ marginBottom: 6 }}>{renderTags(item.tags)}</div>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                <span style={{ fontSize: 12, color: '#999' }}>{item.author} · {item.date}</span>
+                <Space size={4}>
+                  <Link to={`/visas/${item.id}`}>
+                    <Button size="small" type="link" icon={<EditOutlined />} style={{ padding: '0 4px' }}>编辑</Button>
+                  </Link>
+                  <Popconfirm title="确定删除？" onConfirm={() => handleDelete(item.id)}>
+                    <Button size="small" type="link" danger icon={<DeleteOutlined />} style={{ padding: '0 4px' }}>删除</Button>
+                  </Popconfirm>
+                </Space>
+              </div>
+            </Card>
+          )}
+          pagination={{ pageSize: 10, size: 'small', hideOnSinglePage: true }}
+        />
+      ) : (
+        <Table
+          dataSource={filteredVisas}
+          columns={columns}
+          loading={loading}
+          rowKey="id"
+          pagination={{ pageSize: 10 }}
+          scroll={{ x: 700 }}
+        />
+      )}
     </div>
   );
 }

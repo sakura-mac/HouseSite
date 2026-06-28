@@ -1,9 +1,11 @@
 import React, { useState, useEffect } from 'react';
-import { Table, Button, Space, Tag, Popconfirm, message, Input } from 'antd';
+import { Table, Button, Space, Tag, Popconfirm, message, Input, Grid, Card, List, Image } from 'antd';
 import { PlusOutlined, EditOutlined, DeleteOutlined } from '@ant-design/icons';
 import { Link } from 'react-router-dom';
 import { housesApi } from '../api';
 import { getImageUrl } from '../utils/imageUrl';
+
+const { useBreakpoint } = Grid;
 
 const TAG_LABELS = {
   selling: '在售房源',
@@ -23,6 +25,8 @@ export default function Houses() {
   const [houses, setHouses] = useState([]);
   const [loading, setLoading] = useState(true);
   const [searchText, setSearchText] = useState('');
+  const screens = useBreakpoint();
+  const isMobile = !screens.md;
 
   const loadData = () => {
     setLoading(true);
@@ -48,6 +52,12 @@ export default function Houses() {
     h.folder_name?.toLowerCase().includes(searchText.toLowerCase())
   );
 
+  const renderTags = (tags) => (tags || []).map(t => (
+    <Tag key={t} color={TAG_COLORS[t] || 'default'} style={{ marginBottom: 2 }}>
+      {TAG_LABELS[t] || t}
+    </Tag>
+  ));
+
   const columns = [
     { title: 'ID', dataIndex: 'id', width: 60 },
     {
@@ -67,11 +77,7 @@ export default function Houses() {
       title: '标签',
       dataIndex: 'tags',
       width: 200,
-      render: (tags) => (tags || []).map(t => (
-        <Tag key={t} color={TAG_COLORS[t] || 'default'} style={{ marginBottom: 2 }}>
-          {TAG_LABELS[t] || t}
-        </Tag>
-      )),
+      render: renderTags,
     },
     {
       title: '操作',
@@ -95,7 +101,7 @@ export default function Houses() {
         <Input.Search
           placeholder="搜索标题或文件夹名"
           allowClear
-          style={{ width: '100%', maxWidth: 300 }}
+          style={{ width: '100%', maxWidth: isMobile ? '100%' : 300 }}
           value={searchText}
           onChange={(e) => setSearchText(e.target.value)}
         />
@@ -103,14 +109,70 @@ export default function Houses() {
           <Button type="primary" icon={<PlusOutlined />} style={{ width: 'fit-content' }}>新增房源</Button>
         </Link>
       </div>
-      <Table
-        dataSource={filteredHouses}
-        columns={columns}
-        loading={loading}
-        rowKey="id"
-        pagination={{ pageSize: 10 }}
-        scroll={{ x: 800 }}
-      />
+
+      {isMobile ? (
+        <List
+          loading={loading}
+          dataSource={filteredHouses}
+          grid={{ gutter: 12, column: 1 }}
+          renderItem={(item) => (
+            <Card
+              size="small"
+              style={{ marginBottom: 8 }}
+              styles={{ body: { padding: 12 } }}
+            >
+              <div style={{ display: 'flex', gap: 12 }}>
+                {item.cover ? (
+                  <img
+                    src={getImageUrl(item.cover)}
+                    alt=""
+                    style={{ width: 72, height: 54, objectFit: 'cover', borderRadius: 4, flexShrink: 0 }}
+                  />
+                ) : (
+                  <div style={{
+                    width: 72, height: 54, borderRadius: 4, flexShrink: 0,
+                    background: '#f0f0f0', display: 'flex', alignItems: 'center', justifyContent: 'center',
+                    color: '#ccc', fontSize: 12,
+                  }}>无</div>
+                )}
+                <div style={{ flex: 1, minWidth: 0 }}>
+                  <div style={{ display: 'flex', gap: 6, alignItems: 'center', marginBottom: 4 }}>
+                    <span style={{ color: '#999', fontSize: 12 }}>#{item.id}</span>
+                    <span style={{
+                      fontSize: 14, fontWeight: 500, color: '#333',
+                      overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap',
+                    }}>
+                      {item.title}
+                    </span>
+                  </div>
+                  <div style={{ marginBottom: 6 }}>{renderTags(item.tags)}</div>
+                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
+                    <span style={{ fontSize: 12, color: '#999' }}>{item.date}</span>
+                    <Space size={4}>
+                      <Link to={`/houses/${item.id}`}>
+                        <Button size="small" type="link" icon={<EditOutlined />} style={{ padding: '0 4px' }}>编辑</Button>
+                      </Link>
+                      <Popconfirm title="确定删除？" onConfirm={() => handleDelete(item.id)}>
+                        <Button size="small" type="link" danger icon={<DeleteOutlined />} style={{ padding: '0 4px' }}>删除</Button>
+                      </Popconfirm>
+                    </Space>
+                  </div>
+                </div>
+              </div>
+            </Card>
+          )}
+          pagination={{ pageSize: 10, size: 'small', hideOnSinglePage: true }}
+        />
+      ) : (
+        <Table
+          dataSource={filteredHouses}
+          columns={columns}
+          loading={loading}
+          rowKey="id"
+          pagination={{ pageSize: 10 }}
+          scroll={{ x: 800 }}
+        />
+      )}
     </div>
   );
 }
