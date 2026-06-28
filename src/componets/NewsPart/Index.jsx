@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link, useLocation } from 'react-router-dom';
+import { Link, useLocation, useHistory } from 'react-router-dom';
 import { Container, Row, Col } from 'react-bootstrap';
 import { useI18n } from '../../i18n/i18n';
 import { API_BASE, getCoverUrl } from '../../config';
@@ -10,6 +10,7 @@ const NewsPart = () => {
   const [loading, setLoading] = useState(true);
   const [visibleHouses, setVisibleHouses] = useState(6);
   const location = useLocation();
+  const history = useHistory();
   const { t } = useI18n();
 
   // 获取 URL 中的 tag 参数
@@ -159,7 +160,8 @@ const NewsPart = () => {
                 <div className="col-lg-4 col-md-6 col-sm-9" key={index}>
                   <div
                       className="single-news"
-                      style={styles.singleNews}
+                      style={{ ...styles.singleNews, cursor: 'pointer' }}
+                      onClick={() => history.push(`/house-details/${house.folderName}`)}
                       onMouseEnter={(e) => {
                         e.currentTarget.querySelector('.single-news-overlay').style.backgroundColor = styles.overlayHover.backgroundColor;
                         e.currentTarget.querySelector('.content').style.transform = styles.contentHover.transform;
@@ -183,13 +185,11 @@ src={getCoverUrl(house)}
                           {house.category || t('house.defaultCategory')}
                         </span>
                         <h5 className="title" style={styles.title}>
-                          <Link to={`/house-details/${house.folderName}`} style={{ color: 'white', textDecoration: 'none' }}>
-                            {house.title}
-                          </Link>
+                          {house.title}
                         </h5>
-                        <Link to={`/house-details/${house.folderName}`} style={styles.icon}>
+                        <div style={styles.icon}>
                           <i className="fal fa-long-arrow-right" style={{ color: 'white' }} />
-                        </Link>
+                        </div>
                       </div>
                     </div>
                   </div>

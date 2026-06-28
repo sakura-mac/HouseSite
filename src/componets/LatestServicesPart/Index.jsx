@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useHistory } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLongArrowAltRight } from '@fortawesome/free-solid-svg-icons';
 import { Container, Row, Col } from 'react-bootstrap';
@@ -10,6 +10,7 @@ import LoadingSpinner from '../LoadingSpinner/LoadingSpinner';
 const LatestServicesPart = () => {
   const [houses, setHouses] = useState([]);
   const [loading, setLoading] = useState(true);
+  const history = useHistory();
   const { t } = useI18n();
 
   // 加载首页指定展示的房源
@@ -107,7 +108,7 @@ const LatestServicesPart = () => {
             <Row className="justify-content-center">
               {loading ? <LoadingSpinner text={t('common.loading')} height="200px" /> : houses.map((house, index) => (
                   <div className="col-lg-4 col-md-6 col-sm-9" key={index}>
-                    <div className="single-services" style={styles.singleService}>
+                    <div className="single-services" style={{ ...styles.singleService, cursor: 'pointer' }} onClick={() => history.push(`/house-details/${house.folderName}`)}>
                       {/* 使用房源的封面图片 */}
                       <div className="services-thumb" style={styles.imgContainer}>
 <img src={getCoverUrl(house)} alt={house.title} style={styles.img} />
@@ -116,10 +117,10 @@ const LatestServicesPart = () => {
                         <h4 className="title" style={styles.title}>{house.title}</h4>
                         <p style={styles.description}>{house.description}</p>
                         <div style={styles.linkContainer}>
-                          <Link to={`/house-details/${house.folderName}`} style={styles.link}>
+                          <span style={styles.link}>
                             {t('home.services.cta', '了解更多')}
                             <FontAwesomeIcon icon={faLongArrowAltRight} style={styles.arrowIcon} />
-                          </Link>
+                          </span>
                         </div>
                       </div>
                     </div>
