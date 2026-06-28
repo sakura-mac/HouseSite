@@ -84,7 +84,7 @@
                 font-size: 15px;
                 line-height: 32px;
             }
-            & > a{
+            & .main-btn{
                 font-size: 15px;
                 color: $black;
                 background-color: transparent;
@@ -94,6 +94,7 @@
                 &:hover{
                     background: $theme-color;
                     color: $white;
+                    border-color: $theme-color;
                 }
             }
         }
