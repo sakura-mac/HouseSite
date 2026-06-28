@@ -1,11 +1,13 @@
 import { message } from 'antd';
 import { uploadApi } from '../api';
-import { getImageUrl } from '../utils/imageUrl';
 
 /**
  * Markdown 编辑器拖拽 / 粘贴图片上传 Hook
  *
- * 流程：接受图片 → compressToWebP 压缩 → 上传到 R2 → 返回完整 URL 插入 Markdown
+ * 流程：接受图片 → compressToWebP 压缩 → 上传到 R2 → 返回相对路径插入 Markdown
+ *
+ * 注意：插入 Markdown 正文时必须用相对路径 /api/images/...，
+ * 这样前端网站和后台预览都能通过各自代理正确加载图片。
  *
  * @param {string} type - 'houses' | 'blogs' | 'visas'
  * @param {function} getFolderName - 获取当前 folder_name 的函数
@@ -19,7 +21,7 @@ export function useMarkdownUpload(type, getFolderName) {
       const res = await uploadApi.upload(file, type, folderName);
       hide();
       message.success(`图片上传成功（WebP, ${(res.size / 1024).toFixed(0)}KB）`);
-      return getImageUrl(res.key);
+      return `/api/images/${encodeURI(res.key)}`;
     } catch (err) {
       hide();
       message.error(err.error || '图片上传失败');
