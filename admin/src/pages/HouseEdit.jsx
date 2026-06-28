@@ -3,10 +3,12 @@ import { Form, Input, Button, Card, Select, DatePicker, Upload, message, Space, 
 import { UploadOutlined, ArrowLeftOutlined } from '@ant-design/icons';
 import { useNavigate, useParams } from 'react-router-dom';
 import MDEditor from '@uiw/react-md-editor';
+import { commands as mdCommands } from '@uiw/react-md-editor';
 import dayjs from 'dayjs';
 import { housesApi, uploadApi } from '../api';
 import { getImageUrl } from '../utils/imageUrl';
 import { useMarkdownUpload } from '../hooks/useMarkdownUpload';
+import { createUploadImageCommand } from '../commands/uploadImage';
 import EmojiBar from '../components/EmojiBar';
 
 const { TextArea } = Input;
@@ -45,10 +47,24 @@ export default function HouseEdit() {
     }
   }, [id]);
 
-  const { handleDrop, handlePaste } = useMarkdownUpload(
+  const { handleDrop, handlePaste, uploadSingle } = useMarkdownUpload(
     'houses',
     () => form.getFieldValue('folder_name')
   );
+
+  const uploadImageCmd = createUploadImageCommand({ uploadSingle, setContent });
+
+  const editorCommands = [
+    mdCommands.bold, mdCommands.italic, mdCommands.strikethrough, mdCommands.hr,
+    mdCommands.group([mdCommands.title1, mdCommands.title2, mdCommands.title3, mdCommands.title4, mdCommands.title5, mdCommands.title6], {
+      name: 'title', groupName: 'title',
+      buttonProps: { 'aria-label': 'Insert title', title: 'Insert title' }
+    }),
+    mdCommands.divider, mdCommands.link, mdCommands.quote, mdCommands.code, mdCommands.codeBlock,
+    mdCommands.comment, mdCommands.image, uploadImageCmd, mdCommands.table, mdCommands.divider,
+    mdCommands.unorderedListCommand, mdCommands.orderedListCommand, mdCommands.checkedListCommand,
+    mdCommands.divider, mdCommands.help,
+  ];
 
   const handleCoverUpload = async (file) => {
     const folderName = form.getFieldValue('folder_name') || 'misc';
@@ -154,6 +170,7 @@ export default function HouseEdit() {
                 onChange={setContent}
                 height={600}
                 preview="live"
+                commands={editorCommands}
                 style={{ whiteSpace: 'pre-wrap' }}
               />
             </div>
