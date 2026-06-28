@@ -1,0 +1,198 @@
+{
+  "langName": "English",
+  "header": {
+    "brandTitle": "Swallow Homes",
+    "brandSubtitle": "Quality Japanese Real Estate · Better Living",
+    "email": "88swallow@gmail.com",
+    "phone": "078-891-7099",
+    "nav": {
+      "home": "Home",
+      "about": "About Us",
+      "houses": "Properties",
+      "blog": "News",
+      "contact": "Contact",
+      "more": "Visa Consulting",
+      "regions": {
+        "kobe": "Kobe",
+        "osaka": "Osaka",
+        "kyoto": "Kyoto",
+        "hokkaido": "Hokkaido",
+        "okinawa": "Okinawa",
+        "east": "East Japan",
+        "west": "West Japan",
+        "tokyo": "Tokyo"
+      }
+    },
+    "language": "Language"
+  },
+  "footer": {
+    "company": "Swallow Homes",
+    "introTitle": "Swallow Homes",
+    "intro": "",
+    "navTitle": "Navigation",
+    "nav": {
+      "home": "Home",
+      "houses": "Properties",
+      "about": "About Us",
+      "blog": "News",
+      "contact": "Contact",
+      "more": "Visa Consulting"
+    },
+    "contactTitle": "Contact Us",
+    "contact": {
+      "email": "Email: 88swallow@gmail.com",
+      "address": "Address: 8-6-26 Motoyama Minamimachi, Higashinada-ku, Kobe, Higashi-Kobe Center Building W 8F SD1",
+      "phone": "Phone: 078-891-7099"
+    },
+    "qr": {
+      "whatsapp": "WhatsApp",
+      "wechat": "WeChat",
+      "line": "LINE",
+      "linepublic": "LINE Official"
+    },
+    "copyright": "Copyright By@ swallow-homes - {year}"
+  },
+  "contact": {
+    "title": "Contact Us",
+    "locationTitle": "Location",
+    "address": "8-6-26 Motoyama Minamimachi, Higashinada-ku, Kobe, Higashi-Kobe Center Building W 8F SD1",
+    "telTitle": "TEL",
+    "tel": "078-891-7099",
+    "faxTitle": "FAX",
+    "fax": "078-452-7633",
+    "emailTitle": "Email",
+    "email": "88swallow@gmail.com"
+  },
+  "case": {
+    "listTitle": "Properties",
+    "listCrumb": "Properties",
+    "detailTitle": "Property Details",
+    "notFound": "Property not found"
+  },
+  "blog": {
+    "title": "News",
+    "notFound": "Article not found"
+  },
+  "meta": {
+    "title": "Swallow Homes Japan"
+  },
+  "home": {
+    "banner": {
+      "tagline": "Estate Consultant",
+      "title": "Find Your Perfect Home",
+      "description": {
+        "line1": "Every property has its own unique charm.",
+        "line2": "Personalized solutions and precise matching for comfortable living."
+      },
+      "cta": "View Properties"
+    },
+    "who": {
+      "subtitle": "About Us",
+      "title": {
+        "line1": "Connecting the world and Japan,",
+        "line2": "your trustworthy one-stop partner"
+      },
+      "description": {
+        "line1": "From real estate to healthcare and environment,",
+        "line2": "a comprehensive creative company creating next-generation prosperity beyond borders.",
+        "line3": "Overcoming language and national barriers, providing reliable security and management."
+      }
+    },
+    "choose": {
+      "subtitle": "Best agency for you",
+      "title": "Why Choose Us?",
+      "items": {
+        "team": {
+          "title": "Professional Team",
+          "desc": "Our experienced professional team provides quality real estate consulting services, ensuring every decision is accurate and reliable."
+        },
+        "assets": {
+          "title": "Premium Properties",
+          "desc": "We offer carefully selected premium properties on the market, meeting all your expectations for an ideal living environment."
+        },
+        "efficient": {
+          "title": "Efficient Transactions",
+          "desc": "Simplified transaction processes let you complete deals in the shortest time, saving valuable time."
+        },
+        "service": {
+          "title": "Dedicated Service",
+          "desc": "One-on-one personalized service from consultation to after-sales, ensuring every detail is properly handled."
+        }
+      },
+      "counters": {
+        "experience": {
+          "title": "Real Estate Experience",
+          "desc": "Years of real estate experience with rich market insights and industry knowledge."
+        },
+        "deals": {
+          "title": "Completed Deals",
+          "desc": "Successfully completed over 500 property projects, ensuring every client finds their ideal home."
+        },
+        "praise": {
+          "title": "Customer Satisfaction",
+          "desc": "98% of clients gave high praise for our professional, efficient, and dedicated service."
+        }
+      }
+    },
+    "services": {
+      "subtitle": "Featured Properties",
+      "title": {
+        "line1": "Prime Locations or Quality Homes",
+        "line2": "We Cover It All"
+      },
+      "cta": "Learn More"
+    },
+    "news": {
+      "subtitle": "latest news",
+      "title": "News",
+      "cta": "Learn More"
+    }
+  },
+  "about": {
+    "title": "About Us",
+    "experience": {
+      "subtitle": "About Us",
+      "title": "Connecting the world and Japan, your trustworthy one-stop partner",
+      "description": "From real estate to healthcare and environment. A comprehensive creative company creating next-generation prosperity beyond borders. Overcoming language and national barriers, providing reliable security and management."
+    },
+    "intro": {
+      "subtitle": "Swallow Homes",
+      "ceoTitle": "CEO — Li Xiaoyan",
+      "desc1": "Connecting the world and Japan, your trustworthy all-round partner",
+      "desc2": "From real estate to healthcare and environment. A comprehensive creative company creating next-generation prosperity beyond borders. Overcoming language and national barriers, providing reliable security and management.",
+      "stat1Value": "Rich",
+      "stat1Label": "Real Estate Expertise",
+      "stat2Value": "98%",
+      "stat2Label": "Customer Satisfaction"
+    }
+  },
+  "house": {
+    "filterLabel": "Filter properties:",
+    "all": "All",
+    "loadMore": "Load More +",
+    "defaultCategory": "Property",
+    "tags": {
+      "selling": "For Sale",
+      "managed": "Managed",
+      "sold": "Sold",
+      "owned": "Owned"
+    }
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "Error",
+    "readMore": "Learn More"
+  },
+  "visa": {
+    "title": "Visa Consulting",
+    "contactTitle": "Contact Us",
+    "contactSubtitle": "If you have questions about visas or need consultation, please feel free to contact us.",
+    "contactDesc": "Our experienced professional team will provide dedicated one-on-one support tailored to your specific situation. No matter what stage you are at, we welcome you to reach out. We look forward to serving you.",
+    "email": "Email",
+    "phone": "Phone",
+    "wechat": "WeChat",
+    "whatsapp": "WhatsApp",
+    "line": "LINE",
+    "listTitle": "Visa Related Articles"
+  }
+}

@@ -124,9 +124,15 @@ const MobileLangBall = () => {
             >
               🇯🇵 日本語
             </button>
+            <button
+              style={{ ...styles.langBtn, ...(locale === 'en' ? styles.langBtnHighlight : {}) }}
+              onClick={() => handleSelect('en')}
+            >
+              🇬🇧 English
+            </button>
           </div>
           <button style={styles.skipBtn} onClick={handleDismiss}>
-            {locale === 'ja' ? 'スキップ' : '跳过'}
+            {locale === 'ja' ? 'スキップ' : locale === 'en' ? 'Skip' : '跳过'}
           </button>
         </div>
       </div>

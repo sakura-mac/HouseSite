@@ -2,7 +2,7 @@ import React, { createContext, useContext, useEffect, useMemo, useState } from '
 
 const STORAGE_KEY = 'app_locale';
 const DEFAULT_LOCALE = 'zh';
-const SUPPORTED = ['zh', 'ja'];
+const SUPPORTED = ['zh', 'ja', 'en'];
 
 const loadMessages = (locale) => {
   try {

@@ -51,7 +51,7 @@ const LatestNewsPart = () => {
                                         >
                                             <div className="letest-news-item mt-30" style={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
                                                 <div>
-                                                    <span>{new Date(blog.date).toLocaleDateString(locale === 'ja' ? 'ja-JP' : 'zh-CN')}</span>
+                                                    <span>{new Date(blog.date).toLocaleDateString(locale === 'ja' ? 'ja-JP' : locale === 'en' ? 'en-US' : 'zh-CN')}</span>
                                                     <h4 className="title">
                                                         <Link to={`/blog-details/${blog.folderName}`}>
                                                             {blog.title}

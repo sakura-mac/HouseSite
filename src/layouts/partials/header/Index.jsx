@@ -71,6 +71,7 @@ class Header extends React.Component {
                     >
                       <option value="zh">中文</option>
                       <option value="ja">日本語</option>
+                      <option value="en">English</option>
                     </select>
                   </div>
                 </Col>

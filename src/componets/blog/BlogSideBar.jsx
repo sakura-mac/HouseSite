@@ -44,12 +44,12 @@ src={getCoverUrl(blog, 'blog')}
                         />
                       </div>
                       <div className="blog-standard-content">
-                        <span>{blog.category ? (locale === 'ja' ? { '房地产投资': '不動産投資', '移民': '移民', 'Blog': 'ブログ' }[blog.category] || blog.category : blog.category) : t('blog.title')}</span>
+                        <span>{blog.category ? (locale === 'ja' ? { '房地产投资': '不動産投資', '移民': '移民', 'Blog': 'ブログ' }[blog.category] || blog.category : locale === 'en' ? { '房地产投资': 'Real Estate Investment', '移民': 'Immigration', 'Blog': 'Blog' }[blog.category] || blog.category : blog.category) : t('blog.title')}</span>
                         <h2 className="title">
                           <Link to={`/blog-details/${blog.folderName}`}>{blog.title}</Link>
                         </h2>
                         <ul>
-                          <li><i className="fal fa-calendar-alt" /> {new Date(blog.date).toLocaleDateString(locale === 'ja' ? 'ja-JP' : 'zh-CN')}</li>
+                          <li><i className="fal fa-calendar-alt" /> {new Date(blog.date).toLocaleDateString(locale === 'ja' ? 'ja-JP' : locale === 'en' ? 'en-US' : 'zh-CN')}</li>
                         </ul>
                         <p>{blog.description || blog.excerpt}</p>
                         <div className="blog-flex">
