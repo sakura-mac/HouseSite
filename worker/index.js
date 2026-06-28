@@ -248,7 +248,6 @@ async function updateHouse(request, env) {
 
   if (updates.length === 0) return json({ error: 'No fields to update' }, 400);
 
-  updates.push("updated_at = datetime('now')");
   values.push(id);
 
   await env.DB.prepare(
@@ -337,7 +336,6 @@ async function updateBlog(request, env) {
   }
 
   if (updates.length === 0) return json({ error: 'No fields to update' }, 400);
-  updates.push("updated_at = datetime('now')");
   values.push(id);
 
   await env.DB.prepare(
@@ -424,7 +422,6 @@ async function updateVisa(request, env) {
   }
 
   if (updates.length === 0) return json({ error: 'No fields to update' }, 400);
-  updates.push("updated_at = datetime('now')");
   values.push(id);
 
   await env.DB.prepare(
@@ -589,7 +586,7 @@ async function getDashboard(request, env) {
 
   // 最近更新
   const recent = await env.DB.prepare(
-    'SELECT id, title, updated_at FROM houses ORDER BY updated_at DESC LIMIT 5'
+    'SELECT id, title, date FROM houses ORDER BY date DESC LIMIT 5'
   ).all();
 
   return json({
