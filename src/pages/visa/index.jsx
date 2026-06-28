@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import Layout from '../../layouts';
 import { Container, Row, Col } from 'react-bootstrap';
-import { useI18n } from '../../i18n/i18n';
+import { useI18n, formatDate } from '../../i18n/i18n';
 import { API_BASE, getCoverUrl } from '../../config';
 import LoadingSpinner from '../../componets/LoadingSpinner/LoadingSpinner';
 
@@ -76,7 +76,7 @@ function VisaPage() {
               <div className="blog-standard">
                 {loading ? <LoadingSpinner text={t('common.loading')} height="300px" /> : visas.length === 0 ? (
                   <p style={{ textAlign: 'center', color: '#999', padding: '60px 0' }}>
-                    {locale === 'ja' ? 'まだ記事がありません。' : locale === 'en' ? 'No articles yet.' : '暂无文章。'}
+                    {t('visa.noArticles')}
                   </p>
                 ) : (
                   visas.map((visa, index) => (
@@ -93,7 +93,7 @@ function VisaPage() {
                           <Link to={`/visa-details/${visa.folderName}`}>{visa.title}</Link>
                         </h2>
                         <ul>
-                  <li><i className="fal fa-calendar-alt" /> {new Date(visa.date).toLocaleDateString(locale === 'ja' ? 'ja-JP' : locale === 'en' ? 'en-US' : 'zh-CN')}</li>
+                  <li><i className="fal fa-calendar-alt" /> {formatDate(visa.date, locale)}</li>
                           {visa.author && <li><i className="fal fa-user" /> {visa.author}</li>}
                         </ul>
                         <p>{visa.description}</p>

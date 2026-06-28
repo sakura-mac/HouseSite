@@ -4,7 +4,7 @@ import { useI18n } from '../../i18n/i18n';
 const FIRST_VISIT_KEY = 'lang_modal_shown';
 
 const MobileLangBall = () => {
-  const { locale, setLocale } = useI18n();
+  const { locale, setLocale, t } = useI18n();
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
@@ -132,7 +132,7 @@ const MobileLangBall = () => {
             </button>
           </div>
           <button style={styles.skipBtn} onClick={handleDismiss}>
-            {locale === 'ja' ? 'スキップ' : locale === 'en' ? 'Skip' : '跳过'}
+            {t('common.skip')}
           </button>
         </div>
       </div>

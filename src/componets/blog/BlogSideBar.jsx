@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Container, Row, Col } from 'react-bootstrap';
-import { useI18n } from '../../i18n/i18n';
+import { useI18n, formatDate } from '../../i18n/i18n';
 import { API_BASE, getCoverUrl } from '../../config';
 import LoadingSpinner from '../LoadingSpinner/LoadingSpinner';
 
@@ -44,12 +44,12 @@ src={getCoverUrl(blog, 'blog')}
                         />
                       </div>
                       <div className="blog-standard-content">
-                        <span>{blog.category ? (locale === 'ja' ? { '房地产投资': '不動産投資', '移民': '移民', 'Blog': 'ブログ' }[blog.category] || blog.category : locale === 'en' ? { '房地产投资': 'Real Estate Investment', '移民': 'Immigration', 'Blog': 'Blog' }[blog.category] || blog.category : blog.category) : t('blog.title')}</span>
+                        <span>{blog.category ? t(`categories.${blog.category}`, blog.category) : t('blog.title')}</span>
                         <h2 className="title">
                           <Link to={`/blog-details/${blog.folderName}`}>{blog.title}</Link>
                         </h2>
                         <ul>
-                          <li><i className="fal fa-calendar-alt" /> {new Date(blog.date).toLocaleDateString(locale === 'ja' ? 'ja-JP' : locale === 'en' ? 'en-US' : 'zh-CN')}</li>
+                          <li><i className="fal fa-calendar-alt" /> {formatDate(blog.date, locale)}</li>
                         </ul>
                         <p>{blog.description || blog.excerpt}</p>
                         <div className="blog-flex">

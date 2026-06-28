@@ -178,10 +178,16 @@
       "owned": "持有房源"
     }
   },
+  "categories": {
+    "房地产投资": "房地产投资",
+    "移民": "移民",
+    "Blog": "博客"
+  },
   "common": {
     "loading": "加载中...",
     "error": "错误",
-    "readMore": "了解更多"
+    "readMore": "了解更多",
+    "skip": "跳过"
   },
   "visa": {
     "title": "签证咨询",
@@ -193,6 +199,8 @@
     "wechat": "微信",
     "whatsapp": "WhatsApp",
     "line": "LINE",
-    "listTitle": "签证相关文章"
+    "listTitle": "签证相关文章",
+    "noArticles": "暂无文章。",
+    "notFound": "文章未找到"
   }
 }

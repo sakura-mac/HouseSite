@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faLongArrowAltRight } from '@fortawesome/free-solid-svg-icons';
 import { Container, Row, Col } from 'react-bootstrap';
-import { useI18n } from '../../i18n/i18n';
+import { useI18n, formatDate } from '../../i18n/i18n';
 import { API_BASE } from '../../config';
 import LoadingSpinner from '../LoadingSpinner/LoadingSpinner';
 
@@ -51,7 +51,7 @@ const LatestNewsPart = () => {
                                         >
                                             <div className="letest-news-item mt-30" style={{ display: 'flex', flexDirection: 'column', height: '100%' }}>
                                                 <div>
-                                                    <span>{new Date(blog.date).toLocaleDateString(locale === 'ja' ? 'ja-JP' : locale === 'en' ? 'en-US' : 'zh-CN')}</span>
+                                                    <span>{formatDate(blog.date, locale)}</span>
                                                     <h4 className="title">
                                                         <Link to={`/blog-details/${blog.folderName}`}>
                                                             {blog.title}

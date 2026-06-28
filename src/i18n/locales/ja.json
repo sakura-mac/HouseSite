@@ -178,10 +178,16 @@
       "owned": "所有物件"
     }
   },
+  "categories": {
+    "房地产投资": "不動産投資",
+    "移民": "移民",
+    "Blog": "ブログ"
+  },
   "common": {
     "loading": "読み込み中...",
     "error": "エラー",
-    "readMore": "詳しく見る"
+    "readMore": "詳しく見る",
+    "skip": "スキップ"
   },
   "visa": {
     "title": "ビザ相談",
@@ -193,6 +199,8 @@
     "wechat": "WeChat",
     "whatsapp": "WhatsApp",
     "line": "LINE",
-    "listTitle": "ビザ関連記事"
+    "listTitle": "ビザ関連記事",
+    "noArticles": "まだ記事がありません。",
+    "notFound": "記事が見つかりません"
   }
 }

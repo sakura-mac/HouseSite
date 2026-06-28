@@ -94,6 +94,19 @@ export const I18nProvider = ({ children }) => {
 
 export const useI18n = () => useContext(I18nContext);
 
+/**
+ * 根据当前 locale 格式化日期，统一日期显示格式
+ * @param {Date|string|number} date - 日期
+ * @param {string} locale - 当前语言 zh/ja/en
+ * @param {object} options - toLocaleDateString 的 options 参数（可选）
+ * @returns {string} 格式化后的日期字符串
+ */
+export const formatDate = (date, locale, options) => {
+  const localeMap = { zh: 'zh-CN', ja: 'ja-JP', en: 'en-US' };
+  const defaultOptions = { year: 'numeric', month: 'long', day: 'numeric' };
+  return new Date(date).toLocaleDateString(localeMap[locale] || 'zh-CN', options || defaultOptions);
+};
+
 export const withI18n = (Component) => (props) => (
   <I18nContext.Consumer>
     {(ctx) => <Component {...props} i18n={ctx} />}

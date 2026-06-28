@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link, useParams } from 'react-router-dom';
 import Layout from '../../layouts';
 import { Container, Row, Col } from 'react-bootstrap';
-import { useI18n } from '../../i18n/i18n';
+import { useI18n, formatDate } from '../../i18n/i18n';
 import { API_BASE, getCoverUrl, getContentImageUrl } from '../../config';
 import LoadingSpinner from '../../componets/LoadingSpinner/LoadingSpinner';
 
@@ -57,7 +57,7 @@ function VisaDetails() {
         <Container>
           <Row className="justify-content-center">
             <Col lg="8" className="text-center" style={{ paddingTop: '100px' }}>
-              <h2>{locale === 'ja' ? '記事が見つかりません' : locale === 'en' ? 'Article not found' : '文章未找到'}</h2>
+              <h2>{t('visa.notFound')}</h2>
               <Link to="/visa" className="main-btn mt-30">{t('visa.title')}</Link>
             </Col>
           </Row>
@@ -108,7 +108,7 @@ function VisaDetails() {
               </div>
               <div className="blog-details-content mt-30">
                 <ul className="blog-meta">
-                  <li><i className="fal fa-calendar-alt" /> {new Date(visa.date).toLocaleDateString(locale === 'ja' ? 'ja-JP' : locale === 'en' ? 'en-US' : 'zh-CN')}</li>
+                  <li><i className="fal fa-calendar-alt" /> {formatDate(visa.date, locale)}</li>
                   {visa.author && <li><i className="fal fa-user" /> {visa.author}</li>}
                 </ul>
                 <div

@@ -178,10 +178,16 @@
       "owned": "Owned"
     }
   },
+  "categories": {
+    "房地产投资": "Real Estate Investment",
+    "移民": "Immigration",
+    "Blog": "Blog"
+  },
   "common": {
     "loading": "Loading...",
     "error": "Error",
-    "readMore": "Learn More"
+    "readMore": "Learn More",
+    "skip": "Skip"
   },
   "visa": {
     "title": "Visa Consulting",
@@ -193,6 +199,8 @@
     "wechat": "WeChat",
     "whatsapp": "WhatsApp",
     "line": "LINE",
-    "listTitle": "Visa Related Articles"
+    "listTitle": "Visa Related Articles",
+    "noArticles": "No articles yet.",
+    "notFound": "Article not found"
   }
 }
