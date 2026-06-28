@@ -21,12 +21,16 @@ const BlogSideBar = () => {
   }, []);
 
   // 分页逻辑
+  const totalPages = Math.ceil(blogs.length / blogsPerPage);
   const indexOfLastBlog = currentPage * blogsPerPage;
   const indexOfFirstBlog = indexOfLastBlog - blogsPerPage;
   const currentBlogs = blogs.slice(indexOfFirstBlog, indexOfLastBlog);
 
-  // 处理翻页
-  const paginate = (pageNumber) => setCurrentPage(pageNumber);
+  // 处理翻页（边界保护）
+  const paginate = (pageNumber) => {
+    if (pageNumber < 1 || pageNumber > totalPages) return;
+    setCurrentPage(pageNumber);
+  };
 
   return (
       <div className="blog-standard-area pt-90 pb-120">
@@ -62,8 +66,14 @@ src={getCoverUrl(blog, 'blog')}
                       </div>
                     </div>
                 ))}
-                {/* 分页 */}
-                {!loading && (
+                {/* 无文章提示 */}
+                {!loading && blogs.length === 0 && (
+                  <div style={{ textAlign: 'center', padding: '60px 0', color: '#999', fontSize: '16px' }}>
+                    {t('common.noArticles') || '暂无文章'}
+                  </div>
+                )}
+                {/* 分页：只有一页或没有文章时不显示 */}
+                {!loading && totalPages > 1 && (
                 <Row>
                   <Col lg="12">
                     <nav className="mt-60" aria-label="Page navigation example">
@@ -79,7 +89,7 @@ src={getCoverUrl(blog, 'blog')}
                             <i className="far fa-chevron-double-left" />
                           </Link>
                         </li>
-                        {[...Array(Math.ceil(blogs.length / blogsPerPage)).keys()].map(page => (
+                        {[...Array(totalPages).keys()].map(page => (
                             <li key={page + 1} className="page-item">
                               <Link
                                   className={`page-link ${currentPage === page + 1 ? 'active' : ''}`}
@@ -92,10 +102,10 @@ src={getCoverUrl(blog, 'blog')}
                         ))}
                         <li className="page-item">
                           <Link
-                              className={`page-link ${currentPage === Math.ceil(blogs.length / blogsPerPage) ? 'disabled' : ''}`}
+                              className={`page-link ${currentPage === totalPages ? 'disabled' : ''}`}
                               onClick={() => paginate(currentPage + 1)}
                               to="#"
-                              aria-disabled={currentPage === Math.ceil(blogs.length / blogsPerPage)}
+                              aria-disabled={currentPage === totalPages}
                           >
                             <i className="far fa-chevron-double-right" />
                           </Link>
