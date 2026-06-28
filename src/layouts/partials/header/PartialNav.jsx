@@ -5,7 +5,12 @@ import { withI18n } from '../../../i18n/i18n';
 
 class PartialNav extends React.Component {
     render() { 
-        const { t } = this.props.i18n || {};
+        const { t, locale, setLocale } = this.props.i18n || {};
+        const langs = [
+            { code: 'zh', label: '中文' },
+            { code: 'ja', label: '日本語' },
+            { code: 'en', label: 'English' },
+        ];
         return ( 
             <>
                 <Nav className="mr-auto">
@@ -98,6 +103,38 @@ class PartialNav extends React.Component {
                         <Link className="nav-link" to={'/visa'}>{t('header.nav.more')}</Link>
                     </li>
                 </Nav>
+                <div className="mobile-lang-switcher" style={{
+                    display: 'flex',
+                    gap: '8px',
+                    padding: '12px 15px',
+                    marginTop: '8px',
+                    borderTop: '1px solid #eee',
+                }}>
+                    <style>{`
+                        @media (min-width: 992px) {
+                            .mobile-lang-switcher { display: none !important; }
+                        }
+                    `}</style>
+                    {langs.map(l => (
+                        <button
+                            key={l.code}
+                            onClick={() => setLocale && setLocale(l.code)}
+                            style={{
+                                flex: 1,
+                                padding: '8px 0',
+                                borderRadius: '6px',
+                                border: locale === l.code ? '1px solid #0f3c9e' : '1px solid #ddd',
+                                background: locale === l.code ? '#0f3c9e' : '#fff',
+                                color: locale === l.code ? '#fff' : '#333',
+                                fontSize: '14px',
+                                fontWeight: '500',
+                                cursor: 'pointer',
+                            }}
+                        >
+                            {l.label}
+                        </button>
+                    ))}
+                </div>
             </>
         );
     }
